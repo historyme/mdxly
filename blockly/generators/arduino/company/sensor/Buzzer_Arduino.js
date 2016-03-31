@@ -72,13 +72,13 @@ Blockly.Arduino.BuzzerToneSong = function() {
 	var code='';
 	code+='for (int a = 0; music_'+buzzerSong+'[a] != 0; a++) {\n';
 	code+='  if (music_'+buzzerSong+'[a] != 22) {\n';
-	code+='    tone('+BuzzerPin+', tone_list[music_'+buzzerSong+'[a] - 1]);\n';
+	code+='    tone(BuzzerPin'+BuzzerPin+', tone_list[music_'+buzzerSong+'[a] - 1]);\n';
 	code+='  }\n';
 	code+='  else {\n';
-	code+='    noTone('+BuzzerPin+');\n';
+	code+='    noTone(BuzzerPin'+BuzzerPin+');\n';
 	code+='  }\n';
 	code+='  delay(rhythm_'+buzzerSong+'[a] * 300);\n';
-	code+='  noTone('+BuzzerPin+');\n';
+	code+='  noTone(BuzzerPin'+BuzzerPin+');\n';
 	code+='  delay(30);\n';
 	code+='}\n';
 	code+='delay(2000);\n';

@@ -11,7 +11,10 @@ Blockly.Blocks.Defination = {
         var FLIP = [['uint16_t', 'uint16_t'],     //announce menu
                     ['uint32_t', 'uint32_t'],
                     ['double', 'double']];
-    this.setColour(colorSet);  //module color
+  this.setColour(colorSet);  //module color
+  //this.setColour('#e184a7');  //module color
+
+
     this.appendValueInput('VALUE') 
          .setCheck(Number)                          //as string
          .setAlign(Blockly.ALIGN_RIGHT)             //right side
