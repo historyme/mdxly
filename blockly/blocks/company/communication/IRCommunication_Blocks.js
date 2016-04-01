@@ -96,3 +96,16 @@ Blockly.Blocks.IRReciverRaw = {
   this.setTooltip(Blockly.LKL_IR_RECIEVE_RAW_TOOLTIP);
   }
 };
+
+
+Blockly.Blocks.IRReciverEnable = {
+  init: function() {
+    this.setColour(colorSet);
+  this.appendValueInput("PIN", Number)
+        .appendTitle(Blockly.IRReciverEnable)
+        .setCheck(Number);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+  this.setTooltip(Blockly.LKL_IR_RECIEVE_RAW_TOOLTIP);
+  }
+};

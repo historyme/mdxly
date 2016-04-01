@@ -119,3 +119,12 @@ Blockly.Arduino.IRReciverRaw = function() {
    Blockly.Arduino.definitions_['dumpRaw'] = funcode;
    return code;
 };
+
+
+
+Blockly.Arduino.IRReciverEnable = function() {
+   var dropdown_pin = Blockly.Arduino.valueToCode(this, 'PIN',Blockly.Arduino.ORDER_ATOMIC);
+   var code='';
+    code+='irrecv_'+dropdown_pin+'.enableIRIn(); \n';
+   return code;
+};

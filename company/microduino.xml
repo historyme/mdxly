@@ -511,6 +511,11 @@
           <shadow type="pins_digital"></shadow>
         </value>
 	  </block>
+	  <block type="IRReciverEnable">
+		<value name="PIN">
+          <shadow type="pins_digital"></shadow>
+        </value>
+	  </block>
 
 
 		<block type="WiFiBlynk"></block>

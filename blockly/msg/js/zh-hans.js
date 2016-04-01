@@ -1039,6 +1039,8 @@ Blockly.IRSend_content='指令内容';
 Blockly.IRTYPE='发送类型';
 Blockly.IRSnd='红外发送';
 
+Blockly.IRReciverEnable='红外接收恢复';
+
 Blockly.Keyget='按钮';
 Blockly.KeygetJoystic='摇杆';
 Blockly.Keyget_Pin='管脚';
