@@ -362,6 +362,7 @@ Blockly.Msg.TEXT_PROMPT_TYPE_NUMBER = "solicitar número con el mensaje";
 Blockly.Msg.TEXT_PROMPT_TYPE_TEXT = "solicitar texto con el mensaje";
 Blockly.Msg.TEXT_TEXT_HELPURL = "https://es.wikipedia.org/wiki/Cadena_de_caracteres";
 Blockly.Msg.TEXT_TEXT_TOOLTIP = "Una letra, palabra o línea de texto.";
+Blockly.Msg.TEXT_CHAR_TOOLTIP = "A character.";
 Blockly.Msg.TEXT_TRIM_HELPURL = "https://github.com/google/blockly/wiki/Text#trimming-removing-spaces";  // untranslated
 Blockly.Msg.TEXT_TRIM_OPERATOR_BOTH = "quitar espacios de ambos lados de";
 Blockly.Msg.TEXT_TRIM_OPERATOR_LEFT = "quitar espacios iniciales de";
@@ -851,3 +852,28 @@ Blockly.MIXLY_ETHERNET_CLINET_READ='Client.Read';
 Blockly.MIXLY_ETHERNET_CLINET_GET_REQUEST='GET Request';
 Blockly.MIXLY_ETHERNET_CLINET_URL='URL';
 Blockly.MIXLY_ETHERNET_CLINET_SERVER='Server';
+
+//DS18B20温度传感器
+Blockly.MIXLY_DS18B20='DS18B20 PIN#';
+Blockly.MIXLY_DS18B20_GET_TEMP='getTemperature';
+Blockly.MIXLY_DS18B20_C='°C';
+Blockly.MIXLY_DS18B20_F='°F';
+
+//GPS
+Blockly.MIXLY_GPS_INIT='GPS init';
+Blockly.MIXLY_GPS_DATA_AVAILABLE='GPS data is available';
+Blockly.MIXLY_GPS_DATA_ENCODE='GPS encode data successful';
+Blockly.MIXLY_GPS_LOCATION='location';
+Blockly.MIXLY_GPS_DATE='date';
+Blockly.MIXLY_GPS_TIME='time';
+Blockly.MIXLY_GPS_ISVALID='isValid';
+Blockly.MIXLY_GPS_GET='GPS get';
+Blockly.MIXLY_GPS_LOCATION_LAT='location-latitude';
+Blockly.MIXLY_GPS_LOCATION_LNG='location-longitude';
+Blockly.MIXLY_GPS_DATE_YEAR='date-year';
+Blockly.MIXLY_GPS_DATE_MONTH='date-month';
+Blockly.MIXLY_GPS_DATE_DAY='date-day';
+Blockly.MIXLY_GPS_TIME_HOUR='time-hour';
+Blockly.MIXLY_GPS_TIME_MINUTE='time-minute';
+Blockly.MIXLY_GPS_TIME_SECOND='time-second';
+Blockly.MIXLY_GPS_TIME_CENTISECOND='time-centisecond';

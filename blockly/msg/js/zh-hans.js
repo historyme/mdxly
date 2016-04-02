@@ -361,6 +361,7 @@ Blockly.Msg.TEXT_PROMPT_TYPE_NUMBER = "输入数字并显示提示消息";
 Blockly.Msg.TEXT_PROMPT_TYPE_TEXT = "输入数字并显示提示消息";
 Blockly.Msg.TEXT_TEXT_HELPURL = "https://zh.wikipedia.org/wiki/字符串";
 Blockly.Msg.TEXT_TEXT_TOOLTIP = "一个字母、单词或一行文本。";
+Blockly.Msg.TEXT_CHAR_TOOLTIP = "一个字符。";
 Blockly.Msg.TEXT_TRIM_HELPURL = "https://github.com/google/blockly/wiki/Text#trimming-removing-spaces";  // untranslated
 Blockly.Msg.TEXT_TRIM_OPERATOR_BOTH = "消除两侧空格";
 Blockly.Msg.TEXT_TRIM_OPERATOR_LEFT = "消除左侧空格";
@@ -453,15 +454,15 @@ Blockly.LKL_I2C_MASTER_READ2="I2C读取";
 Blockly.LKL_I2C_VALUE="值";
 Blockly.LKL_I2C_BYTES="字节数";
 Blockly.LKL_I2C_AVAILABLE='读取I2C成功吗？';
-Blockly.LANG_CONTROLS_FOR_INPUT_WITH = '使用';
+Blockly.LANG_CONTROLS_FOR_INPUT_WITH = '按次';
 Blockly.LANG_CONTROLS_FOR_INPUT_VAR = 'x';
 Blockly.LANG_CONTROLS_FOR_INPUT_FROM = '从';
 Blockly.LANG_CONTROLS_FOR_INPUT_TO = '到';
 Blockly.LANG_CONTROLS_FOR_INPUT_DO = '执行';
 Blockly.LANG_CONTROLS_WHILEUNTIL_TITLE_REPEAT = '重复';
 Blockly.LANG_CONTROLS_WHILEUNTIL_INPUT_DO = '执行';
-Blockly.LANG_CONTROLS_WHILEUNTIL_OPERATOR_WHILE = '当';
-Blockly.LANG_CONTROLS_WHILEUNTIL_OPERATOR_UNTIL = '直到';
+Blockly.LANG_CONTROLS_WHILEUNTIL_OPERATOR_WHILE = '满足条件';
+Blockly.LANG_CONTROLS_WHILEUNTIL_OPERATOR_UNTIL = '不满足条件';
 Blockly.LANG_CONTROLS_FLOW_STATEMENTS_INPUT_OFLOOP = '循环';
 Blockly.LANG_CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = '跳出';
 Blockly.LANG_CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = '跳到下一个';
@@ -860,7 +861,30 @@ Blockly.MIXLY_ETHERNET_CLINET_GET_REQUEST='GET请求';
 Blockly.MIXLY_ETHERNET_CLINET_URL='URL';
 Blockly.MIXLY_ETHERNET_CLINET_SERVER='服务器';
 
+//DS18B20温度传感器
+Blockly.MIXLY_DS18B20='DS18B20 管脚#';
+Blockly.MIXLY_DS18B20_GET_TEMP='获取温度';
+Blockly.MIXLY_DS18B20_C='°C';
+Blockly.MIXLY_DS18B20_F='°F';
 
+//GPS
+Blockly.MIXLY_GPS_INIT='GPS初始化';
+Blockly.MIXLY_GPS_DATA_AVAILABLE='GPS获取到数据';
+Blockly.MIXLY_GPS_DATA_ENCODE='GPS解析数据成功';
+Blockly.MIXLY_GPS_LOCATION='位置';
+Blockly.MIXLY_GPS_DATE='日期';
+Blockly.MIXLY_GPS_TIME='时间';
+Blockly.MIXLY_GPS_ISVALID='有效';
+Blockly.MIXLY_GPS_GET='GPS获取';
+Blockly.MIXLY_GPS_LOCATION_LAT='位置-纬度';
+Blockly.MIXLY_GPS_LOCATION_LNG='位置-经度';
+Blockly.MIXLY_GPS_DATE_YEAR='日期-年';
+Blockly.MIXLY_GPS_DATE_MONTH='日期-月';
+Blockly.MIXLY_GPS_DATE_DAY='日期-日';
+Blockly.MIXLY_GPS_TIME_HOUR='时间-时';
+Blockly.MIXLY_GPS_TIME_MINUTE='时间-分';
+Blockly.MIXLY_GPS_TIME_SECOND='时间-秒';
+Blockly.MIXLY_GPS_TIME_CENTISECOND='时间-厘秒';
 
 
 /****

@@ -362,6 +362,7 @@ Blockly.Msg.TEXT_PROMPT_TYPE_NUMBER ="輸入數位並顯示提示消息";
 Blockly.Msg.TEXT_PROMPT_TYPE_TEXT ="輸入數位並顯示提示消息";
 Blockly.Msg.TEXT_TEXT_HELPURL ="https://zh.wikipedia.org/wiki/字串";
 Blockly.Msg.TEXT_TEXT_TOOLTIP ="一個字母、單詞或一行文字。";
+Blockly.Msg.TEXT_CHAR_TOOLTIP = "一個字符。";
 Blockly.Msg.TEXT_TRIM_HELPURL ="https://github.com/google/blockly/wiki/Text#trimming-removing-spaces";// untranslated
 Blockly.Msg.TEXT_TRIM_OPERATOR_BOTH ="消除兩側空格";
 Blockly.Msg.TEXT_TRIM_OPERATOR_LEFT ="消除左側空格";
@@ -555,7 +556,7 @@ Blockly.LKL_LCD_PRINT1='列印第1行';
 Blockly.LKL_LCD_PRINT2='列印第2行';
 Blockly.LKL_LCD_ROW='在第';
 Blockly.LKL_LCD_COLUMN='行第';
-Blockly.LKL_LCD_PRINT='列列印';
+Blockly.LKL_LCD_PRINT='列打印';
 Blockly.LKL_LCD_SETCOLOR='設定顏色';
 Blockly.LKL_LCD_STAT_ON='開';
 Blockly.LKL_LCD_STAT_OFF='關';
@@ -681,7 +682,7 @@ Blockly.LKL_LABPLUS_ROBOT_DISPLAY_ZEBRA='斑馬紋';
 Blockly.LKL_LABPLUS_ROBOT_DISPLAY_NOTHING='黑屏';
 Blockly.LKL_LABPLUS_ROBOT_LED_TOP='設定頂燈為';
 Blockly.LKL_LABPLUS_ROBOT_LED_SIDE='設定側燈顏色為';
-Blockly.LKL_LCD_ADDRESS="液晶顯示幕設備地址";
+Blockly.LKL_LCD_ADDRESS="液晶顯示屏 設備地址";
 var MSG = {
 catInOut:"輸入/輸出",
 catControl:"控制",
@@ -853,3 +854,28 @@ Blockly.MIXLY_ETHERNET_CLINET_READ='客戶端-讀取';
 Blockly.MIXLY_ETHERNET_CLINET_GET_REQUEST='GET請求';
 Blockly.MIXLY_ETHERNET_CLINET_URL='URL';
 Blockly.MIXLY_ETHERNET_CLINET_SERVER='服務器';
+
+//DS18B20温度传感器
+Blockly.MIXLY_DS18B20='DS18B20 管腳#';
+Blockly.MIXLY_DS18B20_GET_TEMP='獲取溫度';
+Blockly.MIXLY_DS18B20_C='°C';
+Blockly.MIXLY_DS18B20_F='°F';
+
+//GPS
+Blockly.MIXLY_GPS_INIT='GPS初始化';
+Blockly.MIXLY_GPS_DATA_AVAILABLE='GPS獲取到數據';
+Blockly.MIXLY_GPS_DATA_ENCODE='GPS解析數據成功';
+Blockly.MIXLY_GPS_LOCATION='位置';
+Blockly.MIXLY_GPS_DATE='日期';
+Blockly.MIXLY_GPS_TIME='時間';
+Blockly.MIXLY_GPS_ISVALID='有效';
+Blockly.MIXLY_GPS_GET='GPS獲取';
+Blockly.MIXLY_GPS_LOCATION_LAT='位置-緯度';
+Blockly.MIXLY_GPS_LOCATION_LNG='位置-經度';
+Blockly.MIXLY_GPS_DATE_YEAR='日期-年';
+Blockly.MIXLY_GPS_DATE_MONTH='日期-月';
+Blockly.MIXLY_GPS_DATE_DAY='日期-日';
+Blockly.MIXLY_GPS_TIME_HOUR='時間-時';
+Blockly.MIXLY_GPS_TIME_MINUTE='時間-分';
+Blockly.MIXLY_GPS_TIME_SECOND='時間-秒';
+Blockly.MIXLY_GPS_TIME_CENTISECOND='時間-厘秒';

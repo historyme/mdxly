@@ -77,6 +77,7 @@ Blockly.Arduino.serial_parseInt_Float = function() {
 
 Blockly.Arduino.ir_recv = function() {
    var variable = Blockly.Arduino.variableDB_.getName(this.getTitleValue('VAR'), Blockly.Variables.NAME_TYPE);
+   Blockly.Arduino.definitions_['var_declare'+variable] = 'long '+variable+';';
    var dropdown_pin = Blockly.Arduino.valueToCode(this, 'PIN',Blockly.Arduino.ORDER_ATOMIC);
    var branch = Blockly.Arduino.statementToCode(this, 'DO');
    var branch2 = Blockly.Arduino.statementToCode(this, 'DO2');
@@ -276,6 +277,26 @@ Blockly.Arduino.dht11 = function() {
 	return [funcName+'()', Blockly.Arduino.ORDER_ATOMIC];
 }
 
+Blockly.Arduino.ds18b20 = function() {
+	var dropdown_pin = Blockly.Arduino.valueToCode(this, 'PIN',Blockly.Arduino.ORDER_ATOMIC);
+	var unit = this.getTitleValue('UNIT');
+	Blockly.Arduino.definitions_['define_OneWire'] = '#include <OneWire.h>';
+	Blockly.Arduino.definitions_['define_DallasTemperature'] = '#include <DallasTemperature.h>';
+	Blockly.Arduino.definitions_['var_OneWire_oneWire'] = 'OneWire oneWire'+'('+dropdown_pin+');';
+	Blockly.Arduino.definitions_['var_DallasTemperature_sensors'] = 'DallasTemperature sensors(&oneWire);';
+	Blockly.Arduino.definitions_['var_DeviceAddress_insideThermometer'] = 'DeviceAddress insideThermometer;';
+	Blockly.Arduino.setups_['setup_sensors_getAddress'] = 'sensors.getAddress(insideThermometer, 0);';
+	Blockly.Arduino.setups_['setup_sensors_setResolution'] = 'sensors.setResolution(insideThermometer, 9);';
+	var funcName='ds18b20_getTemp';
+	var code='float'+ ' ' + funcName + '(int w) {\n' 
+	+ '  sensors.requestTemperatures();\n'
+	+ '  if(w==0) {return sensors.getTempC(insideThermometer);}\n'
+	+ '  else {return sensors.getTempF(insideThermometer);}\n'
+	+ '}\n';
+    Blockly.Arduino.definitions_[funcName] = code;
+	return ['ds18b20_getTemp('+unit+')', Blockly.Arduino.ORDER_ATOMIC];
+}
+
 Blockly.Arduino.servo_move = function() {
   var dropdown_pin = Blockly.Arduino.valueToCode(this, 'PIN',Blockly.Arduino.ORDER_ATOMIC);
   var value_degree = Blockly.Arduino.valueToCode(this, 'DEGREE', Blockly.Arduino.ORDER_ATOMIC);
@@ -342,6 +363,21 @@ Blockly.Arduino.group_lcd_print = function() {
   code+='df_lcd.print('+str1+');\n';
   code+='df_lcd.setCursor(0, 1);\n';
   code+='df_lcd.print('+str2+');\n';
+  return code;
+};
+
+Blockly.Arduino.group_lcd_print2 = function() {
+  var str = Blockly.Arduino.valueToCode(this, 'TEXT', Blockly.Arduino.ORDER_ATOMIC) || 'String(\"\")';
+  var row = Blockly.Arduino.valueToCode(this, 'row', Blockly.Arduino.ORDER_ATOMIC) || '1';
+  var column = Blockly.Arduino.valueToCode(this, 'column', Blockly.Arduino.ORDER_ATOMIC) || '1';
+  var device = Blockly.Arduino.valueToCode(this, 'device', Blockly.Arduino.ORDER_ATOMIC) || '0x27';
+  Blockly.Arduino.definitions_['define_i2c'] = '#include <Wire.h>';
+  Blockly.Arduino.definitions_['define_df_lcd'] = '#include <LiquidCrystal_I2C.h>';
+  Blockly.Arduino.definitions_['var_df_lcd'] = 'LiquidCrystal_I2C df_lcd('+device+',16,2);';
+  Blockly.Arduino.setups_['setup_df_lcd1'] = 'df_lcd.init();';
+  Blockly.Arduino.setups_['setup_df_lcd2'] = 'df_lcd.backlight();';
+  var code = 'df_lcd.setCursor('+column+'-1, '+row+'-1);\n'
+  code+='df_lcd.print('+str+');\n';
   return code;
 };
 

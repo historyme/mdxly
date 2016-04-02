@@ -304,6 +304,21 @@ Blockly.Blocks.dht11={
   }
 };
 
+//DS18B20ÎÂ¶È´«¸ÐÆ÷
+Blockly.Blocks.ds18b20={
+	init: function() {
+	var UNIT = [[Blockly.MIXLY_DS18B20_C, '0'],[Blockly.MIXLY_DS18B20_F, '1']];
+    this.setColour(Blockly.Blocks.blockgroup.HUE1);
+	this.appendValueInput("PIN", Number)
+        .appendTitle(Blockly.MIXLY_DS18B20)
+        .setCheck(Number);
+	this.appendDummyInput("")
+		.appendTitle(Blockly.MIXLY_DS18B20_GET_TEMP)
+	    .appendTitle(new Blockly.FieldDropdown(UNIT), "UNIT");
+	this.setOutput(true, Number);
+  }
+};
+
 Blockly.Blocks.servo_move = {
   init: function() {
     this.setColour(Blockly.Blocks.blockgroup.HUE2);
@@ -410,6 +425,31 @@ Blockly.Blocks.group_lcd_print = {
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField(Blockly.LKL_LCD_PRINT2)
     this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+  }
+};
+
+Blockly.Blocks.group_lcd_print2 = {
+  init: function() {
+    this.setColour(Blockly.Blocks.blockgroup.HUE2);
+    this.appendValueInput('device')
+        .setCheck(Number)
+		.setAlign(Blockly.ALIGN_RIGHT)
+        .appendTitle(Blockly.LKL_LCD_ADDRESS);
+	this.appendValueInput("row", Number)
+        .setCheck(Number)
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField(Blockly.LKL_LCD_ROW);
+	this.appendValueInput("column", Number)
+        .setCheck(Number)
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField(Blockly.LKL_LCD_COLUMN);
+    this.appendValueInput("TEXT", String)
+        .setCheck([String,Number])
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField(Blockly.LKL_LCD_PRINT);
+    this.setPreviousStatement(true, null);
+	this.setInputsInline(true);
     this.setNextStatement(true, null);
   }
 };

@@ -92,7 +92,7 @@ var profile = {
   },
   arduino_eightanaloginputs: {
     description: "eightanaloginputs",
-    digital: [["0", "0"],["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["A0", "A0"], ["A1", "A1"], ["A2", "A2"], ["A3", "A3"], ["A4", "A4"], ["A5", "A5"], ["A6", "A6"], ["A7", "A7"]],
+    digital: [["0", "0"],["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"], ["13", "13"], ["A0", "A0"], ["A1", "A1"], ["A2", "A2"], ["A3", "A3"], ["A4", "A4"], ["A5", "A5"], ["A6", "A6"], ["A7", "A7"]],
     analog: [["A0", "A0"], ["A1", "A1"], ["A2", "A2"], ["A3", "A3"], ["A4", "A4"], ["A5", "A5"], ["A6", "A6"], ["A7", "A7"]],
 	pwm:[["3", "3"], ["5", "5"], ["6", "6"], ["9", "9"], ["10", "10"], ["11", "11"]],
 	interrupt : [["2", "2"], ["3", "3"]],
@@ -153,9 +153,16 @@ var profile = {
 	serial_select:[["Serial", "Serial"]],
     serial: 9600
   },
-
-
-//Microduino pin config
+  'Arduino/Genuino 101': {
+    description: "",
+    digital: [["0", "0"],["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"], ["13", "13"], ["A0", "A0"], ["A1", "A1"], ["A2", "A2"], ["A3", "A3"], ["A4", "A4"], ["A5", "A5"]],
+    analog: [["A0", "A0"], ["A1", "A1"], ["A2", "A2"], ["A3", "A3"], ["A4", "A4"], ["A5", "A5"]],
+	pwm:[["3", "3"], ["5", "5"], ["6", "6"], ["9", "9"]],
+	interrupt : [["2", "2"], ["5", "5"],["7", "7"], ["8", "8"],["10", "10"], ["11", "11"],["12", "12"], ["13", "13"]],
+	serial_select:[["Serial", "Serial"]],
+    serial: 9600
+  },
+  //Microduino pin config
   arduino_coreplus: {
     description: "coreplus",
   digital: [["0", "0"],["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"], ["13", "13"], ["A0", "A0"], ["A1", "A1"], ["A2", "A2"], ["A3", "A3"], ["A4", "A4"], ["A5", "A5"]],
@@ -180,11 +187,6 @@ var profile = {
   interrupt : [["0", "0"], ["1", "1"], ["2", "2"],["3", "3"], ["4", "4"], ["5", "5"]],
     serial: 9600
   }
-
-
-
-
-  
 };
 profile["Arduino Yun"] =profile["Arduino Yun Mini"] =profile["Arduino Leonardo"] =profile["Arduino Leonardo ETH"] =profile["Arduino Micro"] =profile["Arduino Esplora"] =profile["LilyPad Arduino USB"] = profile["arduino_leonardo"];
 profile["Arduino Robot Control"] =profile["Arduino Robot Motor"] =profile["arduino_robot"];
@@ -209,7 +211,7 @@ Blockly.Arduino.init = function(workspace) {
   Blockly.Arduino.definitions_ = Object.create(null);
   // Create a dictionary of setups to be printed before the code.
   Blockly.Arduino.setups_ = Object.create(null);
-  Blockly.Arduino.variableTypes_ = Object.create(null);//处理变量类型
+  //Blockly.Arduino.variableTypes_ = Object.create(null);//处理变量类型
 
 	if (!Blockly.Arduino.variableDB_) {
 		Blockly.Arduino.variableDB_ =
@@ -218,14 +220,14 @@ Blockly.Arduino.init = function(workspace) {
 		Blockly.Arduino.variableDB_.reset();
 	}
 
-	var defvars = [];
-	var variables = Blockly.Variables.allVariables(workspace);
-	for (var x = 0; x < variables.length; x++) {
-		defvars[x] = 'long ' +
-				Blockly.Arduino.variableDB_.getName(variables[x],
-				Blockly.Variables.NAME_TYPE) + ';\n';
-	}
-	Blockly.Arduino.definitions_['variables'] = defvars.join('\n');
+	//var defvars = [];
+	//var variables = Blockly.Variables.allVariables(workspace);
+	//for (var x = 0; x < variables.length; x++) {
+		//defvars[x] = 'long ' +
+			//	Blockly.Arduino.variableDB_.getName(variables[x],
+			//	Blockly.Variables.NAME_TYPE) + ';\n';
+	//}
+	//Blockly.Arduino.definitions_['variables'] = defvars.join('\n');
 };
 
 /**
@@ -247,14 +249,14 @@ Blockly.Arduino.finish = function(code) {
     if (def.match(/^#include/)) {
       imports.push(def);
     } else {
-		if (name === 'variables') {
+		//if (name === 'variables') {
         // Replace real types of variables if given, other than the default 'long'.
-        def = def.replace(/long (\w+);/g, function (s, v) {
-          var type = Blockly.Arduino.variableTypes_[v];
-          if (type && type != 'long') return type + ' ' + v + ';';
-          else return s;
-        });
-      }
+        //def = def.replace(/long (\w+);/g, function (s, v) {
+          //var type = Blockly.Arduino.variableTypes_[v];
+          //if (type && type != 'long') return type + ' ' + v + ';';
+          //else return s;
+        //});
+      //}
       definitions.push(def);
     }
   }
