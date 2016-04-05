@@ -32,6 +32,7 @@ Blockly.Arduino.IRSenderRaw = function() {
 
 Blockly.Arduino.IRReciver = function() {
    var variable = Blockly.Arduino.variableDB_.getName(this.getTitleValue('VAR'), Blockly.Variables.NAME_TYPE);
+   Blockly.Arduino.definitions_['var_declare'+variable] = 'long '+variable+';';
    var dropdown_pin = Blockly.Arduino.valueToCode(this, 'PIN',Blockly.Arduino.ORDER_ATOMIC);
    var branch = Blockly.Arduino.statementToCode(this, 'DO');
    var branch2 = Blockly.Arduino.statementToCode(this, 'DO2');
