@@ -83,6 +83,9 @@
 <script type="text/javascript" src="../../blocks/company/sensor/LM75_Blocks.js"></script>
 <script type="text/javascript" src="../../generators/arduino/company/sensor/LM75_Arduino.js"></script>
 
+<script type="text/javascript" src="../../blocks/company/sensor/TSL2561_Blocks.js"></script>
+<script type="text/javascript" src="../../generators/arduino/company/sensor/TSL2561_Arduino.js"></script>
+
 <script type="text/javascript" src="../../blocks/company/VariableExpansion/NewVariable_Blocks.js"></script>
 <script type="text/javascript" src="../../generators/arduino/company/VariableExpansion/NewVariable_Arduino.js"></script>
 
@@ -765,6 +768,8 @@
 		<block type="Microduino_KEYDigital"></block>
 		<block type="Microduino_KEYAnalog"></block>
 		<block type="lm75"></block>
+		<block type="TSL2561LightReady"></block>
+		<block type="TSL2561Light"></block>
 		<block type="xyJoystick"></block>
 		<!--TEMP HUM-->
 		<block type="mCookie_AM2321"></block>

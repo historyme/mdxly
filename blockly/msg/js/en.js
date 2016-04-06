@@ -1242,3 +1242,6 @@ Blockly.shortPress='Short Press';
 Blockly.longPress='Long Press';
 Blockly.MicroduinoLM75='Tempture LM75';
 
+Blockly.TSL2561Ready='Digital Light Ready';
+Blockly.TSL2561='Get Digital Light';
+

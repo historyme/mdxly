@@ -1250,3 +1250,6 @@ Blockly.shortPress='短按';
 Blockly.longPress='长按';
 Blockly.MicroduinoLM75='温度LM75';
 
+Blockly.TSL2561Ready='数字光照准备';
+Blockly.TSL2561='数字光照获取';
+
