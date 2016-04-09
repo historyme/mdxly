@@ -886,6 +886,12 @@ Blockly.MIXLY_GPS_TIME_MINUTE='时间-分';
 Blockly.MIXLY_GPS_TIME_SECOND='时间-秒';
 Blockly.MIXLY_GPS_TIME_CENTISECOND='时间-厘秒';
 
+//factory
+Blockly.MIXLY_PARAMS = '参数';
+
+//others
+Blockly.LKL_WARNING_NOT_DECLARE='该变量未声明';
+
 
 /****
 add by Microduino for chinese

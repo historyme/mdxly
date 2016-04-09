@@ -887,7 +887,11 @@ Blockly.MIXLY_GPS_TIME_MINUTE='time-minute';
 Blockly.MIXLY_GPS_TIME_SECOND='time-second';
 Blockly.MIXLY_GPS_TIME_CENTISECOND='time-centisecond';
 
+//factory
+Blockly.MIXLY_PARAMS = 'parameters';
 
+//others
+Blockly.LKL_WARNING_NOT_DECLARE='This variable is not declared!';
 
 /****
 add by Microduino for english

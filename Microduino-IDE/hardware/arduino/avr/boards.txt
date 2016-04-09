@@ -77,6 +77,7 @@ uno.build.board=AVR_UNO
 uno.build.core=arduino
 uno.build.variant=standard
 
+
 ##############################################################
 
 nano.name=Arduino Nano
@@ -314,86 +315,6 @@ micro.build.core=arduino
 micro.build.variant=micro
 micro.build.extra_flags={build.usb_flags}
 
-##############################################################
-
-LilyPadUSB.name=LilyPad Arduino USB
-LilyPadUSB.vid.0=0x1B4F
-LilyPadUSB.pid.0=0x9207
-LilyPadUSB.vid.1=0x1B4F
-LilyPadUSB.pid.1=0x9208
-
-LilyPadUSB.upload.tool=avrdude
-LilyPadUSB.upload.protocol=avr109
-LilyPadUSB.upload.maximum_size=28672
-LilyPadUSB.upload.maximum_data_size=2560
-LilyPadUSB.upload.speed=57600
-LilyPadUSB.upload.disable_flushing=true
-LilyPadUSB.upload.use_1200bps_touch=true
-LilyPadUSB.upload.wait_for_upload_port=true
-
-LilyPadUSB.bootloader.tool=avrdude
-LilyPadUSB.bootloader.low_fuses=0xff
-LilyPadUSB.bootloader.high_fuses=0xd8
-LilyPadUSB.bootloader.extended_fuses=0xce
-LilyPadUSB.bootloader.file=caterina-LilyPadUSB/Caterina-LilyPadUSB.hex
-LilyPadUSB.bootloader.unlock_bits=0x3F
-LilyPadUSB.bootloader.lock_bits=0x2F
-
-LilyPadUSB.build.mcu=atmega32u4
-LilyPadUSB.build.f_cpu=8000000L
-LilyPadUSB.build.vid=0x1B4F
-LilyPadUSB.build.pid=0x9208
-LilyPadUSB.build.usb_product="LilyPad USB"
-LilyPadUSB.build.board=AVR_LILYPAD_USB
-LilyPadUSB.build.core=arduino
-LilyPadUSB.build.variant=leonardo
-LilyPadUSB.build.extra_flags={build.usb_flags}
-
-##############################################################
-
-lilypad.name=LilyPad Arduino
-
-lilypad.upload.tool=avrdude
-lilypad.upload.protocol=arduino
-
-lilypad.bootloader.tool=avrdude
-lilypad.bootloader.unlock_bits=0x3F
-lilypad.bootloader.lock_bits=0x0F
-
-lilypad.build.f_cpu=8000000L
-lilypad.build.board=AVR_LILYPAD
-lilypad.build.core=arduino
-lilypad.build.variant=standard
-
-## LilyPad Arduino w/ ATmega328
-## ----------------------------
-lilypad.menu.cpu.atmega328=ATmega328
-
-lilypad.menu.cpu.atmega328.upload.maximum_size=30720
-lilypad.menu.cpu.atmega328.upload.maximum_data_size=2048
-lilypad.menu.cpu.atmega328.upload.speed=57600
-
-lilypad.menu.cpu.atmega328.bootloader.low_fuses=0xFF
-lilypad.menu.cpu.atmega328.bootloader.high_fuses=0xDA
-lilypad.menu.cpu.atmega328.bootloader.extended_fuses=0x05
-lilypad.menu.cpu.atmega328.bootloader.file=atmega/ATmegaBOOT_168_atmega328_pro_8MHz.hex
-
-lilypad.menu.cpu.atmega328.build.mcu=atmega328p
-
-## LilyPad Arduino w/ ATmega168
-## ----------------------------
-lilypad.menu.cpu.atmega168=ATmega168
-
-lilypad.menu.cpu.atmega168.upload.maximum_size=14336
-lilypad.menu.cpu.atmega168.upload.maximum_data_size=1024
-lilypad.menu.cpu.atmega168.upload.speed=19200
-
-lilypad.menu.cpu.atmega168.bootloader.low_fuses=0xe2
-lilypad.menu.cpu.atmega168.bootloader.high_fuses=0xdd
-lilypad.menu.cpu.atmega168.bootloader.extended_fuses=0x00
-lilypad.menu.cpu.atmega168.bootloader.file=lilypad/LilyPadBOOT_168.hex
-
-lilypad.menu.cpu.atmega168.build.mcu=atmega168
 
 ##############################################################
 

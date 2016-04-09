@@ -31,6 +31,7 @@
   <script type="text/javascript" src="../../generators/arduino/ethernet.js"></script>
   <script type="text/javascript" src="../../generators/arduino/variables.js"></script>
   <script type="text/javascript" src="../../generators/arduino/procedures.js"></script>
+  <script type="text/javascript" src="../../generators/arduino/factory.js"></script>
   <script type="text/javascript" src="../../blocks/pins.js"></script>
   <script type="text/javascript" src="../../blocks/inout.js"></script>
   <script type="text/javascript" src="../../blocks/control.js"></script>
@@ -44,6 +45,7 @@
   <script type="text/javascript" src="../../blocks/ethernet.js"></script>
   <script type="text/javascript" src="../../blocks/variables.js"></script>
   <script type="text/javascript" src="../../blocks/procedures.js"></script>
+  <script type="text/javascript" src="../../blocks/factory.js"></script>
   <link rel="stylesheet" type="text/css" href="color.css" />
   <script>
 var sidecodeDisplay=false;
@@ -411,7 +413,7 @@ Blockly.Realtime.doCommand=function(cmdThunk) {
 			<td class="tabmin">&nbsp;</td>
             <td style="vertical-align: center;text-align:center;display:none;" id="tab_xml" class="taboff" onclick="tabClick('xml')">XML</td>
             <td class="tabcoyright" style="align: center;">
-			  <span style="font-family:arial;font-size:12px;color:#999;">Copyright &copy; 北师大教育学部创客教育实验室 20160402</span>
+			  <span style="font-family:arial;font-size:12px;color:#999;">Copyright &copy; 北师大教育学部创客教育实验室 maker.bnu.edu.cn</span>
             </td>
 			<td class="tabmin">
 			  <input onclick="undo();" name="undo" type="image" title="undo(ctrl+z)"  src="media/undo.png" style="padding:5px;" onmouseover="this.src='media/undo1.png'" onmousedown="this.src='media/undo2.png'" onmouseup="this.src='media/undo1.png'" onmouseout="this.src='media/undo.png'" width="20" height="20" border="0">
@@ -448,8 +450,8 @@ Blockly.Realtime.doCommand=function(cmdThunk) {
           <shadow type="pins_digital"></shadow>
         </value>
 		<value name="STAT">
-          <block type="inout_highlow">
-          </block>
+          <shadow type="inout_highlow">
+          </shadow>
         </value>
 	  </block>
 	  <block type="inout_digital_read2">
@@ -540,10 +542,32 @@ Blockly.Realtime.doCommand=function(cmdThunk) {
     </category>
     <category id="catMath"  colour="230">
 	  <block type="math_number"></block>
-	  <block type="math_arithmetic"></block>
+	  <block type="math_arithmetic">
+		<value name="A">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+		<value name="B">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+	  </block>
 	  <block type="math_trig"></block>
 	  <block type="math_to_int"></block>
-	  <block type="math_max_min"></block>
+	  <block type="math_max_min">
+		<value name="A">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+		<value name="B">
+          <shadow type="math_number">
+            <field name="NUM">2</field>
+          </shadow>
+        </value>
+	  </block>
 	  <block type="math_random_int">
 	    <value name="FROM">
           <shadow type="math_number">
@@ -600,21 +624,21 @@ Blockly.Realtime.doCommand=function(cmdThunk) {
 	  </block>
 	  <block type="text_join">
 	    <value name="A">
-          <block type="text">
+          <shadow type="text">
             <field name="TEXT">Hello</field>
-          </block>
+          </shadow>
         </value>
 		<value name="B">
-          <block type="text">
+          <shadow type="text">
             <field name="TEXT">Mixly</field>
-          </block>
+          </shadow>
         </value>
 	  </block>
 	  <block type="text_to_number">
 	    <value name="VAR">
-          <block type="text">
+          <shadow type="text">
             <field name="TEXT">123</field>
-          </block>
+          </shadow>
         </value>
 	  </block>
 	  <block type="number_to_text">
@@ -728,14 +752,14 @@ Blockly.Realtime.doCommand=function(cmdThunk) {
 	  <block type="store_sd_write">
 		<field name="FILE">file.txt</field>
 		<value name="DATA">
-			<block type="text">
+			<shadow type="text">
 				<field name="TEXT">hello world</field>
-			</block>
+			</shadow>
 		</value>
 		<value name="NEWLINE">
-			<block type="logic_boolean">
+			<shadow type="logic_boolean">
 				<field name="BOOL">TRUE</field>
-			</block>
+			</shadow>
 		</value>
 	  </block>
 	  <block type="store_eeprom_write_long">
@@ -853,6 +877,16 @@ Blockly.Realtime.doCommand=function(cmdThunk) {
           </shadow>
         </value>
 	  </block>
+	  <block type="servo_writeMicroseconds">
+		<value name="PIN">
+			<shadow type="pins_digital"></shadow>
+		</value>
+	    <value name="DEGREE">
+          <shadow type="math_number">
+            <field name="NUM">1500</field>
+          </shadow>
+        </value>
+	  </block>
 	  <block type="servo_read_degrees">
 		<value name="PIN">
 			<shadow type="pins_digital"></shadow>
@@ -862,11 +896,26 @@ Blockly.Realtime.doCommand=function(cmdThunk) {
 		<value name="PIN">
 			<shadow type="pins_digital"></shadow>
 		</value>
+		<value name="FREQUENCY">
+          <shadow type="math_number">
+            <field name="NUM">1500</field>
+          </shadow>
+        </value>
 	  </block>
 	  <block type="controls_tone2">
 		<value name="PIN">
 			<shadow type="pins_digital"></shadow>
 		</value>
+		<value name="FREQUENCY">
+          <shadow type="math_number">
+            <field name="NUM">1500</field>
+          </shadow>
+        </value>
+		<value name="DURATION">
+          <shadow type="math_number">
+            <field name="NUM">1000</field>
+          </shadow>
+        </value>
 	  </block>
 	  <block type="controls_notone">
 		<value name="PIN">
@@ -1006,6 +1055,18 @@ Blockly.Realtime.doCommand=function(cmdThunk) {
 	<sep></sep>
 	<category id="catVar" colour="330" custom="VARIABLE"></category>
     <category id="catFun" custom="PROCEDURE" colour="290"></category>
+	<category id="catFactory" name="Factory" colour="65">
+		<block type="factory_include"></block>
+		<block type="factory_function_noreturn"></block>
+		<block type="factory_function_return"></block>
+		<block type="factory_declare"></block>
+		<block type="factory_callMethod_noreturn"></block>
+		<block type="factory_callMethod_return"></block>
+		<block type="factory_static_method_noreturn"></block>
+		<block type="factory_static_method_return"></block>
+		<block type="factory_block"></block>
+		<block type="factory_block_return"></block>
+	</category>
   </xml>
   <script>
 	if(company_block!=null){

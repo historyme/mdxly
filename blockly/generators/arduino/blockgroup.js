@@ -141,6 +141,13 @@ Blockly.Arduino.ir_send_nec = function() {
 	var bits = Blockly.Arduino.valueToCode(this, 'bits',Blockly.Arduino.ORDER_ATOMIC) || '0';
 	var type = this.getFieldValue('TYPE');
 	var code='irsend.send'+type+'('+data+','+bits+');\n';
+	for (var name in Blockly.Arduino.definitions_) {
+		var def = Blockly.Arduino.definitions_[name];
+		if (def.match(/^IRrecv irrecv_/)) {
+			var tmp=def.substring(7,def.indexOf('('));
+			code=code+tmp+'.enableIRIn();\n';
+		}
+	}
 	return code;
 }
 
@@ -309,6 +316,16 @@ Blockly.Arduino.servo_move = function() {
   Blockly.Arduino.setups_['setup_servo_'+dropdown_pin] = 'servo_'+dropdown_pin+'.attach('+dropdown_pin+');\n';
   
   var code = 'servo_'+dropdown_pin+'.write('+value_degree+');\n'+'delay(' + delay_time + ');\n';
+  return code;
+};
+
+Blockly.Arduino.servo_writeMicroseconds = function() {
+  var dropdown_pin = Blockly.Arduino.valueToCode(this, 'PIN',Blockly.Arduino.ORDER_ATOMIC);
+  var value_degree = Blockly.Arduino.valueToCode(this, 'DEGREE', Blockly.Arduino.ORDER_ATOMIC);  
+  Blockly.Arduino.definitions_['define_servo'] = '#include <Servo.h>\n';
+  Blockly.Arduino.definitions_['var_servo'+dropdown_pin] = 'Servo servo_'+dropdown_pin+';\n';
+  Blockly.Arduino.setups_['setup_servo_'+dropdown_pin] = 'servo_'+dropdown_pin+'.attach('+dropdown_pin+');\n'; 
+  var code = 'servo_'+dropdown_pin+'.writeMicroseconds('+value_degree+');\n';
   return code;
 };
 
