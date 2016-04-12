@@ -86,6 +86,12 @@
 <script type="text/javascript" src="../../blocks/company/sensor/TSL2561_Blocks.js"></script>
 <script type="text/javascript" src="../../generators/arduino/company/sensor/TSL2561_Arduino.js"></script>
 
+<script type="text/javascript" src="../../blocks/company/sensor/digitalRead_Blocks.js"></script>
+<script type="text/javascript" src="../../generators/arduino/company/sensor/digitalRead_Arduino.js"></script>
+
+<script type="text/javascript" src="../../blocks/company/sensor/analogRead_Blocks.js"></script>
+<script type="text/javascript" src="../../generators/arduino/company/sensor/analogRead_Arduino.js"></script>
+
 <script type="text/javascript" src="../../blocks/company/VariableExpansion/NewVariable_Blocks.js"></script>
 <script type="text/javascript" src="../../generators/arduino/company/VariableExpansion/NewVariable_Arduino.js"></script>
 
@@ -100,6 +106,23 @@
 		</block>
 		<block type="serialPrintln">
 		</block> -->
+		<block type="microduinoWatting">
+		</block>
+		<block type="microduinoWhile">
+		</block>
+		<block type="microduinoFor">
+	    <value name="FROM">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+		<value name="TO">
+          <shadow type="math_number">
+            <field name="NUM">10</field>
+          </shadow>
+        </value>
+	  </block>
+
 
 
 		<block type="microduinoAnaloyWrite">
@@ -771,6 +794,13 @@
 		<block type="TSL2561LightReady"></block>
 		<block type="TSL2561Light"></block>
 		<block type="xyJoystick"></block>
+		<block type="microduinoCrash"></block>
+		<block type="microduinoTuch"></block>
+		<block type="microduinoPIR"></block>
+		<block type="microduinoMic"></block>
+		<block type="microduinoLight"></block>
+		<block type="microduinoMicAnal"></block>
+		<block type="microduinoLightAnal"></block>
 		<!--TEMP HUM-->
 		<block type="mCookie_AM2321"></block>
 	</category>

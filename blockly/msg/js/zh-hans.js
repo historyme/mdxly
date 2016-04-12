@@ -1259,3 +1259,26 @@ Blockly.MicroduinoLM75='温度LM75';
 Blockly.TSL2561Ready='数字光照准备';
 Blockly.TSL2561='数字光照获取';
 
+Blockly.microduinoWatting='等待';
+Blockly.microduinoWhile='当';
+Blockly.microduinoSo='则';
+Blockly.microduinoRepeatDoing='重复执行';
+Blockly.MicroduinoEvery='  每';
+Blockly.MicroduinoStep='步';
+
+Blockly.crashButton='碰撞开关';
+Blockly.touchButton='触摸传感器'
+Blockly.PIRSensor='人体感应传感器';
+Blockly.personAction='有人活动';
+Blockly.personNoAction='无人活动';
+Blockly.MicSensor='声音传感器';
+Blockly.sonudHigh='有声';
+Blockly.noSound='无声';
+Blockly.LightSensor='光线传感器';
+Blockly.lightHigh='有光';
+Blockly.lightLow='无光';
+Blockly.MicSensorValue='-音量';
+Blockly.LightSensorValue='-光强'
+Blockly.Horizontal='横向';
+Blockly.Vertical='纵向';
+Blockly.coordinate='坐标';

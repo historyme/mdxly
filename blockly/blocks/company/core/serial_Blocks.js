@@ -109,3 +109,86 @@ Blockly.Blocks.microduinoAnaloyWrite = {
   },
 };
 
+
+Blockly.Blocks.microduinoWatting = { 
+  init: function() {
+
+    this.setColour(colorSet);
+    this.appendDummyInput("")
+        .appendTitle(Blockly.microduinoWatting)
+    this.appendValueInput('wait')
+        .setCheck([Number,Boolean]);
+
+    var tip="符合条件时等待...\n";
+    this.setTooltip(tip);
+
+    this.setPreviousStatement(true,null);
+    this.setNextStatement(true,null);
+    this.setInputsInline(true);
+  }
+};
+
+Blockly.Blocks.microduinoWhile = { 
+  init: function() {
+
+    this.setColour(colorSet);
+    this.appendDummyInput("")
+        .appendTitle(Blockly.microduinoWhile);
+    this.appendValueInput('wait')
+        .setCheck([Number,Boolean]);
+    this.appendDummyInput("")
+        .appendTitle(Blockly.microduinoSo);
+
+    this.appendStatementInput('DO')
+    .appendTitle(Blockly.microduinoRepeatDoing);
+
+    var tip="当满足条件时重复执行...\n";
+    this.setTooltip(tip);
+
+    this.setPreviousStatement(true,null);
+    this.setNextStatement(true,null);
+    this.setInputsInline(true);
+  }
+};
+
+
+Blockly.Blocks.microduinoFor = {
+  init: function() {
+    this.setColour(colorSet);
+    this.appendDummyInput()
+        .appendTitle(Blockly.LANG_CONTROLS_FOR_INPUT_WITH)
+        .appendTitle(new Blockly.FieldTextInput('i'), 'VAR');
+    this.appendValueInput('FROM')
+        .setCheck(Number)
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendTitle(Blockly.LANG_CONTROLS_FOR_INPUT_FROM);
+    this.appendValueInput('TO')
+        .setCheck(Number)
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendTitle(Blockly.LANG_CONTROLS_FOR_INPUT_TO);
+    this.appendDummyInput()
+        .appendTitle(Blockly.MicroduinoEvery)
+        .appendTitle(new Blockly.FieldTextInput('1',
+        Blockly.FieldTextInput.math_number_validator), 'STEP');
+    this.appendDummyInput()
+        .appendTitle(Blockly.MicroduinoStep);
+    this.appendStatementInput('DO')
+        .appendTitle(Blockly.LANG_CONTROLS_FOR_INPUT_DO);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setInputsInline(true);
+    var thisBlock = this;
+    this.setTooltip(function() {
+      return Blockly.Msg.CONTROLS_FOR_TOOLTIP.replace('%1',
+          thisBlock.getFieldValue('VAR'));
+    });
+  },
+  getVars: function() {
+    return [this.getFieldValue('VAR')];
+  },
+  renameVar: function(oldName, newName) {
+    if (Blockly.Names.equals(oldName, this.getFieldValue('VAR'))) {
+      this.setTitleValue(newName, 'VAR');
+    }
+  }
+};

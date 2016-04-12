@@ -5,7 +5,6 @@ goog.provide('Blockly.Arduino.Microduino');
 goog.require('Blockly.Arduino');
 
 
-
 Blockly.Arduino.Microduino_KEYDigital = function() {
 
   var branch = Blockly.Arduino.statementToCode(this, 'DO');

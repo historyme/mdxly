@@ -1249,3 +1249,26 @@ Blockly.MicroduinoLM75='Tempture LM75';
 Blockly.TSL2561Ready='Digital Light Ready';
 Blockly.TSL2561='Get Digital Light';
 
+
+Blockly.microduinoWatting='Watting';
+Blockly.microduinoWhile='While';
+Blockly.microduinoSo='So';
+Blockly.microduinoRepeatDoing='Repeat Doing';
+Blockly.MicroduinoEvery='  Each';
+Blockly.MicroduinoStep='Step';
+Blockly.crashButton='Crash Button';
+Blockly.touchButton='Touch Button'
+Blockly.PIRSensor='Person Infrared Reciver';
+Blockly.personAction='Person Moved';
+Blockly.personNoAction='Person Pause';
+Blockly.MicSensor='Mic Sensor';
+Blockly.sonudHigh='Sound';
+Blockly.noSound='No Sound';
+Blockly.LightSensor='Light Sensor';
+Blockly.lightHigh='Light';
+Blockly.lightLow='No Light';
+Blockly.MicSensorValue='-Volume';
+Blockly.LightSensorValue='-Light Value'
+Blockly.Horizontal='Horizontal';
+Blockly.Vertical='Vertical';
+Blockly.coordinate='Coordinate';

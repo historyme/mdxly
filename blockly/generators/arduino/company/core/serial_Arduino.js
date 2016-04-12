@@ -61,3 +61,59 @@ Blockly.Arduino.microduinoAnaloyWrite = function() {
   return code;
 };
 
+
+
+Blockly.Arduino.microduinoWatting = function() {
+  var wait = Blockly.Arduino.valueToCode(this, 'wait',Blockly.Arduino.ORDER_ATOMIC) || 'false';
+
+  var code='';
+  code+='while(!'+wait+');\n';
+  return code;
+};
+
+Blockly.Arduino.microduinoWhile = function() {
+  var branch = Blockly.Arduino.statementToCode(this, 'DO');
+  var wait = Blockly.Arduino.valueToCode(this, 'wait',Blockly.Arduino.ORDER_ATOMIC) || 'false';
+
+  var code='';
+  code+='while('+wait+') {\n';
+  code+=branch+'\n';
+  code+='}\n';
+  return code;
+};
+
+
+Blockly.Arduino.microduinoFor = function() {
+  // For loop.
+  var variable0 = Blockly.Arduino.variableDB_.getName(
+      this.getTitleValue('VAR'), Blockly.Variables.NAME_TYPE);
+  var argument0 = Blockly.Arduino.valueToCode(this, 'FROM',
+      Blockly.Arduino.ORDER_ASSIGNMENT) || '0';
+  var argument1 = Blockly.Arduino.valueToCode(this, 'TO',
+      Blockly.Arduino.ORDER_ASSIGNMENT) || '0';
+  var step =  window.parseFloat(this.getTitleValue('STEP'));
+  var branch = Blockly.Arduino.statementToCode(this, 'DO');
+  if (Blockly.Arduino.INFINITE_LOOP_TRAP) {
+    branch = Blockly.Arduino.INFINITE_LOOP_TRAP.replace(/%1/g,
+        '\'' + this.id + '\'') + branch;
+  }
+  var code;
+  var down = step<0;
+  if (argument0.match(/^-?\d+(\.\d+)?$/) &&
+      argument1.match(/^-?\d+(\.\d+)?$/)) {
+    code = 'for (int ' + variable0 + ' = ' + argument0 + '; ' +
+        variable0 + (down ? ' >= ' : ' <= ') + argument1 + '; ' +
+        variable0 + ' = '  + variable0 + ' + (' +step+')) {\n' +
+        branch + '}\n';
+  }else {
+      //涉及到变量
+      code = 'for (int ' + variable0 + ' = (' + argument0 + '); ' +
+      variable0 + (down ? ' >= ' : ' <= ')+'(' + argument1 + '); ' +
+      variable0 + ' = '  + variable0 + ' + (' +step+')) {\n' +
+      branch + '}\n';
+  }
+  return code;
+};
+
+
+
