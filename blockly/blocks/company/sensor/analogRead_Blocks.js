@@ -24,7 +24,7 @@ Blockly.Blocks.microduinoMicAnal = {
     tip+="返回一个模拟值\n";
     tip+="模拟接口\n";
     this.setTooltip(tip);
-    this.setOutput(true, String);
+    this.setOutput(true, Number);
 
   }
 };
@@ -44,7 +44,7 @@ Blockly.Blocks.microduinoLightAnal = {
     tip+="返回一个模拟值\n";
     tip+="模拟接口\n";
     this.setTooltip(tip);
-    this.setOutput(true, String);
+    this.setOutput(true, Number);
 
   }
 };

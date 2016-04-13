@@ -28,7 +28,7 @@ Blockly.Blocks.xyJoystick = {
 
     // this.setPreviousStatement(true, null);
     // this.setNextStatement(true, null);
-    this.setOutput(true, String);
+    this.setOutput(true, Number);
 
   }
 };

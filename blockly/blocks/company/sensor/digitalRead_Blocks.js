@@ -24,7 +24,7 @@ Blockly.Blocks.microduinoCrash = {
     tip+="返回一个数字值\n";
     tip+="数字接口\n";
     this.setTooltip(tip);
-    this.setOutput(true, String);
+    this.setOutput(true, Boolean);
 
   }
 };
@@ -47,7 +47,7 @@ Blockly.Blocks.microduinoTuch = {
     tip+="返回一个数字值\n";
     tip+="数字接口\n";
     this.setTooltip(tip);
-    this.setOutput(true, String);
+    this.setOutput(true, Boolean);
 
   }
 };
@@ -68,7 +68,7 @@ Blockly.Blocks.microduinoPIR = {
     tip+="返回一个数字值\n";
     tip+="数字接口\n";
     this.setTooltip(tip);
-    this.setOutput(true, String);
+    this.setOutput(true, Boolean);
 
   }
 };
@@ -89,7 +89,7 @@ Blockly.Blocks.microduinoMic = {
     tip+="返回一个数字值\n";
     tip+="数字接口\n";
     this.setTooltip(tip);
-    this.setOutput(true, String);
+    this.setOutput(true, Boolean);
 
   }
 };
@@ -109,7 +109,7 @@ Blockly.Blocks.microduinoLight = {
     tip+="返回一个数字值\n";
     tip+="数字接口\n";
     this.setTooltip(tip);
-    this.setOutput(true, String);
+    this.setOutput(true, Boolean);
 
   }
 };
