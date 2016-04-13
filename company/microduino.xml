@@ -794,11 +794,41 @@
 		<block type="TSL2561LightReady"></block>
 		<block type="TSL2561Light"></block>
 		<block type="xyJoystick"></block>
-		<block type="microduinoCrash"></block>
-		<block type="microduinoTuch"></block>
-		<block type="microduinoPIR"></block>
-		<block type="microduinoMic"></block>
-		<block type="microduinoLight"></block>
+		<block type="microduinoCrash">
+			<value name="digitalPin">
+	          <block type="math_number">
+	            <field name="NUM">6</field>
+	          </block>
+	        </value>
+		</block>
+		<block type="microduinoTuch">
+			<value name="digitalPin">
+	          <block type="math_number">
+	            <field name="NUM">6</field>
+	          </block>
+	        </value>
+		</block>
+		<block type="microduinoPIR">
+			<value name="digitalPin">
+	          <block type="math_number">
+	            <field name="NUM">6</field>
+	          </block>
+	        </value>
+		</block>
+		<block type="microduinoMic">
+			<value name="digitalPin">
+	          <block type="math_number">
+	            <field name="NUM">6</field>
+	          </block>
+	        </value>
+		</block>
+		<block type="microduinoLight">
+			<value name="digitalPin">
+	          <block type="math_number">
+	            <field name="NUM">6</field>
+	          </block>
+	        </value>
+		</block>
 		<block type="microduinoMicAnal"></block>
 		<block type="microduinoLightAnal"></block>
 		<!--TEMP HUM-->
