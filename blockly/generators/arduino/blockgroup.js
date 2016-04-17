@@ -134,6 +134,13 @@ Blockly.Arduino.ir_recv = function() {
    return code;
 };
 
+Blockly.Arduino.ir_recv_enable = function() {
+	Blockly.Arduino.definitions_['define_ir_recv'] = '#include <IRremote.h>';
+	var dropdown_pin = Blockly.Arduino.valueToCode(this, 'PIN',Blockly.Arduino.ORDER_ATOMIC);
+	var code='irrecv_'+dropdown_pin+'.enableIRIn();\n';
+	return code;
+}
+
 Blockly.Arduino.ir_send_nec = function() {
 	Blockly.Arduino.definitions_['define_ir_recv'] = '#include <IRremote.h>\n';
 	Blockly.Arduino.definitions_['var_ir_send'] = 'IRsend irsend;\n';
@@ -141,13 +148,14 @@ Blockly.Arduino.ir_send_nec = function() {
 	var bits = Blockly.Arduino.valueToCode(this, 'bits',Blockly.Arduino.ORDER_ATOMIC) || '0';
 	var type = this.getFieldValue('TYPE');
 	var code='irsend.send'+type+'('+data+','+bits+');\n';
+	/*
 	for (var name in Blockly.Arduino.definitions_) {
 		var def = Blockly.Arduino.definitions_[name];
 		if (def.match(/^IRrecv irrecv_/)) {
 			var tmp=def.substring(7,def.indexOf('('));
 			code=code+tmp+'.enableIRIn();\n';
 		}
-	}
+	}*/
 	return code;
 }
 
@@ -337,6 +345,11 @@ Blockly.Arduino.servo_read_degrees = function() {
   Blockly.Arduino.setups_['setup_servo_'+dropdown_pin] = 'servo_'+dropdown_pin+'.attach('+dropdown_pin+');\n';
   
   var code = 'servo_'+dropdown_pin+'.read()';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Arduino.tone_notes = function() {
+  var code = this.getTitleValue('STAT');
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
