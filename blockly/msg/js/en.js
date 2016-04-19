@@ -1103,6 +1103,7 @@ Blockly.mTankchannel='mTank channel choose';
 
 
 Blockly.OLEDBegin='OLED Begin';
+Blockly.OLEDBeginEnd=')';
 Blockly.OLEDFlip='Screen Flip';
 Blockly.OLEDPrint='Print';
 Blockly.OLEDRoll='Roll';
@@ -1274,3 +1275,7 @@ Blockly.LightSensorValue='-Light Value'
 Blockly.Horizontal='Horizontal';
 Blockly.Vertical='Vertical';
 Blockly.coordinate='Coordinate';
+
+Blockly.MDStpperBegin='Stepper Motor Perpare';
+Blockly.StepperChoice='Stepper Motor Choice';
+Blockly.StepperSpeed='Speed(-4096~4096)';

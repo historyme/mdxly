@@ -20,6 +20,7 @@ Blockly.Blocks.OLED_begin = {
     this.appendDummyInput("")
 		.appendTitle(Blockly.OLEDFlip)
 		.appendField(new Blockly.FieldDropdown(FLIP), 'FLIP')
+        .appendTitle(Blockly.OLEDBeginEnd)
 	this.appendStatementInput('DO')
 	this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);

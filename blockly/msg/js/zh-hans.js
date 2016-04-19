@@ -1105,7 +1105,8 @@ Blockly.mtankDIR2='方向2(1000~2000):';
 Blockly.mTankthr2='油门2(1000~2000):';
 Blockly.mTankchannel='mTank通道选择';
 
-Blockly.OLEDBegin='OLED 初始化';
+Blockly.OLEDBegin='OLED (显示';
+Blockly.OLEDBeginEnd=')';
 Blockly.OLEDFlip='屏幕翻转';
 Blockly.OLEDPrint='打印';
 Blockly.OLEDRoll='滚动';
@@ -1148,7 +1149,7 @@ Blockly.SetRTCTime='设置时间';
 Blockly.RTCYear='年';
 Blockly.RTCMouth='月';
 Blockly.RTCDay='日';
-Blockly.RTCWeek='周';
+Blockly.RTCWeek='星期几';
 Blockly.RTCHour='时';
 Blockly.RTCMinute='分';
 Blockly.RTCSecond='秒';
@@ -1284,3 +1285,7 @@ Blockly.LightSensorValue='-光强'
 Blockly.Horizontal='横向';
 Blockly.Vertical='纵向';
 Blockly.coordinate='坐标';
+
+Blockly.MDStpperBegin='步进电机准备';
+Blockly.StepperChoice='步进电机选择';
+Blockly.StepperSpeed='速度(-4096~4096)';

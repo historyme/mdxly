@@ -9,6 +9,9 @@
 <script type="text/javascript" src="../../blocks/company/extended/Motor_Blocks.js"></script>
 <script type="text/javascript" src="../../generators/arduino/company/extended/Motor_Arduino.js"></script>
 
+<script type="text/javascript" src="../../blocks/company/extended/Stepper_Blocks.js"></script>
+<script type="text/javascript" src="../../generators/arduino/company/extended/Stepper_Arduino.js"></script>
+
 <script type="text/javascript" src="../../blocks/company/extended/DotMatrix_Blocks.js"></script>
 <script type="text/javascript" src="../../generators/arduino/company/extended/DotMatrix_Arduino.js"></script>
 
@@ -137,8 +140,7 @@
 
 	<!--扩展-->
 	<category id="catMicroduinoExtended" colour="120">
-		<block type="MotorBegin">
-		</block>
+
 		<block type="MotorBeginchange">
 		</block>
 		<block type="Motor_run">
@@ -146,6 +148,10 @@
 		<block type="MotorBreak">
 		</block>
 		<block type="MotorFree">
+		</block>
+
+
+		<block type="MotorBegin">
 		</block>
 		<block type="Car_Motor">
  	    <value name="speed">
@@ -161,6 +167,19 @@
  	  </block>
 		<block type="mCookie_Motor">
 		</block>
+
+
+		<block type="mdStepperBegin">
+		</block>
+		<block type="mdStepperControl">
+			<value name="speed">
+				<shadow type="math_number">
+				 <field name="NUM">60</field>
+				</shadow>
+        	</value>
+		</block>
+
+
 		<!--Dot matrix screen-->
 		<block type="DotMatrix">
 			<block type="dotMatrixName">
@@ -266,8 +285,6 @@
 				</block>
 			</value>
 		</block>
-
-
 
 		<block type="OLED_begin"></block>
 		<block type="OLED_print">
@@ -486,36 +503,34 @@
 		<block type="bluetoothmtankBegin"></block>
 		<block type="bluetoothmTankReciver"></block>
 		<block type="bluetoothmTankdata"></block>
-        <block type="bluetoothcolorled"></block>
+		<block type="bluetoothcolorled"></block>
 
-
-
-	  <block type="IRSenderCode">
- 		<value name="data">
-           <shadow type="math_number">
-             <field name="NUM">0x89ABCDEF</field>
-           </shadow>
-         </value>
- 		<value name="bits">
-           <shadow type="math_number">
-             <field name="NUM">32</field>
-           </shadow>
-         </value>
- 	  </block>
+		<block type="IRSenderCode">
+			<value name="data">
+		   <shadow type="math_number">
+		     <field name="NUM">0x89ABCDEF</field>
+		   </shadow>
+		 </value>
+			<value name="bits">
+		   <shadow type="math_number">
+		     <field name="NUM">32</field>
+		   </shadow>
+		 </value>
+		  </block>
  
  
- 	  <block type="IRSenderRaw">
- 	    <value name="length">
-           <shadow type="math_number">
-             <field name="NUM">3</field>
-           </shadow>
-         </value>
- 		<value name="freq">
-           <shadow type="math_number">
-             <field name="NUM">38</field>
-           </shadow>
-         </value>
- 	  </block>
+		<block type="IRSenderRaw">
+			<value name="length">
+				<shadow type="math_number">
+				 <field name="NUM">3</field>
+				</shadow>
+			</value>
+			<value name="freq">
+				<shadow type="math_number">
+				 <field name="NUM">38</field>
+				</shadow>
+			</value>
+		</block>
 
 	  <block type="IRReciver">
 		<value name="PIN">
