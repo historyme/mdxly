@@ -6,10 +6,25 @@ goog.require('Blockly.Arduino');
 
 Blockly.Arduino.mCookie_AM2321 = function() {
 var Tem_Hum = this.getTitleValue('direction');
+
+
+// var tempHumidCode='';
+// tempHumidCode+='\n';
+// tempHumidCode+='\n';
+// tempHumidCode+='\n';
+
 var code='readByAM2321('+Tem_Hum+')';
 
 Blockly.Arduino.definitions_['Wire'] = '#include <Wire.h>';
 Blockly.Arduino.definitions_['AM2321'] = '#include <AM2321.h>';
+
+
+
+// var AM2321DefineVar='';
+// AM2321DefineVar+='float tempMY=0.0;';
+// AM2321DefineVar+='float humidMY=0.0;';
+
+// Blockly.Arduino.definitions_['AM2321DefineVar'] = AM2321DefineVar;
 
 var joyName='readByAM2321';
 var code1 = 'float ' +joyName+'(int num) {\n';

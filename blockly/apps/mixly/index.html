@@ -46,7 +46,7 @@
   <script type="text/javascript" src="../../blocks/variables.js"></script>
   <script type="text/javascript" src="../../blocks/procedures.js"></script>
   <script type="text/javascript" src="../../blocks/factory.js"></script>
-  <link rel="stylesheet" type="text/css" href="color.css" />
+  <link rel="stylesheet" type="text/css" href="microduinoColor.css" />
   <script>
 var sidecodeDisplay=false;
 /**
@@ -435,12 +435,12 @@ Blockly.Realtime.doCommand=function(cmdThunk) {
     <tr>
       <td height="100%" width="75%" id="content_area"></td>
 	  <td style="display:none;height:100%;width:0.3%;background: #ddd;cursor: w-resize;" id="mid_td"></td>
-	  <td width="25%" style="background-color:#eee;display:none;" id="side_code_parent"><textarea id="side_code" style="padding:5px;border:0;background-color:#eee;height:100%;width:100%;resize:none;" wrap="off" readonly></textarea></td>
+	  <td width="25%" style="background-color:#eee;display:none;" id="side_code_parent"><textarea id="side_code" wrap="off" readonly></textarea></td>
 	  <div id="sidebar" class="right-top" onclick="sidecodeClick()"></div>
     </tr>
   </table>
   <div id="content_blocks" class="content"></div>
-  <textarea id="content_arduino" class="content" wrap="off" style="resize:none;"></textarea>
+  <textarea id="content_arduino" class="content" wrap="off" ></textarea>
   <textarea id="content_xml" class="content" wrap="off" readonly></textarea>
   <xml id="toolbox" style="display: none">
     <category name="" id="catInOut" colour="20">
@@ -676,7 +676,7 @@ Blockly.Realtime.doCommand=function(cmdThunk) {
 	  <block type="logic_null"></block>
 	  <block type="logic_true_or_false"></block>
     </category>
-	<category id="catGroup"  colour="65">
+	<category id="catSerialPort"  colour="65">
 	  <block type="serial_begin">
 		<value name="CONTENT">
           <shadow type="math_number">
@@ -690,6 +690,17 @@ Blockly.Realtime.doCommand=function(cmdThunk) {
 	  <block type="serial_available"></block>
 	  <block type="serial_readstr"></block>
 	  <block type="serial_parseInt_Float"></block>
+	  <block type="serial_flush"></block>
+	  <block type="serial_softserial">
+		<value name="TX">
+          <shadow type="pins_digital"></shadow>
+        </value>
+		<value name="RX">
+          <shadow type="pins_digital"></shadow>
+        </value>
+	  </block>
+	</category>
+	<category id="catGroup"  colour="140">
 	  <block type="ir_recv">
 		<value name="PIN">
           <shadow type="pins_digital"></shadow>
@@ -923,12 +934,31 @@ Blockly.Realtime.doCommand=function(cmdThunk) {
 			<shadow type="pins_digital"></shadow>
 		</value>
 	  </block>
-	  <block type="group_lcd_print">
+	  <block type="group_lcd_init">
 		<value name="device">
           <shadow type="math_number">
             <field name="NUM">0x27</field>
           </shadow>
         </value>
+	  </block>
+	  <block type="group_lcd_init2">
+		<value name="device">
+          <shadow type="math_number">
+            <field name="NUM">0x27</field>
+          </shadow>
+        </value>
+		<value name="PIN1">
+			<shadow type="pins_digital">
+			 <field name="PIN">A1</field>
+			</shadow>
+		</value>
+		<value name="PIN2">
+			<shadow type="pins_digital">
+			 <field name="PIN">A2</field>
+			</shadow>
+		</value>
+	  </block>
+	  <block type="group_lcd_print">
 		<value name="TEXT">
 			<block type="text">
 				<field name="TEXT"></field>
@@ -941,11 +971,6 @@ Blockly.Realtime.doCommand=function(cmdThunk) {
 		</value>
 	  </block>
 	  <block type="group_lcd_print2">
-		<value name="device">
-          <shadow type="math_number">
-            <field name="NUM">0x27</field>
-          </shadow>
-        </value>
 		<value name="row">
 			<shadow type="math_number">
 				<field name="NUM">1</field>
@@ -962,13 +987,7 @@ Blockly.Realtime.doCommand=function(cmdThunk) {
 			</block>
 		</value>
 	  </block>
-	  <block type="group_lcd_power">
-		<value name="device">
-          <shadow type="math_number">
-            <field name="NUM">0x27</field>
-          </shadow>
-        </value>
-	  </block>
+	  <block type="group_lcd_power"></block>
 	  <block type="group_stepper_setup">
 		<value name="PIN1">
 			<shadow type="pins_digital"><field name="PIN">1</field></shadow>
