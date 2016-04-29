@@ -38,6 +38,20 @@ Blockly.Blocks.mCookie_RTC_set = {
   }
 };
 
+
+Blockly.Blocks.mCookie_RTC_time={
+init:function(){
+    this.setColour(colorSet);
+    this.appendDummyInput("")
+         .appendTitle(Blockly.RTCFormatTime)
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    //this.setOutput(true, String);
+  }
+};
+
+
 Blockly.Blocks.mCookie_RTC_date={
 init:function(){
     this.setColour(colorSet);
@@ -45,22 +59,10 @@ init:function(){
 	     .appendTitle(Blockly.RTCFormatDate)
     this.setOutput(true, String);
     this.setInputsInline(true);
-    // this.setPreviousStatement(true);
-    // this.setNextStatement(true);
   }
 };
 
-Blockly.Blocks.mCookie_RTC_time={
-init:function(){
-    this.setColour(colorSet);
-    this.appendDummyInput("")
-	     .appendTitle(Blockly.RTCFormatTime)
-    this.setInputsInline(true);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    //this.setOutput(true, String);
-  }
-};
+
 
 Blockly.Blocks.mCookie_RTC_Week={
 init:function(){
@@ -101,3 +103,25 @@ init:function(){
     this.setOutput(true);
   }
 };
+
+
+
+Blockly.Blocks.mCookie_RTC_Output={
+init:function(){
+
+
+    var getType =[[Blockly.RTCFormatWeek, "getWeekday()"], [Blockly.RTCFormatHour, "getHour()"], [Blockly.RTCFormatMinute, "getMinute()"], 
+                 [Blockly.RTCFormatSecond, "getSecond()"]
+                ];
+
+    this.setColour(colorSet);
+    this.appendDummyInput("")
+         .appendTitle(Blockly.RTCFormatGetInfo)
+         .appendTitle(new Blockly.FieldDropdown(getType), "getType");
+    this.setInputsInline(true);
+    this.setOutput(true);
+  }
+};
+
+
+

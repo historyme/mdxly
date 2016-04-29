@@ -1156,10 +1156,11 @@ Blockly.RTCMinute='分';
 Blockly.RTCSecond='秒';
 Blockly.RTCFormatDate='格式化日期';
 Blockly.RTCFormatTime='时间初始化';
-Blockly.RTCFormatWeek='获取周';
-Blockly.RTCFormatHour='获取小时';
-Blockly.RTCFormatMinute='获取分';
-Blockly.RTCFormatSecond='获取秒';
+Blockly.RTCFormatWeek='周';
+Blockly.RTCFormatHour='小时';
+Blockly.RTCFormatMinute='分';
+Blockly.RTCFormatSecond='秒';
+Blockly.RTCFormatGetInfo='获取';
 
 Blockly.melodyTakes='旋律抓取';
 Blockly.low1DO='低1DO';
@@ -1290,4 +1291,8 @@ Blockly.coordinate='坐标';
 Blockly.MDStpperBegin='步进电机准备';
 Blockly.StepperChoice='步进电机选择';
 Blockly.StepperSpeed='速度(-4096~4096)';
+
+Blockly.IRRaction='红外反射传感器';
+Blockly.IRRactionDistance='距离';
+Blockly.IRRactionBlack='灰度';
 

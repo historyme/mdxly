@@ -20,6 +20,17 @@ Blockly.Arduino.mCookie_RTC_set = function() {
   var code='';
   return code;
 	};
+
+
+Blockly.Arduino.mCookie_RTC_time = function() {
+
+  Blockly.Arduino.definitions_['define_RTC'] = '#include <Rtc_Pcf8563.h>\n'+'Rtc_Pcf8563 rtc;\n';
+  Blockly.Arduino.definitions_['define_Wire'] = '#include "Wire.h"\n';
+  var code='rtc.formatTime(RTCC_TIME_HMS);\n';
+  //return [code, Blockly.Arduino.ORDER_ATOMIC]|| 'String(\"\")';
+  return code;
+};
+
 Blockly.Arduino.mCookie_RTC_date = function() {
 
   Blockly.Arduino.definitions_['define_RTC'] = '#include <Rtc_Pcf8563.h>\n'+'Rtc_Pcf8563 rtc;\n';
@@ -29,15 +40,7 @@ Blockly.Arduino.mCookie_RTC_date = function() {
   //return code;
 };
 
-Blockly.Arduino.mCookie_RTC_time = function() {
 
-  Blockly.Arduino.definitions_['define_RTC'] = '#include <Rtc_Pcf8563.h>\n'+'Rtc_Pcf8563 rtc;\n';
-  Blockly.Arduino.definitions_['define_Wire'] = '#include "Wire.h"\n';
-  //Blockly.Arduino.setups_['setup_Serial'] ='Serial.begin(9600);\n';
-  var code='rtc.formatTime(RTCC_TIME_HMS);\n';
-  //return [code, Blockly.Arduino.ORDER_ATOMIC]|| 'String(\"\")';
-  return code;
-};
 
 Blockly.Arduino.mCookie_RTC_Week = function() {
 
@@ -72,5 +75,16 @@ Blockly.Arduino.mCookie_RTC_Second = function() {
   Blockly.Arduino.definitions_['define_Wire'] = '#include "Wire.h"\n';
   Blockly.Arduino.setups_['setup_Serial'] ='Serial.begin(9600);\n';
   var code='rtc.getSecond()';
+  return [code, Blockly.Arduino.ORDER_ATOMIC]|| '0';
+};
+
+
+Blockly.Arduino.mCookie_RTC_Output = function() {
+
+  var getType = this.getTitleValue('getType');
+
+  Blockly.Arduino.definitions_['define_RTC'] = '#include <Rtc_Pcf8563.h>\n'+'Rtc_Pcf8563 rtc;\n';
+  Blockly.Arduino.definitions_['define_Wire'] = '#include "Wire.h"\n';
+  var code='rtc.'+getType;
   return [code, Blockly.Arduino.ORDER_ATOMIC]|| '0';
 };

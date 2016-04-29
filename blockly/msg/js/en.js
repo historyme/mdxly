@@ -1157,10 +1157,11 @@ Blockly.RTCMinute='Minute';
 Blockly.RTCSecond='Second';
 Blockly.RTCFormatDate='Format Date';
 Blockly.RTCFormatTime='Format Time';
-Blockly.RTCFormatWeek='Get Week';
-Blockly.RTCFormatHour='Get Hour';
-Blockly.RTCFormatMinute='Get Minute';
-Blockly.RTCFormatSecond='Get Second';
+Blockly.RTCFormatWeek='Week';
+Blockly.RTCFormatHour='Hour';
+Blockly.RTCFormatMinute='Minute';
+Blockly.RTCFormatSecond='Second';
+Blockly.RTCFormatGetInfo='Get ';
 
 
 Blockly.melodyTakes='Melody taken';
@@ -1282,3 +1283,7 @@ Blockly.coordinate='Coordinate';
 Blockly.MDStpperBegin='Stepper Motor Perpare';
 Blockly.StepperChoice='Stepper Motor Choice';
 Blockly.StepperSpeed='Speed(-4096~4096)';
+
+Blockly.IRRaction='Infrared reflection sensor';
+Blockly.IRRactionDistance='distance';
+Blockly.IRRactionBlack='gray level';
