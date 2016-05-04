@@ -340,12 +340,14 @@
 		        </shadow>
 		    </value>
 		</block>
-		<block type="mCookie_Audio_Play"></block>
+<!-- 		<block type="mCookie_Audio_Play"></block>
 		<block type="mCookie_Audio_Pose"></block>
 		<block type="mCookie_Audio_Next"></block>
 		<block type="mCookie_Audio_Prev"></block>
 		<block type="mCookie_Audio_VolUp"></block>
-		<block type="mCookie_Audio_VolDown"></block>
+		<block type="mCookie_Audio_VolDown"></block> -->
+
+		<block type="mCookie_Audio_Control"></block>
 
 
 

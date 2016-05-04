@@ -1295,4 +1295,5 @@ Blockly.StepperSpeed='速度(-4096~4096)';
 Blockly.IRRaction='红外反射传感器';
 Blockly.IRRactionDistance='距离';
 Blockly.IRRactionBlack='灰度';
+Blockly.RTCAudioControl='音乐播放控制';
 

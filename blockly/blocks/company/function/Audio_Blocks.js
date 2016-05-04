@@ -96,3 +96,28 @@ init:function(){
     this.setNextStatement(true);
   }
 };
+
+
+
+Blockly.Blocks.mCookie_Audio_Control={
+init:function(){
+
+
+    var getType =[[Blockly.AudioPlay, "play()"], 
+                  [Blockly.AudioPause, "pause()"], 
+                  [Blockly.AudioNext, "next()"], 
+                  [Blockly.AudioPrev, "prev()"],
+                  [Blockly.AudioVolUp, "volUp()"],
+                  [Blockly.AudioVolDown, "volDown()"]
+                ];
+
+    this.setColour(colorSet);
+    this.appendDummyInput("")
+         .appendTitle(Blockly.RTCAudioControl)
+         .appendTitle(new Blockly.FieldDropdown(getType), "getType");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    //this.setOutput(true);
+  }
+};

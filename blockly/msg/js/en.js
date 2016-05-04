@@ -1287,3 +1287,4 @@ Blockly.StepperSpeed='Speed(-4096~4096)';
 Blockly.IRRaction='Infrared reflection sensor';
 Blockly.IRRactionDistance='distance';
 Blockly.IRRactionBlack='gray level';
+Blockly.RTCAudioControl='Music Control';

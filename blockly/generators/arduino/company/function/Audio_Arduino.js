@@ -56,3 +56,16 @@ Blockly.Arduino.mCookie_Audio_VolDown = function() {
   var code='AUDIO.volDown();\n';
   return code;
 };
+
+
+
+Blockly.Arduino.mCookie_Audio_Control = function() {
+
+  var getType = this.getTitleValue('getType');
+
+  // Blockly.Arduino.definitions_['define_RTC'] = '#include <Rtc_Pcf8563.h>\n'+'Rtc_Pcf8563 rtc;\n';
+  // Blockly.Arduino.definitions_['define_Wire'] = '#include "Wire.h"\n';
+  var code='AUDIO.'+getType+';';
+
+  return code;
+};
