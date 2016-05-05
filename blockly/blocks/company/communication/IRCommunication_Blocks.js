@@ -15,20 +15,20 @@ Blockly.Blocks.IRSenderCode = {
     var TYPE = [['NEC', 'NEC'],['Whynter', 'Whynter'],['Sony', 'Sony'],['RC5', 'RC5'],['RC6', 'RC6'],['DISH', 'DISH'],['SharpRaw', 'SharpRaw'],['SAMSUNG', 'SAMSUNG']];
     this.setColour(colorSet);
     this.appendDummyInput("")
-      .appendTitle(Blockly.LKL_IR_SEND_NEC1)
+      .appendTitle(Blockly.MIXLY_IR_SEND_NEC1)
       .appendField(new Blockly.FieldDropdown(TYPE), 'TYPE')
       // .appendTitle(Blockly.LKL_IR_SEND_NEC2)
       // .appendTitle(new Blockly.FieldDropdown([["3", "3"],["6", "6"],["8", "8"]]), "PIN");
     this.appendValueInput('data')
       .setCheck(Number)
-      .appendTitle(' '+Blockly.LKL_DATA);
+      .appendTitle(' '+Blockly.MIXLY_DATA);
     this.appendValueInput('bits')
       .setCheck(Number)
-      .appendTitle(' '+Blockly.LKL_BITS);
+      .appendTitle(' '+Blockly.MIXLY_BITS);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setInputsInline(true);
-    this.setTooltip(Blockly.LKL_IR_SEND_NEC_TOOLTIP);
+    this.setTooltip(Blockly.MIXLY_IR_SEND_NEC_TOOLTIP);
 
   }
 };
@@ -39,21 +39,21 @@ Blockly.Blocks.IRSenderRaw = {
     this.setColour(colorSet);
 
   this.appendDummyInput("")
-      .appendTitle(Blockly.LKL_IR_SEND_RAW);
+      .appendTitle(Blockly.MIXLY_IR_SEND_RAW);
   //     .appendTitle(new Blockly.FieldDropdown([["3", "3"],["6", "6"],["8", "8"]]), "PIN");
     this.appendDummyInput("")
-        .appendTitle(' '+Blockly.LKL_LIST_NAME)
+        .appendTitle(' '+Blockly.MIXLY_LIST_NAME)
         .appendTitle(new Blockly.FieldTextInput('0,0,0'), 'TEXT');
   this.appendValueInput('length')
         .setCheck(Number)
-        .appendTitle(' '+Blockly.LKL_LIST_LENGTH);
+        .appendTitle(' '+Blockly.MIXLY_LIST_LENGTH);
   this.appendValueInput('freq')
         .setCheck(Number)
-        .appendTitle(' '+Blockly.LKL_FREQUENCY);
+        .appendTitle(' '+Blockly.MIXLY_FREQUENCY);
   this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-  this.setTooltip(Blockly.LKL_IR_SEND_RAW_TOOLTIP);
+  this.setTooltip(Blockly.MIXLY_IR_SEND_RAW_TOOLTIP);
 
   }
 };
@@ -64,15 +64,15 @@ Blockly.Blocks.IRReciver = {
     this.setColour(colorSet);
   this.appendValueInput("PIN", Number)
     .appendTitle(new Blockly.FieldTextInput('ir_item'), 'VAR')
-        .appendTitle(Blockly.LKL_IR_RECEIVE)
+        .appendTitle(Blockly.MIXLY_IR_RECEIVE)
         .setCheck(Number);
   this.appendStatementInput('DO')
-        .appendTitle(Blockly.LKL_IR_RECEIVE_YES);
+        .appendTitle(Blockly.MIXLY_IR_RECEIVE_YES);
   this.appendStatementInput('DO2')
-        .appendTitle(Blockly.LKL_IR_RECEIVE_NO);
+        .appendTitle(Blockly.MIXLY_IR_RECEIVE_NO);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-  this.setTooltip(Blockly.LKL_IR_RECIEVE_TOOLTIP);
+  this.setTooltip(Blockly.MIXLY_IR_RECIEVE_TOOLTIP);
   },
   getVars: function() {
     return [this.getFieldValue('VAR')];
@@ -89,11 +89,11 @@ Blockly.Blocks.IRReciverRaw = {
   init: function() {
     this.setColour(colorSet);
   this.appendValueInput("PIN", Number)
-        .appendTitle(Blockly.LKL_IR_RECEIVE_RAW)
+        .appendTitle(Blockly.MIXLY_IR_RECEIVE_RAW)
         .setCheck(Number);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-  this.setTooltip(Blockly.LKL_IR_RECIEVE_RAW_TOOLTIP);
+  this.setTooltip(Blockly.MIXLY_IR_RECIEVE_RAW_TOOLTIP);
   }
 };
 
@@ -106,6 +106,6 @@ Blockly.Blocks.IRReciverEnable = {
         .setCheck(Number);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-  this.setTooltip(Blockly.LKL_IR_RECIEVE_RAW_TOOLTIP);
+  this.setTooltip(Blockly.MIXLY_IR_RECIEVE_RAW_TOOLTIP);
   }
 };
