@@ -90,7 +90,7 @@ Blockly.Blocks.microduinoAnaloyWrite = {
 
 
     this.appendDummyInput("")
-    .appendTitle(Blockly.LKL_ANALOGWRITE_PIN)
+    .appendTitle(Blockly.MIXLY_ANALOGWRITE_PIN)
     .appendTitle(new Blockly.FieldDropdown(mCookie_pwmPin), "mCookie_pwmPin")
 
     this.appendValueInput("pwmNumber", Number)

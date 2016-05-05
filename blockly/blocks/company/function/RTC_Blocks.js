@@ -110,7 +110,11 @@ Blockly.Blocks.mCookie_RTC_Output={
 init:function(){
 
 
-    var getType =[[Blockly.RTCFormatWeek, "getWeekday()"], [Blockly.RTCFormatHour, "getHour()"], [Blockly.RTCFormatMinute, "getMinute()"], 
+    var getType =[
+                  [Blockly.RTCFormatDate, "formatDate(RTCC_DATE_US)"],
+                  [Blockly.RTCFormatWeek, "getWeekday()"], 
+                  [Blockly.RTCFormatHour, "getHour()"], 
+                  [Blockly.RTCFormatMinute, "getMinute()"], 
                  [Blockly.RTCFormatSecond, "getSecond()"]
                 ];
 
