@@ -895,7 +895,6 @@ Blockly.MIXLY_PARAMS = '参数';
 //others
 Blockly.MIXLY_WARNING_NOT_DECLARE='该变量未声明';
 
-
 /****
 add by Microduino for chinese
 ****/

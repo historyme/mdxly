@@ -896,8 +896,6 @@ Blockly.MIXLY_PARAMS = 'parameters';
 //others
 Blockly.MIXLY_WARNING_NOT_DECLARE='This variable is not declared!';
 
-
-
 /****
 add by Microduino for english
 ****/
