@@ -16,6 +16,7 @@ Blockly.Blocks.IRSenderCode = {
     var TYPE = [['NEC', 'NEC'],['Whynter', 'Whynter'],['Sony', 'Sony'],['RC5', 'RC5'],['RC6', 'RC6'],['DISH', 'DISH'],['SharpRaw', 'SharpRaw'],['SAMSUNG', 'SAMSUNG']];
     this.setColour(colorSet);
     this.appendDummyInput("")
+    .appendField(new Blockly.FieldImage("../../media/Microduino/IR_S.png", 40, 30))
       .appendTitle(Blockly.MIXLY_IR_SEND_NEC1)
       .appendField(new Blockly.FieldDropdown(TYPE), 'TYPE')
       // .appendTitle(Blockly.LKL_IR_SEND_NEC2)
@@ -40,6 +41,7 @@ Blockly.Blocks.IRSenderRaw = {
     this.setColour(colorSet);
 
   this.appendDummyInput("")
+  .appendField(new Blockly.FieldImage("../../media/Microduino/IR_S.png", 40, 30))
       .appendTitle(Blockly.MIXLY_IR_SEND_RAW);
   //     .appendTitle(new Blockly.FieldDropdown([["3", "3"],["6", "6"],["8", "8"]]), "PIN");
     this.appendDummyInput("")
@@ -64,6 +66,7 @@ Blockly.Blocks.IRReciver = {
   init: function() {
     this.setColour(colorSet);
   this.appendValueInput("PIN", Number)
+  .appendField(new Blockly.FieldImage("../../media/Microduino/IR_R.png", 40, 30))
     .appendTitle(new Blockly.FieldTextInput('ir_item'), 'VAR')
         .appendTitle(Blockly.MIXLY_IR_RECEIVE)
         .setCheck(Number);
@@ -90,6 +93,7 @@ Blockly.Blocks.IRReciverRaw = {
   init: function() {
     this.setColour(colorSet);
   this.appendValueInput("PIN", Number)
+  .appendField(new Blockly.FieldImage("../../media/Microduino/IR_R.png", 40, 30))
         .appendTitle(Blockly.MIXLY_IR_RECEIVE_RAW)
         .setCheck(Number);
     this.setPreviousStatement(true);
@@ -103,6 +107,7 @@ Blockly.Blocks.IRReciverEnable = {
   init: function() {
     this.setColour(colorSet);
   this.appendValueInput("PIN", Number)
+  .appendField(new Blockly.FieldImage("../../media/Microduino/IR_R.png", 40, 30))
         .appendTitle(Blockly.IRReciverEnable)
         .setCheck(Number);
     this.setPreviousStatement(true);

@@ -15,6 +15,7 @@ Blockly.Blocks.xyJoystick = {
 
     //this.appendValueInput("intValue")
     this.appendDummyInput()
+    .appendField(new Blockly.FieldImage("../../media/Microduino/Joystick.png", 40, 30))
     .appendField(Blockly.Keyget_Pin)
     .appendField(new Blockly.FieldTextInput("A0"), "analogPin")
     .appendField(Blockly.KeygetJoystic)

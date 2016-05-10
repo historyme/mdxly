@@ -14,8 +14,9 @@ Blockly.Blocks.BuzzerTone = {
     this.setColour(colorSet);
 
     this.appendDummyInput("")
-	    .appendTitle(Blockly.Buzzer)
-		.appendField(new Blockly.FieldImage("../../media/Microduino/Buzzer.jpg", 45, 32))
+        .appendField(new Blockly.FieldImage("../../media/Microduino/Buzzer.png", 40, 30))
+        .appendTitle(Blockly.Buzzer)
+		
     // .appendField(Blockly.BuzzerNum)
     // .appendField(new Blockly.FieldTextInput("1"), "buzzerNumber")
   	
@@ -54,8 +55,9 @@ Blockly.Blocks.BuzzerToneMelody = {
     this.setColour(colorSet);
 
     this.appendDummyInput("")
-      .appendTitle(Blockly.Buzzer)
-    .appendField(new Blockly.FieldImage("../../media/Microduino/Buzzer.jpg", 45, 32))
+        .appendField(new Blockly.FieldImage("../../media/Microduino/Buzzer.png", 40, 30))
+        .appendTitle(Blockly.Buzzer)
+    
 
     this.appendValueInput("BuzzerPin", Number)
       .setCheck(Number)
@@ -87,8 +89,9 @@ Blockly.Blocks.BuzzerToneSong = {
     this.setColour(colorSet);
 
     this.appendDummyInput("")
-      .appendTitle(Blockly.Buzzer)
-    .appendField(new Blockly.FieldImage("../../media/Microduino/Buzzer.jpg", 45, 32))
+        .appendField(new Blockly.FieldImage("../../media/Microduino/Buzzer.png", 40, 30))
+        .appendTitle(Blockly.Buzzer)
+    
 
     this.appendValueInput("BuzzerPin", Number)
       .setCheck(Number)
@@ -118,8 +121,9 @@ Blockly.Blocks.BuzzerNoTone = {
     this.setColour(colorSet);
 
     this.appendDummyInput("")
-      .appendTitle(Blockly.BuzzerNoTone)
-    .appendField(new Blockly.FieldImage("../../media/Microduino/Buzzer.jpg", 45, 32))
+        .appendField(new Blockly.FieldImage("../../media/Microduino/Buzzer.png", 40, 30))
+        .appendTitle(Blockly.BuzzerNoTone)
+    
     // .appendField(Blockly.BuzzerNum)
     // .appendField(new Blockly.FieldTextInput("1"), "buzzerNumber")
     

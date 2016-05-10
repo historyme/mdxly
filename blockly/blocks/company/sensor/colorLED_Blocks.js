@@ -14,8 +14,9 @@ Blockly.Blocks.ws2812Begin = {
     this.setColour(colorSet);
 
     this.appendDummyInput("")
+        .appendField(new Blockly.FieldImage("../../media/Microduino/colorLEDBegin.png", 40, 30))
         .appendTitle(Blockly.ColorLEDInit)
-        .appendField(new Blockly.FieldImage("../../media/Microduino/colorLEDBegin.png", 80, 32))
+        
 
     this.appendValueInput("LEDNumber", Number)
         .setCheck(Number)
@@ -45,8 +46,8 @@ Blockly.Blocks.ws2812Doing = {
   init: function() {
     this.setColour(colorSet);
     this.appendDummyInput("")
+        .appendField(new Blockly.FieldImage("../../media/Microduino/colorLEDCntrol.png", 40, 30))
         .appendTitle(Blockly.ColorLEDControl)
-        .appendField(new Blockly.FieldImage("../../media/Microduino/colorLEDCntrol.png", 40, 32))
     this.appendValueInput("LEDIndex", Number)
         .setCheck(Number)
         .setAlign(Blockly.ALIGN_RIGHT)
@@ -70,8 +71,8 @@ Blockly.Blocks.ws2812DoingRGB = {
   init: function() {
     this.setColour(colorSet);
     this.appendDummyInput("")
+        .appendField(new Blockly.FieldImage("../../media/Microduino/colorLEDCntrol.png", 40, 30))
         .appendTitle(Blockly.ColorLEDControl)
-        .appendField(new Blockly.FieldImage("../../media/Microduino/colorLEDCntrol.png", 40, 32))
     this.appendValueInput("LEDIndex", Number)
         .setCheck(Number)
         .setAlign(Blockly.ALIGN_RIGHT)
@@ -106,8 +107,8 @@ Blockly.Blocks.ws2812BreathRGB = {
   init: function() {
     this.setColour(colorSet);
     this.appendDummyInput("")
+        .appendField(new Blockly.FieldImage("../../media/Microduino/colorLEDCntrol.png", 40, 30))
         .appendTitle(Blockly.ColorLEDBreath)
-        .appendField(new Blockly.FieldImage("../../media/Microduino/colorLEDCntrol.png", 40, 32))
     this.appendValueInput("LEDIndex", Number)
         .setCheck(Number)
         .setAlign(Blockly.ALIGN_RIGHT)

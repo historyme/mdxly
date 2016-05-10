@@ -16,6 +16,7 @@ Blockly.Blocks.microduinoMicAnal = {
 
     //this.appendValueInput("intValue")
     this.appendDummyInput()
+    .appendField(new Blockly.FieldImage("../../media/Microduino/MIC.png", 40, 30))
     .appendField(Blockly.Keyget_Pin)
     .appendField(new Blockly.FieldTextInput("A0"), "analogPin")
     .appendTitle(Blockly.MicSensor)
@@ -36,6 +37,7 @@ Blockly.Blocks.microduinoLightAnal = {
 
     //this.appendValueInput("intValue")
     this.appendDummyInput()
+    .appendField(new Blockly.FieldImage("../../media/Microduino/ALight.png", 40, 30))
     .appendField(Blockly.Keyget_Pin)
     .appendField(new Blockly.FieldTextInput("A0"), "analogPin")
     .appendTitle(Blockly.LightSensor)

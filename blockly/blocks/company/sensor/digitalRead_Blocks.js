@@ -13,14 +13,8 @@ Blockly.Blocks.microduinoCrash = {
   init: function() {
     this.setColour(colorSet);
 
-
-    // this.appendDummyInput()
-    // .appendField(Blockly.Keyget_Pin)
-    // .appendField(new Blockly.FieldTextInput("6"), "digitalPin")
-    // .appendTitle(Blockly.crashButton)
-    // .appendTitle(new Blockly.FieldDropdown([[Blockly.KeyInputPRESS, "down"], [Blockly.KeyInputRELEASE, "up"]]),'action');
-
     this.appendDummyInput("")
+        .appendField(new Blockly.FieldImage("../../media/Microduino/Crash.png", 40, 30))
         .appendTitle(Blockly.Keyget_Pin)
     this.appendValueInput("digitalPin", Number)
         .setCheck(Number)
@@ -29,6 +23,7 @@ Blockly.Blocks.microduinoCrash = {
 
     this.appendDummyInput()
     .appendTitle(Blockly.crashButton)
+    
     .appendTitle(new Blockly.FieldDropdown([[Blockly.KeyInputPRESS, "down"], [Blockly.KeyInputRELEASE, "up"]]),'action');
 
 
@@ -49,6 +44,7 @@ Blockly.Blocks.microduinoTuch = {
     this.setColour(colorSet);
 
     this.appendDummyInput("")
+    .appendField(new Blockly.FieldImage("../../media/Microduino/Touch.png", 40, 30))
         .appendTitle(Blockly.Keyget_Pin)
     this.appendValueInput("digitalPin", Number)
         .setCheck(Number)
@@ -76,7 +72,8 @@ Blockly.Blocks.microduinoPIR = {
 
 
     this.appendDummyInput("")
-        .appendTitle(Blockly.Keyget_Pin)
+    .appendField(new Blockly.FieldImage("../../media/Microduino/PIR.png", 40, 30))
+    .appendTitle(Blockly.Keyget_Pin)
     this.appendValueInput("digitalPin", Number)
         .setCheck(Number)
         .setAlign(Blockly.ALIGN_RIGHT);
@@ -101,7 +98,9 @@ Blockly.Blocks.microduinoMic = {
     this.setColour(colorSet);
 
     this.appendDummyInput("")
-        .appendTitle(Blockly.Keyget_Pin)
+    .appendField(new Blockly.FieldImage("../../media/Microduino/MIC.png", 40, 30))
+    .appendTitle(Blockly.Keyget_Pin)
+        
     this.appendValueInput("digitalPin", Number)
         .setCheck(Number)
         .setAlign(Blockly.ALIGN_RIGHT);
@@ -125,7 +124,9 @@ Blockly.Blocks.microduinoLight = {
     this.setColour(colorSet);
 
     this.appendDummyInput("")
-        .appendTitle(Blockly.Keyget_Pin)
+    .appendField(new Blockly.FieldImage("../../media/Microduino/ALight.png", 40, 30))
+    .appendTitle(Blockly.Keyget_Pin)
+        
     this.appendValueInput("digitalPin", Number)
         .setCheck(Number)
         .setAlign(Blockly.ALIGN_RIGHT);
