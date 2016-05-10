@@ -4,7 +4,8 @@ goog.provide('Blockly.Blocks.Microduino');
 
 goog.require('Blockly.Blocks');
 
-var colorSet=230;
+//var colorSet=230;
+var colorSet='#51a4ce';
 
 Blockly.Blocks.NFC_Format = {
   init: function() {

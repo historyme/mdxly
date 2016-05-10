@@ -101,7 +101,7 @@
 
 <category id="microduino" colour="0">
 	<!--核心-->
-	<category id="catMicroduinoCore" colour="0">
+	<category id="catMicroduinoCore" colour="#eb584e">
 		
 <!-- 		<block type="serialBegin">
 		</block>
@@ -139,7 +139,7 @@
 
 
 	<!--扩展-->
-	<category id="catMicroduinoExtended" colour="120">
+	<category id="catMicroduinoExtended" colour="#27b6ac">
 
 		<block type="MotorBeginchange">
 		</block>
@@ -330,7 +330,7 @@
 		</block>
 	</category>
 	<!--功能-->
-	<category id="catMicroduinoFunction" colour="65">
+	<category id="catMicroduinoFunction" colour="#e5b748">
 
 		<!--audio模块-->
 		<block type="mCookie_Audio_Serial">
@@ -502,7 +502,7 @@
 	</category>
 
 	<!--通讯-->
-	<category id="catMicroduinoCommunication" colour="230">
+	<category id="catMicroduinoCommunication" colour="#51a4ce">
 
 		<!--BT-->
 		<block type="bluetoothMicroduinoBegin"></block>
@@ -659,7 +659,7 @@
 	</category>
 
 	<!--执行器-->
-	<category id="catMicroduinoExecutor" name="sss" colour="518">
+	<category id="catMicroduinoExecutor" colour="#e5624d">
 
 
 		<!--BreathingLight -->
@@ -806,7 +806,7 @@
 	</category>
 
 	<!--传感器-->
-	<category id="catMicroduinoSensor" colour="518">
+	<category id="catMicroduinoSensor" colour="#3bc647">
 		<!--KEY-->
 
 <!-- 		<block type="oldKEYDigital"></block>
@@ -861,7 +861,7 @@
 	</category>
 
 	<!--扩展变量-->
-	<category id="catVariableExpansion" colour="220">
+	<category id="catVariableExpansion" colour="#da6ba3">
 		  <block type="Defination">
 	      </block>
 	      <block type="Structure">

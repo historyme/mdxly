@@ -5,7 +5,8 @@ goog.provide('Blockly.Blocks.Microduino');
 goog.require('Blockly.Blocks');
 
 
-var colorSet=65;
+//var colorSet=65;
+var colorSet='#e5b748';
 
 
 Blockly.Blocks.GPS = {

@@ -4,7 +4,8 @@ goog.provide('Blockly.Arduino.Microduino');
 
 goog.require('Blockly.Arduino');
 
-var colorSet = 518;
+//var colorSet = 518;
+var colorSet='#3bc647';
 
 
 Blockly.Blocks.Microduino_ir_remote_begin = {

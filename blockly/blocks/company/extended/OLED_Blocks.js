@@ -5,8 +5,8 @@ goog.provide('Blockly.Blocks.Microduino');
 goog.require('Blockly.Blocks');
 
 
-//Blockly.Blocks.Microduino.HUE = 120;
-Blockly.Blocks.Microduino.GRE = 120;
+//var colorSet=120;
+var colorSet='#27b6ac';
 
 
 Blockly.Blocks.OLED_begin = {
@@ -14,7 +14,7 @@ Blockly.Blocks.OLED_begin = {
 	var FLIP = [['none', 'undoRotation'],['90', 'setRot90'],['180', 'setRot180'],['270', 'setRot270']];
 
     //this.setColour(Blockly.Blocks.Microduino.HUE);
-    this.setColour(Blockly.Blocks.Microduino.GRE);
+    this.setColour(colorSet);
     this.appendDummyInput("")
         .appendTitle(Blockly.OLEDBegin)
     this.appendDummyInput("")
@@ -34,7 +34,7 @@ Blockly.Blocks.OLED_print = {
 	var TYPE = [['Small', 'setFont_S'],['Middle', 'setFont_M'],['Large', 'setFont_L']];
 
     // this.setColour(Blockly.Blocks.Microduino.HUE);
-    this.setColour(Blockly.Blocks.Microduino.GRE);
+    this.setColour(colorSet);
     this.appendDummyInput("")
         .appendTitle(Blockly.OLEDPrint)
     this.appendDummyInput("")
@@ -65,7 +65,7 @@ Blockly.Blocks.OLED_print_roll = {
     var TYPE = [['Small', 'setFont_S'],['Middle', 'setFont_M'],['Large', 'setFont_L']];
 
     // this.setColour(Blockly.Blocks.Microduino.HUE);
-    this.setColour(Blockly.Blocks.Microduino.GRE);
+    this.setColour(colorSet);
     this.appendDummyInput("")
         .appendTitle(Blockly.OLEDRoll)
     this.appendDummyInput("")
@@ -96,7 +96,7 @@ Blockly.Blocks.OLED_simplePrint = {
   init: function() {
 
     // this.setColour(Blockly.Blocks.Microduino.HUE);
-    this.setColour(Blockly.Blocks.Microduino.GRE);
+    this.setColour(colorSet);
     this.appendDummyInput("")
         .appendTitle(Blockly.OLEDPrint)
 

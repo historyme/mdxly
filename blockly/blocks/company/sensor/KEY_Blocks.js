@@ -4,7 +4,8 @@ goog.provide('Blockly.Blocks.Microduino');
 
 goog.require('Blockly.Blocks');
 
-var colorSet = 518;
+//var colorSet = 518;
+var colorSet='#3bc647';
 
 Blockly.Blocks.Microduino_KEYDigital = {
   init: function() {

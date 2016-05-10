@@ -4,7 +4,8 @@ goog.provide('Blockly.Arduino.Microduino');
 
 goog.require('Blockly.Arduino');
 
-var colorSet=65;
+//var colorSet=65;
+var colorSet='#e5b748';
 
 Blockly.Blocks.SD_Write={
 init:function(){

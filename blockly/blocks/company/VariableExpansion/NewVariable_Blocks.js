@@ -4,7 +4,8 @@ goog.provide('Blockly.Blocks.Microduino');
 
 goog.require('Blockly.Blocks');
 
-var colorSet=220;
+//var colorSet=220;
+var colorSet='#da6ba3';
 
 Blockly.Blocks.Defination = {
   init: function() {

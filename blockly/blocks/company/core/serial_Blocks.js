@@ -5,7 +5,8 @@ goog.provide('Blockly.Blocks.Microduino');
 goog.require('Blockly.Blocks');
 
 
-var colorSet=0;
+//var colorSet=0;
+var colorSet='#eb584e';
 
 Blockly.Blocks.serialBegin = {
   init: function() {
