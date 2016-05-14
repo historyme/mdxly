@@ -117,3 +117,10 @@ Blockly.Arduino.microduinoFor = function() {
 
 
 
+Blockly.Arduino.microduinoAnaloyRead = function() {
+  var analogPin = this.getFieldValue('analogPin');
+  Blockly.Arduino.setups_['setup_'+analogPin] = 'pinMode('+analogPin+',INPUT);';
+  var code='';
+  code+='analogRead('+analogPin+')';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};

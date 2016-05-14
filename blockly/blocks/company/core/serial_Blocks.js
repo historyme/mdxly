@@ -193,3 +193,21 @@ Blockly.Blocks.microduinoFor = {
     }
   }
 };
+
+
+Blockly.Blocks.microduinoAnaloyRead = {
+  init: function() {
+    this.setColour(colorSet);
+
+    this.appendDummyInput()
+    .appendField(Blockly.MIXLY_ANALOGREAD_PIN)
+    .appendField(new Blockly.FieldTextInput("A6"), "analogPin");
+
+    var tip="获取一个模拟值\n";
+    tip+="返回一个模拟值\n";
+    tip+="模拟接口\n";
+    this.setTooltip(tip);
+    this.setOutput(true, Number);
+
+  }
+};

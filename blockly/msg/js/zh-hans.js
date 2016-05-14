@@ -1115,6 +1115,7 @@ Blockly.OLEDContext='内容';
 
 Blockly.chooseAudioPlay='音乐播放器准备';
 Blockly.chooseAudioSerial='核心模块类型';
+Blockly.chooseAudioNum='音频选择';
 Blockly.memoryDevice='存储设备';
 Blockly.playMode='播放模式';
 Blockly.volume='音量';
@@ -1132,7 +1133,7 @@ Blockly.productType='蓝牙产品类型';
 Blockly.tfCard='TF卡';
 Blockly.flashMemory='闪存';
 
-Blockly.MODE_ONE='播放一次';
+Blockly.MODE_ONE='重复播放';
 Blockly.MODE_ONE_STOP='播放一次停止';
 Blockly.MODE_ALL='播放所有';
 Blockly.MODE_FOL='顺序播放';

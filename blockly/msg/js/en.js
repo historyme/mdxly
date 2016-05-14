@@ -1113,6 +1113,7 @@ Blockly.OLEDContext='Context';
 
 Blockly.chooseAudioPlay='Audio Player Perpare';
 Blockly.chooseAudioSerial='Core Module Type';
+Blockly.chooseAudioNum='Audio Choose';
 Blockly.memoryDevice='Memory Device';
 Blockly.playMode='Play Mode';
 Blockly.volume='Volume';

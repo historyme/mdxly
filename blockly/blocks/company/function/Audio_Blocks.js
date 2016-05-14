@@ -122,3 +122,25 @@ init:function(){
     //this.setOutput(true);
   }
 };
+
+
+Blockly.Blocks.mCookie_Audio_Choose = {
+  init: function() {
+    this.setColour(colorSet);
+
+    this.appendDummyInput("")
+        .appendTitle(Blockly.chooseAudioNum)
+    this.appendValueInput("audioNumber", Number)
+        .setCheck(Number)
+        .setAlign(Blockly.ALIGN_RIGHT);
+
+    this.setInputsInline(true);
+    var tip="选择音频文件序号\n";
+    // tip+="返回一个数字值\n";
+    // tip+="数字接口\n";
+    this.setTooltip(tip);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+
+  }
+};

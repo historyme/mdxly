@@ -126,8 +126,6 @@
         </value>
 	  </block>
 
-
-
 		<block type="microduinoAnaloyWrite">
 		    <value name="pwmNumber">
 		      <shadow type="math_number">
@@ -135,6 +133,8 @@
 		      </shadow>
 		    </value>
 		</block>
+
+		<block type="microduinoAnaloyRead"></block>
 	</category>
 
 
@@ -340,15 +340,16 @@
 		        </shadow>
 		    </value>
 		</block>
-<!-- 		<block type="mCookie_Audio_Play"></block>
-		<block type="mCookie_Audio_Pose"></block>
-		<block type="mCookie_Audio_Next"></block>
-		<block type="mCookie_Audio_Prev"></block>
-		<block type="mCookie_Audio_VolUp"></block>
-		<block type="mCookie_Audio_VolDown"></block> -->
 
 		<block type="mCookie_Audio_Control"></block>
 
+		<block type="mCookie_Audio_Choose">
+			<value name="audioNumber">
+	          <shadow type="math_number">
+	            <field name="NUM">1</field>
+	          </shadow>
+	        </value>
+		</block>
 
 
 		<!--RTC模块-->
@@ -391,11 +392,7 @@
 		</block> 
 
 		<block type="mCookie_RTC_time"></block>
-<!--		<block type="mCookie_RTC_date"></block>
- 		<block type="mCookie_RTC_Week"></block>
-		<block type="mCookie_RTC_Hour"></block>
-		<block type="mCookie_RTC_Minute"></block>
-		<block type="mCookie_RTC_Second"></block> -->
+
 		
 		<block type="mCookie_RTC_Output"></block>
 
