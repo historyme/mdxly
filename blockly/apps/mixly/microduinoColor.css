@@ -363,3 +363,27 @@ div>span.blocklyTreeIcon.blocklyTreeIconNone{
 	background:url('../../media/mark/communication.png') no-repeat;
 	background-size: 100% auto; 
 }
+#\:n>div>span.blocklyTreeIcon.blocklyTreeIconNone{ 
+	background:url('../../media/mark/act.png') no-repeat;
+	background-size: 100% auto; 
+}
+#\:n>.blocklyTreeSelected>span.blocklyTreeIcon.blocklyTreeIconNone{ 
+	background:url('../../media/mark/act.png') no-repeat;
+	background-size: 100% auto; 
+}
+#\:o>div>span.blocklyTreeIcon.blocklyTreeIconNone{ 
+	background:url('../../media/mark/sensor.png') no-repeat;
+	background-size: 100% auto; 
+}
+#\:o>.blocklyTreeSelected>span.blocklyTreeIcon.blocklyTreeIconNone{ 
+	background:url('../../media/mark/sensor.png') no-repeat;
+	background-size: 100% auto; 
+}
+#\:p>div>span.blocklyTreeIcon.blocklyTreeIconNone{ 
+	background:url('../../media/mark/var.png') no-repeat;
+	background-size: 100% auto; 
+}
+#\:p>.blocklyTreeSelected>span.blocklyTreeIcon.blocklyTreeIconNone{ 
+	background:url('../../media/mark/var.png') no-repeat;
+	background-size: 100% auto; 
+}
