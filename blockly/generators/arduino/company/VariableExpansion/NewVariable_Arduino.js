@@ -79,13 +79,6 @@ Blockly.Arduino.IntDefine = function() {
   Blockly.Arduino.definitions_['var_Int'+text_intName] = 'int '+text_intName+'=0;';
 
   var code='';
-  // if(intValue!=undefined) {
-  //   code=text_intName+'='+intValue;
-  // } else {
-  //   code=text_intName;
-  // }
-  //var code=text_intName+'='+intValue;
-  //return [code, Blockly.Arduino.ORDER_ATOMIC];
   return code;
 };
 
@@ -114,5 +107,51 @@ Blockly.Arduino.rhythmBuzzer = function() {
 
   var rhythmNumber = this.getFieldValue('rhythmNumber');
   var code=rhythmNumber;
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+
+
+
+Blockly.Arduino.nrfDataStructDefine = function() {
+  var branch = Blockly.Arduino.statementToCode(this, 'DO');
+  var define_nrfDataStruct='';
+  define_nrfDataStruct+='struct payload_t {\n';
+  define_nrfDataStruct+=branch;
+  define_nrfDataStruct+='};\n';
+  Blockly.Arduino.definitions_['define_nrfDataStruct'] = define_nrfDataStruct;
+  var code='';
+  return code;
+};
+
+
+Blockly.Arduino.nrfDataMemberDefine = function() {
+  var varName = this.getFieldValue('NAME');
+  var VALUE = Blockly.Arduino.valueToCode(this, 'VALUE', Blockly.Arduino.ORDER_ATOMIC);
+  var flip = this.getFieldValue('FLIP');
+  var code=flip +' '+ varName+';\n';
+  return code;
+};
+
+
+Blockly.Arduino.nrfDataSender = function() {
+  var branch = Blockly.Arduino.statementToCode(this, 'DO');
+  var code='';
+  code+='payload_t payload = {\n';
+  code+=branch;
+  code+='};\n';
+  return code;
+};
+
+Blockly.Arduino.nrfDataMemberSender = function() {
+  var VALUE = Blockly.Arduino.valueToCode(this, 'VALUE', Blockly.Arduino.ORDER_ATOMIC);
+  var code=VALUE+',\n';
+  return code;
+};
+
+Blockly.Arduino.nrfDataMemberReciver = function() {
+  var Struct_Member = this.getFieldValue('Struct_Member');
+  var code='payload.'+ Struct_Member;
+
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };

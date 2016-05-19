@@ -187,3 +187,92 @@ Blockly.Blocks.rhythmBuzzer = {
   }
 };
 
+
+
+
+Blockly.Blocks.nrfDataStructDefine = {
+  init: function() {
+    this.setColour(colorSet);
+    this.appendDummyInput("")
+        .appendTitle(Blockly.nrfDataStructDefine);
+
+    this.appendStatementInput('DO');
+    this.setPreviousStatement(true, null);    
+    this.setNextStatement(true, null);
+//    this.setTooltip("test");  
+ //   this.setOutput(true);
+    //this.setInputsInline(true);
+    },
+};
+
+Blockly.Blocks.nrfDataMemberDefine = {
+  init: function() {
+        var FLIP = [['uint16_t', 'uint16_t'],     //announce menu
+                    ['uint32_t', 'uint32_t'],
+                    ['uint8_t','uint8_t'],
+                    ['long','long'],
+                    ['unsigned long','unsigned long'],
+                    ['int','int'],
+                    ['char','char'],
+                    ['String','String'],
+                    ['float', 'float'],
+                    ['double', 'double']];
+    this.setColour(colorSet);  //module color
+    this.appendValueInput('VALUE') 
+         .setCheck([Number,String])
+         .setAlign(Blockly.ALIGN_RIGHT)
+         .appendTitle(Blockly.nrfDataMemberDefine)
+         .appendTitle(Blockly.nrfDataMemberType)
+         .appendTitle(new Blockly.FieldDropdown(FLIP), 'FLIP')
+         .appendTitle(Blockly.nrfDataMemberName)
+         .appendTitle(new Blockly.FieldTextInput('item'),'NAME');
+    this.setPreviousStatement(true, null);    
+    this.setNextStatement(true, null);
+    //this.setInputsInline(true);
+    },
+};
+
+
+Blockly.Blocks.nrfDataSender = {
+  init: function() {
+    this.setColour(colorSet);
+    this.appendDummyInput("")
+        .appendTitle(Blockly.nrfDataSender);
+
+    this.appendStatementInput('DO');
+    this.setPreviousStatement(true, null);    
+    this.setNextStatement(true, null);
+//    this.setTooltip("test");  
+ //   this.setOutput(true);
+    //this.setInputsInline(true);
+    },
+};
+
+Blockly.Blocks.nrfDataMemberSender = {
+  init: function() {
+
+    this.setColour(colorSet);  //module color
+    this.appendValueInput('VALUE') 
+         .setCheck([Number,String])
+         .setAlign(Blockly.ALIGN_RIGHT)
+         .appendTitle(Blockly.nrfDataMemberSender);
+    this.setPreviousStatement(true, null);    
+    this.setNextStatement(true, null);
+    //this.setInputsInline(true);
+    },
+};
+
+
+Blockly.Blocks.nrfDataMemberReciver = {
+  init: function() {
+    this.setColour(colorSet);  //module color
+    this.appendDummyInput("")
+         .appendTitle(Blockly.nrfDataMemberReciver)
+         .appendTitle(new Blockly.FieldTextInput('ite_m'),'Struct_Member');
+    // this.setPreviousStatement(true, null);    
+    // this.setNextStatement(true, null);
+//    this.setTooltip("test");  
+   this.setOutput(true);
+    //this.setInputsInline(true);
+    },
+};

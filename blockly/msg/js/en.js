@@ -1006,12 +1006,21 @@ Blockly.StructDef='Declare Struct';
 Blockly.Struct_TEMP='Member:';
 Blockly.Struct_IS='As';
 
+
+
 Blockly.nRF='nRF24';
 Blockly.nRF_Init='Initialization'
 Blockly.nRF_Send='Send';
 Blockly.nRF_Read='Read';
 Blockly.nRF_Channel='Channel:';
 Blockly.nRF_Interval='Interval:';
+Blockly.nrfDataStructDefine='nRF Struct Define';
+Blockly.nrfDataMemberDefine='nRF Data Define';
+Blockly.nrfDataMemberType='Type';
+Blockly.nrfDataMemberName='Name';
+Blockly.nrfDataSender='nRF Sender Data Struct';
+Blockly.nrfDataMemberSender='nRF Sender Data';
+Blockly.nrfDataMemberReciver='nRF Reciver Data';
 
 
 Blockly.ms='ms';

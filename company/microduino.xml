@@ -564,6 +564,10 @@
         </value>
 	  </block>
 
+	<!--nRF24-->
+	<block type="nRF_Init"></block>
+	<block type="nRF_Send"></block>
+	<block type="nRF_Read"></block>
 
 		<block type="WiFiBlynk"></block>
 		<block type="BLYNK_READ"></block>
@@ -625,10 +629,7 @@
 		    <statement name="DO0"></statement>
 		</block>
 		-->
-		<!--nRF24-->
-<!-- 		<block type="nRF_Init"></block>
-		<block type="nRF_Send"></block>
-		<block type="nRF_Read"></block> -->
+
 		<!--SmartRF-->
 <!-- 		<block type="smartRF_Init_Send"></block>
 		<block type="smartRF_Init_Read"></block>
@@ -861,20 +862,26 @@
 	<category id="catVariableExpansion" colour="#da6ba3">
 		  <block type="Defination">
 	      </block>
-	      <block type="Structure">
+
+	      <block type="nrfDataStructDefine">
+	      </block>
+	      <block type="nrfDataMemberDefine">
+	      </block>
+	      <block type="nrfDataSender">
+	      </block>
+	      <block type="nrfDataMemberSender">
+	      </block>
+	      <block type="nrfDataMemberReciver">
+	      </block>
+
+<!-- 	      <block type="Structure">
 	      	<statement name="DO">
 	      	</statement>
 	      </block>
 		  <block type="Var_Definations">
 	      </block>
 	      <block type="Struct_Var_Definations">
-	      </block>
-	      <!--
- 	      <block type="IntDefine">
-	      </block>
-	      <block type="BooleanDefine">
-	      </block> 
-	  		-->
+	      </block> -->
 
 		<block type="melodyBuzzer">
 		</block>

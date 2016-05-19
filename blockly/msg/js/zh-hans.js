@@ -1017,6 +1017,19 @@ Blockly.nRF_Send='nRF24发送';
 Blockly.nRF_Read='nRF24接收';
 Blockly.nRF_Channel='信道:';
 Blockly.nRF_Interval='间隔时间:';
+Blockly.nrfDataStructDefine='nRF数据结构定义';
+Blockly.nrfDataMemberDefine='nRF数据定义';
+Blockly.nrfDataMemberType='类型';
+Blockly.nrfDataMemberName='名字';
+Blockly.nrfDataSender='nRF发送的数据结构';
+Blockly.nrfDataMemberSender='nRF发送的数据';
+Blockly.nrfDataMemberReciver='nRF接收的数据';
+
+
+
+
+
+
 
 Blockly.ms='毫秒';
 Blockly.Send_INFO='发送内容';
