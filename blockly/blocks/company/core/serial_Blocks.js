@@ -93,7 +93,8 @@ Blockly.Blocks.microduinoAnaloyWrite = {
     this.appendDummyInput("")
     .appendTitle(Blockly.MIXLY_ANALOGWRITE_PIN)
     .appendTitle(new Blockly.FieldDropdown(mCookie_pwmPin), "mCookie_pwmPin")
-
+    .appendTitle(Blockly.MIXLY_VALUE2);
+    
     this.appendValueInput("pwmNumber", Number)
       .setCheck(Number)
       .setAlign(Blockly.ALIGN_RIGHT)
@@ -157,7 +158,7 @@ Blockly.Blocks.microduinoFor = {
   init: function() {
     this.setColour(colorSet);
     this.appendDummyInput()
-        .appendTitle(Blockly.LANG_CONTROLS_FOR_INPUT_WITH)
+        .appendTitle(Blockly.MicroduinoForPerTime)
         .appendTitle(new Blockly.FieldTextInput('i'), 'VAR');
     this.appendValueInput('FROM')
         .setCheck(Number)

@@ -1026,11 +1026,6 @@ Blockly.nrfDataMemberSender='nRF发送的数据';
 Blockly.nrfDataMemberReciver='nRF接收的数据';
 
 
-
-
-
-
-
 Blockly.ms='毫秒';
 Blockly.Send_INFO='发送内容';
 Blockly.Read_INFO='存储为';
@@ -1206,6 +1201,11 @@ Blockly.BTSenderData='蓝牙发送数据';
 Blockly.BTSende='发送:';
 Blockly.blueled='蓝牙';
 Blockly.blueMtank='蓝牙mTank';
+Blockly.oldmCookie='老版mCookie';
+Blockly.oldMicroduino='老版Microduino';
+Blockly.newMicroduinoBT='新版蓝牙';
+
+
 
 Blockly.interalTime='间隔执行';
 Blockly.timerName='名字';
@@ -1309,4 +1309,5 @@ Blockly.IRRaction='红外反射传感器';
 Blockly.IRRactionDistance='距离';
 Blockly.IRRactionBlack='灰度';
 Blockly.RTCAudioControl='音乐播放控制';
+Blockly.MicroduinoForPerTime='按次';
 

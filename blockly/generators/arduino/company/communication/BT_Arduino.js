@@ -5,48 +5,6 @@ goog.provide('Blockly.Arduino.Microduino');
 goog.require('Blockly.Arduino');
 
 
-/*
-Blockly.Arduino.mCookie_bluetooth_readString = function() {
-  var dropdown_pin = this.getTitleValue('PIN');
-  Blockly.Arduino.definitions_['define_SoftwareSerial'] = '#include <SoftwareSerial.h>';
-  //Blockly.Arduino.definitions_['define_i2c'] = '#include <Wire.h>';
-
-  if(dropdown_pin=='core')
-    Blockly.Arduino.definitions_['define_SoftwareSerial'] = 'SoftwareSerial mySerial(4, 5);';
-    Blockly.Arduino.definitions_['define_mySerial'] = '#define my_Serial  mySerial';  
-  else {
-    Blockly.Arduino.definitions_['define_mySerial'] = '#define my_Serial Serial1';
-  }
-  
-  Blockly.Arduino.setups_['setup_mCookie_bluetooth'] = 'my_Serial.begin(9600);';
-  //Blockly.Arduino.setups_['setup_mCookie_Serial'] = 'Serial.begin(9600);';
-  var code = 'my_Serial.readString()';
-  return [code, Blockly.Arduino.ORDER_ATOMIC];
-};
-
-
-Blockly.Arduino.mCookie_bluetooth_available = function() {
-
-
-  var dropdown_pin = this.getTitleValue('PIN');
-  Blockly.Arduino.definitions_['define_Software'] = '#include <SoftwareSerial.h>';
-  if(dropdown_pin=='core')
-    Blockly.Arduino.definitions_['define_SoftwareSerial'] = 'SoftwareSerial mySerial(4, 5);';
-    Blockly.Arduino.definitions_['define_mySerial'] = '#define my_Serial  mySerial';  
-  else {
-    Blockly.Arduino.definitions_['define_mySerial'] = '#define my_Serial Serial1';
-  }
-  
-  Blockly.Arduino.setups_['setup_mCookie_bluetooth'] = 'my_Serial.begin(9600);';
-  Blockly.Arduino.setups_['setup_mCookie_Serial'] = 'Serial.begin(9600);';
-
-
-  var code = 'my_Serial.available()';
-  return [code, Blockly.Arduino.ORDER_ATOMIC];
-};
-*/
-
-
 Blockly.Arduino.bluetoothMicroduinoBegin = function() {
   var dropdown_pin = this.getTitleValue('PIN');
   Blockly.Arduino.definitions_['define_Software'] = '#include <SoftwareSerial.h>';
@@ -55,12 +13,16 @@ Blockly.Arduino.bluetoothMicroduinoBegin = function() {
   
   if(dropdown_pin=='2') {
     Blockly.Arduino.definitions_['define_SoftwareSerial'] = 'SoftwareSerial mySerial(4, 5);';
-    Blockly.Arduino.definitions_['define_mySerial'] = '#define my_Serial  mySerial';  
+    Blockly.Arduino.definitions_['define_mySerial'] = '#define my_Serial  mySerial'; 
+    Blockly.Arduino.setups_['setup_mCookie_bluetooth'] = 'my_Serial.begin(9600);'; 
   }
-  else {
+  else if(dropdown_pin=='1'){
     Blockly.Arduino.definitions_['define_mySerial'] = '#define my_Serial Serial1';
+    Blockly.Arduino.setups_['setup_mCookie_bluetooth'] = 'my_Serial.begin(9600);';
+  } else {
+    Blockly.Arduino.definitions_['define_mySerial'] = '#define my_Serial Serial';
+
   }
-  Blockly.Arduino.setups_['setup_mCookie_bluetooth'] = 'my_Serial.begin(9600);';
   var code = '';
   return code;
   //return [code, Blockly.Arduino.ORDER_ATOMIC];
@@ -108,9 +70,12 @@ Blockly.Arduino.bluetoothmtankBegin = function() {
     Blockly.Arduino.definitions_['define_Software'] = '#include <SoftwareSerial.h>';
     Blockly.Arduino.definitions_['define_SoftwareSerial'] = 'SoftwareSerial mySerial(4, -1);';
     Blockly.Arduino.definitions_['define_Protocol'] = 'Protocol ProtocolB(&mySerial, TYPE_NUM);';
+  } else {
+    Blockly.Arduino.definitions_['Protocol_HardSer'] = '#include <Microduino_Protocol_HardSer.h>';
+    Blockly.Arduino.definitions_['define_Protocol'] = 'Protocol ProtocolB(&Serial, TYPE_NUM);';
   }
   Blockly.Arduino.setups_['setup_mCookie_bleSerial'] = 'ProtocolB.begin(9600);';
-  Blockly.Arduino.setups_['setup_mCookie_Serial'] = 'Serial.begin(9600);';
+  // Blockly.Arduino.setups_['setup_mCookie_Serial'] = 'Serial.begin(9600);';
   var code = '\n';
   return code;
 };

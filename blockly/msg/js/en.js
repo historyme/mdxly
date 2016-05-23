@@ -1203,6 +1203,9 @@ Blockly.BTSenderData='Send Data';
 Blockly.BTSende='Send:';
 Blockly.blueled='Bluetooth';
 Blockly.blueMtank='Bluetooth mTank';
+Blockly.oldmCookie='old mCookie';
+Blockly.oldMicroduino='old Microduino';
+Blockly.newMicroduinoBT='new BT';
 
 Blockly.interalTime='Interal Doing';
 Blockly.timerName='Name';
@@ -1296,3 +1299,4 @@ Blockly.IRRaction='Infrared reflection sensor';
 Blockly.IRRactionDistance='distance';
 Blockly.IRRactionBlack='gray level';
 Blockly.RTCAudioControl='Music Control';
+Blockly.MicroduinoForPerTime='Every Time';
