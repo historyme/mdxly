@@ -79,10 +79,11 @@ Blockly.Arduino.MotorBeginchange = function() {
 Blockly.Arduino.Motor_run = function() {
 
 var Break_left_right = this.getFieldValue('Break_left_right');
+var speed = Blockly.Arduino.valueToCode(this, 'speed',Blockly.Arduino.ORDER_ATOMIC) || '0';
 
-var throttle = this.getFieldValue('motor_ctrl');
+//var throttle = this.getFieldValue('motor_ctrl');
 
-var code='throttle = '+throttle+';\n';
+var code='throttle = '+speed+';\n';
 
  if (Break_left_right==1)  code+='MotorLeft.Driver(MotorLeft.GetData(throttle, 0, CHAN_LEFT));\n';
  else if (Break_left_right==2) code+='MotorRight.Driver(MotorRight.GetData(throttle, 0, CHAN_RIGHT));\n';

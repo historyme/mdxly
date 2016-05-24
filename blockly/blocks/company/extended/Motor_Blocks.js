@@ -45,9 +45,16 @@ Blockly.Blocks.Motor_run = {
     this.appendDummyInput("")
         .appendTitle(Blockly.N20choose)
         .appendField(new Blockly.FieldDropdown(Break_left_right), 'Break_left_right');
-    this.appendDummyInput("")
-        .appendField(Blockly.motor_ctrl)
-        .appendField(new Blockly.FieldTextInput("255"), "motor_ctrl")
+    // this.appendDummyInput("")
+    //     .appendField(Blockly.motor_ctrl)
+    //     .appendField(new Blockly.FieldTextInput("255"), "motor_ctrl")
+
+          this.appendValueInput('speed')
+        .setCheck(Number)
+        .appendTitle(' '+Blockly.carSpeed);
+
+
+
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setInputsInline(true);
