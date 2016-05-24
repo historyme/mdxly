@@ -860,6 +860,7 @@
 		<block type="microduinoIRRactAnal"></block>
 		<!--TEMP HUM-->
 		<block type="mCookie_AM2321"></block>
+		<block type="mCookie_SHT2"></block>
 	</category>
 
 	<!--扩展变量-->
