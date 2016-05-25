@@ -454,34 +454,12 @@
 		        <block type="GPSSatellites"></block>
 		</block>
 		<!--Motion模块-->
-		<block type="motionBegin"></block>
-		<block type="accX"></block>
-		<block type="accY"></block>
-		<block type="accZ"></block>
-		<block type="gyroX"></block>
-		<block type="gyroY"></block>
-		<block type="gyroZ"></block>
-		<block type="tabSpace"></block>
-		<block type="motionDoing">
-				<value name="ax">
-				<block type="accX"></block>
-			</value>
-				<value name="ay">
-				<block type="accY"></block>
-			</value>
-				<value name="az">
-				<block type="accZ"></block>
-			</value>
-				<value name="gx">
-				<block type="gyroX"></block>
-			</value>
-				<value name="gy">
-				<block type="gyroY"></block>
-			</value>
-				<value name="gz">
-				<block type="gyroZ"></block>
-			</value>
-		</block>
+		<block type="motionAccGyro"></block>
+		<block type="getMotionValue"></block>
+		<block type="motionDMP"></block>
+		<block type="motionSoft"></block>
+
+		<block type="getMotionYawPitchRoll"></block>
 
 
 		<!--SD模块-->

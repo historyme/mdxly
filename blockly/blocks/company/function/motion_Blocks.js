@@ -9,7 +9,7 @@ goog.require('Blockly.Blocks');
 var colorSet='#e5b748';
 
 
-Blockly.Blocks.motionBegin = {
+Blockly.Blocks.motionAccGyro = {
   init: function() {
     this.setColour(colorSet);
 
@@ -17,7 +17,6 @@ Blockly.Blocks.motionBegin = {
         .appendTitle(Blockly.motionInit)
         .appendField(new Blockly.FieldImage("../../media/Microduino/motion.png", 63, 70))
 
-    //this.appendStatementInput('DO')
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
 //    this.setTooltip("test");  
@@ -27,118 +26,75 @@ Blockly.Blocks.motionBegin = {
 
 
 
+Blockly.Blocks.getMotionValue={
+init:function(){
 
-Blockly.Blocks.accX = {
-  init: function() {
-    this.setColour(colorSet);
-    this.appendDummyInput()
-        .appendTitle(Blockly.accX);
-    //this.setOutput(true, Number);
-    this.setOutput(true, String);
-  }
-};
-Blockly.Blocks.accY = {
-  init: function() {
-    this.setColour(colorSet);
-    this.appendDummyInput()
-        .appendTitle(Blockly.accY);
-    //this.setOutput(true, Number);
-    this.setOutput(true, String);
-  }
-};
-Blockly.Blocks.accZ = {
-  init: function() {
-    this.setColour(colorSet);
-    this.appendDummyInput()
-        .appendTitle(Blockly.accZ);
-    //this.setOutput(true, Number);
-    this.setOutput(true, String);
-  }
-};
+    var getType =[[Blockly.accX, "accX"], 
+                  [Blockly.accY, "accY"], 
+                  [Blockly.accZ, "accZ"], 
+                  [Blockly.gyroX, "gyroX"],
+                  [Blockly.gyroY, "gyroY"],
+                  [Blockly.gyroZ, "gyroZ"]
+                ];
 
-Blockly.Blocks.gyroX = {
-  init: function() {
     this.setColour(colorSet);
-    this.appendDummyInput()
-        .appendTitle(Blockly.gyroX);
-    //this.setOutput(true, Number);
-    this.setOutput(true, String);
-  }
-};
-Blockly.Blocks.gyroY = {
-  init: function() {
-    this.setColour(colorSet);
-    this.appendDummyInput()
-        .appendTitle(Blockly.gyroY);
-    //this.setOutput(true, Number);
-    this.setOutput(true, String);
-  }
-};
-Blockly.Blocks.gyroZ = {
-  init: function() {
-    this.setColour(colorSet);
-    this.appendDummyInput()
-        .appendTitle(Blockly.gyroZ);
-    //this.setOutput(true, Number);
-    this.setOutput(true, String);
-  }
-};
-Blockly.Blocks.tabSpace = {
-  init: function() {
-    this.setColour(colorSet);
-    this.appendDummyInput()
-        .appendTitle(Blockly.tabSpace);
-    //this.setOutput(true, Number);
-    this.setOutput(true, String);
+    this.appendDummyInput("")
+         .appendTitle(Blockly.GetMotion)
+         .appendTitle(new Blockly.FieldDropdown(getType), "getType");
+    this.setInputsInline(true);
+    // this.setPreviousStatement(true);
+    // this.setNextStatement(true);
+    this.setOutput(true);
   }
 };
 
 
-
-Blockly.Blocks.motionDoing = {
+Blockly.Blocks.motionDMP = {
   init: function() {
-    //var FLIP = [['none', 'undoRotation'],['90', 'setRot90'],['180', 'setRot180'],['270', 'setRot270']];
-
     this.setColour(colorSet);
-
 
     this.appendDummyInput("")
-        .appendTitle(Blockly.motionDo)
+        .appendTitle(Blockly.motionDMP)
         .appendField(new Blockly.FieldImage("../../media/Microduino/motion.png", 63, 70))
 
-    this.appendValueInput("ax", String)
-        .setCheck(String)
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendTitle(Blockly.accX);
-    this.appendValueInput("ay", String)
-        .setCheck(String)
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendTitle(Blockly.accY);
-    this.appendValueInput("az", String)
-        .setCheck(String)
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendTitle(Blockly.accZ);
-
-    this.appendValueInput("gx", String)
-        .setCheck(String)
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendTitle(Blockly.gyroX);
-    this.appendValueInput("gy", String)
-        .setCheck(String)
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendTitle(Blockly.gyroY);
-    this.appendValueInput("gz", String)
-        .setCheck(String)
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendTitle(Blockly.gyroZ);
-
-
-
-
-    //this.appendStatementInput('DO')
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
 //    this.setTooltip("test");  
-    //this.setInputsInline(true);
+    this.setInputsInline(true);
     },
+};
+
+Blockly.Blocks.motionSoft = {
+  init: function() {
+    this.setColour(colorSet);
+
+    this.appendDummyInput("")
+        .appendTitle(Blockly.motionSoft)
+        .appendField(new Blockly.FieldImage("../../media/Microduino/motion.png", 63, 70))
+
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip("开启后需要旋转20秒用于磁极校准...");  
+    this.setInputsInline(true);
+    },
+};
+
+
+Blockly.Blocks.getMotionYawPitchRoll={
+init:function(){
+
+    var getType =[[Blockly.motionYaw, "ypr[0]"], 
+                  [Blockly.motionPitch, "ypr[1]"], 
+                  [Blockly.motionRoll, "ypr[2]"]
+                ];
+
+    this.setColour(colorSet);
+    this.appendDummyInput("")
+         .appendTitle(Blockly.GetMotion)
+         .appendTitle(new Blockly.FieldDropdown(getType), "getType");
+    this.setInputsInline(true);
+    // this.setPreviousStatement(true);
+    // this.setNextStatement(true);
+    this.setOutput(true);
+  }
 };

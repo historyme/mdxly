@@ -947,15 +947,23 @@ Blockly.BuzzerNum='序号';
 Blockly.BuzzerPin='蜂鸣器管脚';
 Blockly.Frequency='蜂鸣器频率';
 
-Blockly.motionInit='姿态模块初始化:';
-Blockly.motionDo='姿态模块:';
+Blockly.motionInit='姿态加速度角速度准备';
+Blockly.GetMotion='获取姿态';
+Blockly.motionDMP='姿态DMP解算';
+Blockly.motionSoft='姿态算法解算';
 
-Blockly.accX='加速度 X:';
-Blockly.accY='加速度 Y:';
-Blockly.accZ='加速度 Z:';
-Blockly.gyroX='角速度 X:';
-Blockly.gyroY='角速度 Y:';
-Blockly.gyroZ='角速度 Z:';
+Blockly.accX='加速度 X';
+Blockly.accY='加速度 Y';
+Blockly.accZ='加速度 Z';
+Blockly.gyroX='角速度 X';
+Blockly.gyroY='角速度 Y';
+Blockly.gyroZ='角速度 Z';
+Blockly.motionYaw='偏航';
+Blockly.motionPitch='俯仰';
+Blockly.motionRoll='翻滚';
+
+
+
 Blockly.tabSpace='间隔';
 
 Blockly.serialSetup='串口波特率:';

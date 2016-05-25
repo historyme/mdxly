@@ -65,6 +65,17 @@ bool BMP085::testConnection() {
     return I2Cdev::readByte(devAddr, BMP085_RA_AC1_H, buffer) == 1;
 }
 
+
+bool BMP085::begin(){
+	Wire.begin();
+	if(!testConnection())
+		return false;
+	initialize();
+	devStatus = STATUS_START_TEM;
+	return true;
+}
+
+
 /* calibration register methods */
 
 void BMP085::loadCalibration() {
@@ -270,3 +281,60 @@ float BMP085::getPressure() {
 float BMP085::getAltitude(float pressure, float seaLevelPressure) {
     return 44330 * (1.0 - pow(pressure / seaLevelPressure, 0.1903));
 }
+
+
+bool BMP085::available(uint8_t mode){
+	switch(devStatus){
+		case STATUS_START_TEM:
+			setControl(BMP085_MODE_TEMPERATURE);
+			lastMillis = millis();
+			delayTime = getMeasureDelayMilliseconds();
+			devStatus = STATUS_GETTING_TEM;
+			break;
+		case STATUS_GETTING_TEM:
+			if(millis() - lastMillis > delayTime){
+				temperatureBuf = getTemperatureC();
+				temperatureFlag = true;
+				if(mode == BMP085_MODE_PRESSURE_0||
+				   mode == BMP085_MODE_PRESSURE_1||
+				   mode == BMP085_MODE_PRESSURE_2||
+				   mode == BMP085_MODE_PRESSURE_3){
+					setControl(mode);
+					lastMillis = millis();
+					delayTime = getMeasureDelayMilliseconds();
+					devStatus = STATUS_GETTING_PRE;
+				}else if(mode == BMP085_MODE_TEMPERATURE){
+					setControl(mode);
+					lastMillis = millis();
+					delayTime = getMeasureDelayMilliseconds();
+				}
+			}
+		case STATUS_GETTING_PRE:
+			if(millis() - lastMillis > delayTime){
+				pressureBuf = getPressure();
+				pressureFlag = true;
+				setControl(BMP085_MODE_TEMPERATURE);
+				lastMillis = millis();
+				delayTime = getMeasureDelayMilliseconds();
+				devStatus = STATUS_GETTING_TEM;
+			}
+	}
+	return (mode == BMP085_MODE_TEMPERATURE)?  temperatureFlag : pressureFlag;
+}
+
+float BMP085::readTemperature(){
+	if(temperatureFlag){
+		temperatureFlag = false;
+		return temperatureBuf;
+	}
+	return 0.0;
+}
+
+float BMP085::readPressure(){
+	if(pressureFlag){
+		pressureFlag = false;
+		return pressureBuf;
+	}
+	return 0.0;
+}
+

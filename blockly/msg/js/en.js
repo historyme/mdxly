@@ -946,9 +946,10 @@ Blockly.Frequency='Frequency:';
 //Blockly.BuzzerMelody='Melody';
 
 
-Blockly.motionInit='Motion Init:';
-Blockly.motionDo='Motion:';
-
+Blockly.motionInit='Motion Prepare Acc/Gyro:';
+Blockly.GetMotion='Get Motion:';
+Blockly.motionDMP='Motion DMP Solution';
+Blockly.motionSoft='Motion Software Solution';
 
 Blockly.accX='Accel X:';
 Blockly.accY='Accel Y:';
@@ -956,6 +957,10 @@ Blockly.accZ='Accel Z:';
 Blockly.gyroX='gyro X:';
 Blockly.gyroY='gyro Y:';
 Blockly.gyroZ='gyro Z:';
+Blockly.motionYaw='Yaw';
+Blockly.motionPitch='Pitch';
+Blockly.motionRoll='Roll';
+
 Blockly.tabSpace='tab';
 
 Blockly.serialSetup='Serial baud:';
