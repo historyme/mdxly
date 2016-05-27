@@ -71,10 +71,24 @@ Blockly.Arduino.motionDMP = function() {
 
 Blockly.Arduino.motionSoft = function() {
 
+  var getType = this.getTitleValue('getType');
+
   Blockly.Arduino.definitions_['define_MPU6050_6Axis_Microduino'] = '#include "MPU6050_6Axis_Microduino.h"';
   Blockly.Arduino.definitions_['define_HMC5883L'] = '#include "HMC5883L.h"';
   Blockly.Arduino.definitions_['var_MPU6050'] = 'MPU6050 mpu;';
-  Blockly.Arduino.definitions_['var_HMC5883L'] = 'HMC5883L mag;';
+
+  if(getType=='1') {
+    Blockly.Arduino.definitions_['define_AXIS_9'] = '#define AXIS_9';
+  }
+
+
+  var defHMC5883L='';
+  defHMC5883L+='#ifdef AXIS_9\n';
+  defHMC5883L+='  HMC5883L mag;\n';
+  defHMC5883L+='#endif\n';
+
+
+  Blockly.Arduino.definitions_['var_HMC5883L'] = defHMC5883L;
 
 
   var motionSoft='';
@@ -89,17 +103,30 @@ Blockly.Arduino.motionSoft = function() {
   var setupMotionSoft='';
   setupMotionSoft+='mpuMode = MODE_SW;\n';
   setupMotionSoft+='mpuReady = mpu.begin(mpuMode);\n';
-  setupMotionSoft+='mag.begin();\n';
-  setupMotionSoft+='mag.calibrateMag(0);\n';
-  setupMotionSoft+='mag.xOffset;\n';
-  setupMotionSoft+='mag.yOffset;\n';
-  setupMotionSoft+='mag.zOffset;\n';
+  
+  setupMotionSoft+='#ifdef AXIS_9\n';
+  setupMotionSoft+='  mag.begin();\n';
+  setupMotionSoft+='  mag.calibrateMag(0);\n';
+  setupMotionSoft+='  mag.xOffset;\n';
+  setupMotionSoft+='  mag.yOffset;\n';
+  setupMotionSoft+='  mag.zOffset;\n';
+  setupMotionSoft+='#endif \n';
+
+
   Blockly.Arduino.setups_['setup_motionDMP'] = setupMotionSoft;
 
   var code='';
   code+='if (!mpuReady) return;\n';
-  code+='mag.getMagneto(&mx, &my, &mz);\n';
-  code+='mpu.getYawPitchRoll(ypr, mx, my, mz);\n';
+
+  code+='#ifdef AXIS_9\n';
+  code+=' mag.getMagneto(&mx, &my, &mz);\n';
+  code+='#endif\n';
+
+  code+='#ifdef AXIS_9\n';
+  code+=' mpu.getYawPitchRoll(ypr, mx, my, mz);\n';
+  code+='#else\n';
+  code+=' mpu.getYawPitchRoll(ypr);\n';
+  code+='#endif\n';
 
   return code;
 };

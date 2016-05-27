@@ -4,7 +4,7 @@ goog.provide('Blockly.Blocks.storage');
 
 goog.require('Blockly.Blocks');
 
-Blockly.Blocks.storage.HUE = 0;
+Blockly.Blocks.storage.HUE = '#e86695';
 
 Blockly.Blocks.store_sd_write = {
   init: function() {

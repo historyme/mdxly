@@ -950,6 +950,9 @@ Blockly.motionInit='Motion Prepare Acc/Gyro:';
 Blockly.GetMotion='Get Motion:';
 Blockly.motionDMP='Motion DMP Solution';
 Blockly.motionSoft='Motion Software Solution';
+Blockly.motionIsMagic='Geomagnetic ?';
+Blockly.motionNoMagic='Geomagnetic Disable';
+Blockly.motionMagic='Geomagnetic Enable';
 
 Blockly.accX='Accel X:';
 Blockly.accY='Accel Y:';

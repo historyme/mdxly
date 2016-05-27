@@ -951,6 +951,10 @@ Blockly.motionInit='姿态加速度角速度准备';
 Blockly.GetMotion='获取姿态';
 Blockly.motionDMP='姿态DMP解算';
 Blockly.motionSoft='姿态算法解算';
+Blockly.motionIsMagic='是否地磁校准';
+Blockly.motionNoMagic='非地磁校准';
+Blockly.motionMagic='地磁校准';
+
 
 Blockly.accX='加速度 X';
 Blockly.accY='加速度 Y';

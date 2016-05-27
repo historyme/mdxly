@@ -9,7 +9,7 @@ goog.require('Blockly.Arduino');
 Blockly.Arduino.microduinoMicAnal = function() {
 	var analogPin = this.getFieldValue('analogPin');
 
-	Blockly.Arduino.setups_['setup_'+analogPin] = 'pinMode('+analogPin+',INPUT);';
+	//Blockly.Arduino.setups_['setup_'+analogPin] = 'pinMode('+analogPin+',INPUT);';
 	var code='';
 	code+='analogRead('+analogPin+')';
 
@@ -19,7 +19,7 @@ Blockly.Arduino.microduinoMicAnal = function() {
 Blockly.Arduino.microduinoLightAnal = function() {
 	var analogPin = this.getFieldValue('analogPin');
 
-	Blockly.Arduino.setups_['setup_'+analogPin] = 'pinMode('+analogPin+',INPUT);';
+	//Blockly.Arduino.setups_['setup_'+analogPin] = 'pinMode('+analogPin+',INPUT);';
 
 	var code='';
 	code+='analogRead('+analogPin+')';
@@ -31,7 +31,7 @@ Blockly.Arduino.microduinoLightAnal = function() {
 Blockly.Arduino.microduinoIRRactAnal = function() {
 	var analogPin = this.getFieldValue('analogPin');
 
-	Blockly.Arduino.setups_['setup_'+analogPin] = 'pinMode('+analogPin+',INPUT);';
+	//Blockly.Arduino.setups_['setup_'+analogPin] = 'pinMode('+analogPin+',INPUT);';
 
 	var code='';
 	code+='analogRead('+analogPin+')';

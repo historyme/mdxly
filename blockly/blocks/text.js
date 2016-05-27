@@ -5,7 +5,7 @@ goog.provide('Blockly.Blocks.texts');
 goog.require('Blockly.Blocks');
 
 
-Blockly.Blocks.texts.HUE = 160;
+Blockly.Blocks.texts.HUE = '#2cb98c';
 
 Blockly.Blocks['text'] = {
   /**

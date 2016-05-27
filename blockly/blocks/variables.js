@@ -5,7 +5,7 @@ goog.provide('Blockly.Blocks.variables');
 goog.require('Blockly.Blocks');
 
 
-Blockly.Blocks.variables.HUE = 330;
+Blockly.Blocks.variables.HUE = '#da6ba3';
 
 // ************************************************************************
 // THIS SECTION IS INSERTED INTO BLOCKLY BY BLOCKLYDUINO.

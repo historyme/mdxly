@@ -2,7 +2,7 @@
 
 goog.provide('Blockly.Blocks.sensor');
 goog.require('Blockly.Blocks');
-Blockly.Blocks.sensor.HUE = 40;
+Blockly.Blocks.sensor.HUE = '#e5624e';
 
 Blockly.Blocks['gps_init'] = {
   init: function() {

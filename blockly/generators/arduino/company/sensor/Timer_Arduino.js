@@ -22,50 +22,36 @@ Blockly.Arduino.MicroduinoTimer = function() {
   code+='  '+timerName+'lastTime = millis();\n';
   code+='} \n';
 
-  //return [code, Blockly.Arduino.ORDER_ATOMIC];
   return code;
 };
 
 
 Blockly.Arduino.MicroduinoTimerBegin = function() {
-  //var branch = Blockly.Arduino.statementToCode(this, 'TimerDOing');
-  var timerName = this.getFieldValue('timerName');
-  //var intervalTime = Blockly.Arduino.valueToCode(this, 'intervalTime', Blockly.Arduino.ORDER_ATOMIC)
 
-  // Blockly.Arduino.definitions_['define_'+timerName+'Timer'] = '#define INTERVAL_'+timerName+' '+intervalTime;
+  var timerName = this.getFieldValue('timerName');
+
   Blockly.Arduino.definitions_['define_'+timerName+'lastTime'] = 'unsigned long '+timerName+'lastTime = millis();';
 
   var code='';
 
-  // code+='if ('+timerName+'lastTime > millis()) '+timerName+'lastTime = millis();\n';
-  // code+='if(millis()-'+timerName+'lastTime>INTERVAL_'+timerName+') {\n';
-  // code+=branch;
   code+=timerName+'lastTime = millis();\n';
-  // code+='} \n';
 
-  //return [code, Blockly.Arduino.ORDER_ATOMIC];
   return code;
 };
 
 
 Blockly.Arduino.MicroduinoTimerOut = function() {
-  //var branch = Blockly.Arduino.statementToCode(this, 'TimerDOing');
+
   var timerName = this.getFieldValue('timerName');
   var intervalTime = Blockly.Arduino.valueToCode(this, 'intervalTime', Blockly.Arduino.ORDER_ATOMIC)
 
   Blockly.Arduino.definitions_['define_'+timerName+'Timer'] = '#define INTERVAL_'+timerName+' '+intervalTime;
   Blockly.Arduino.definitions_['define_'+timerName+'lastTime'] = 'unsigned long '+timerName+'lastTime = millis();';
 
-  var code='millis() - '+timerName+'lastTime > INTERVAL_'+timerName;
-
-  // code+='if ('+timerName+'lastTime > millis()) '+timerName+'lastTime = millis();\n';
-  // code+='if(millis()-'+timerName+'lastTime>INTERVAL_'+timerName+') {\n';
-  // //code+=branch;
-  // code+='  '+timerName+'lastTime = millis();\n';
-  // code+='} \n';
+  var code='(millis() - '+timerName+'lastTime > INTERVAL_'+timerName+')';
 
   return [code, Blockly.Arduino.ORDER_ATOMIC];
-  //return code;
+
 };
 
 

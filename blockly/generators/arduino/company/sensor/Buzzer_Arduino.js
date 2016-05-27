@@ -11,7 +11,7 @@ var Frequency = Blockly.Arduino.valueToCode(this, 'Frequency', Blockly.Arduino.O
 var BuzzerPin = Blockly.Arduino.valueToCode(this, 'BuzzerPin', Blockly.Arduino.ORDER_ATOMIC)
 Blockly.Arduino.definitions_['define_BuzzerPin'+BuzzerPin] = '#define BuzzerPin'+BuzzerPin+' '+BuzzerPin;
 
-Blockly.Arduino.setups_['setup_Buzzer'+BuzzerPin] = 'pinMode(BuzzerPin'+BuzzerPin+',OUTPUT);';
+//Blockly.Arduino.setups_['setup_Buzzer'+BuzzerPin] = 'pinMode(BuzzerPin'+BuzzerPin+',OUTPUT);';
 
 var code='tone(BuzzerPin'+BuzzerPin+','+Frequency+');\n';
 return code;
@@ -23,7 +23,7 @@ Blockly.Arduino.BuzzerToneMelody = function() {
 	var BuzzerPin = Blockly.Arduino.valueToCode(this, 'BuzzerPin', Blockly.Arduino.ORDER_ATOMIC)
 	Blockly.Arduino.definitions_['define_BuzzerPin'+BuzzerPin] = '#define BuzzerPin'+BuzzerPin+' '+BuzzerPin;
 
-	Blockly.Arduino.setups_['setup_Buzzer'+BuzzerPin] = 'pinMode(BuzzerPin'+BuzzerPin+',OUTPUT);';
+	//Blockly.Arduino.setups_['setup_Buzzer'+BuzzerPin] = 'pinMode(BuzzerPin'+BuzzerPin+',OUTPUT);';
 
 	var code='';
 	code+='tone(BuzzerPin'+BuzzerPin+','+buzzerMelody+');\n';
@@ -65,7 +65,7 @@ Blockly.Arduino.BuzzerToneSong = function() {
 	Blockly.Arduino.definitions_['setup_BuzzerSongArray'] = songArray;
 
 
-	Blockly.Arduino.setups_['setup_Buzzer'+BuzzerPin] = 'pinMode(BuzzerPin'+BuzzerPin+',OUTPUT);';
+	//Blockly.Arduino.setups_['setup_Buzzer'+BuzzerPin] = 'pinMode(BuzzerPin'+BuzzerPin+',OUTPUT);';
 
 	
 
@@ -93,7 +93,7 @@ Blockly.Arduino.BuzzerNoTone = function() {
 
 	Blockly.Arduino.definitions_['define_BuzzerPin'+BuzzerPin] = '#define BuzzerPin'+BuzzerPin+' '+BuzzerPin;
 
-	Blockly.Arduino.setups_['setup_Buzzer'+BuzzerPin] = 'pinMode(BuzzerPin'+BuzzerPin+',OUTPUT);';
+	//Blockly.Arduino.setups_['setup_Buzzer'+BuzzerPin] = 'pinMode(BuzzerPin'+BuzzerPin+',OUTPUT);';
 
 	var code='noTone(BuzzerPin'+BuzzerPin+');\n';
 	return code;

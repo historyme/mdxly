@@ -66,11 +66,23 @@ Blockly.Blocks.motionDMP = {
 
 Blockly.Blocks.motionSoft = {
   init: function() {
+
+
+    var getType =[[Blockly.motionNoMagic, '0'], 
+                  [Blockly.motionMagic, '1']
+                ];
+
+
     this.setColour(colorSet);
 
     this.appendDummyInput("")
         .appendTitle(Blockly.motionSoft)
         .appendField(new Blockly.FieldImage("../../media/Microduino/motion.png", 63, 70))
+
+
+    this.appendDummyInput("")
+         .appendTitle(Blockly.motionIsMagic)
+         .appendTitle(new Blockly.FieldDropdown(getType), "getType");
 
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
