@@ -55,3 +55,16 @@ Blockly.Arduino.MicroduinoTimerOut = function() {
 };
 
 
+Blockly.Arduino.MicroduinoTimerDuration = function() {
+
+  var timerName = this.getFieldValue('timerName');
+
+  Blockly.Arduino.definitions_['define_'+timerName+'lastTime'] = 'unsigned long '+timerName+'lastTime = millis();';
+
+  var code='(millis() - '+timerName+'lastTime)';
+
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+
+};
+
+

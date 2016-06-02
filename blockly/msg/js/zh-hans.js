@@ -1106,6 +1106,11 @@ Blockly.KeyInputpullup='有上拉电阻';
 Blockly.KeyInputRELEASE='松开';
 Blockly.KeyInputPRESS='按下';
 Blockly.KeyInputANALOG='模拟';
+Blockly.KeyDownDir='向下';
+Blockly.KeyLeftDir='向左';
+Blockly.KeyUpDir='向上';
+Blockly.KeyRightDir='向右';
+Blockly.KeyJoysticState='状态';
 
 Blockly.WiFi='WiFi 模块 配合Blynk';
 Blockly.WiFiSSID='名称:';
@@ -1323,3 +1328,4 @@ Blockly.IRRactionBlack='灰度';
 Blockly.RTCAudioControl='音乐播放控制';
 Blockly.MicroduinoForPerTime='按次';
 
+Blockly.MicroduinoServoSpeed='转速(度/秒)';

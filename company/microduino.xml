@@ -95,6 +95,9 @@
 <script type="text/javascript" src="../../blocks/company/sensor/analogRead_Blocks.js"></script>
 <script type="text/javascript" src="../../generators/arduino/company/sensor/analogRead_Arduino.js"></script>
 
+<script type="text/javascript" src="../../blocks/company/sensor/servo_Blocks.js"></script>
+<script type="text/javascript" src="../../generators/arduino/company/sensor/servo_Arduino.js"></script>
+
 <script type="text/javascript" src="../../blocks/company/VariableExpansion/NewVariable_Blocks.js"></script>
 <script type="text/javascript" src="../../generators/arduino/company/VariableExpansion/NewVariable_Arduino.js"></script>
 
@@ -782,6 +785,26 @@
 				</shadow>
 			</value>
 		</block>
+		<block type="MicroduinoTimerDuration">
+		</block>
+
+
+	   <block type="microduinoServoMove">
+		<value name="PIN">
+			<shadow type="pins_digital"></shadow>
+		</value>
+	    <value name="DEGREE">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+		<value name="DELAY_TIME">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+	  </block>
+
 
 	</category>
 
@@ -798,6 +821,7 @@
 		<block type="TSL2561LightReady"></block>
 		<block type="TSL2561Light"></block>
 		<block type="xyJoystick"></block>
+		<block type="microduinoJoystick"></block>
 		<block type="microduinoCrash">
 			<value name="digitalPin">
 	          <shadow type="math_number">

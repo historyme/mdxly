@@ -1098,6 +1098,11 @@ Blockly.KeyInputpullup='INPUT_PULLUP';
 Blockly.KeyInputRELEASE='RELEASE';
 Blockly.KeyInputPRESS='PRESS';
 Blockly.KeyInputANALOG='ANALOG';
+Blockly.KeyDownDir='down direct';
+Blockly.KeyLeftDir='left direct';
+Blockly.KeyUpDir='up direct';
+Blockly.KeyRightDir='right direct';
+Blockly.KeyJoysticState='State';
 
 
 Blockly.WiFi='WiFi Module With Blynk';
@@ -1308,3 +1313,5 @@ Blockly.IRRactionDistance='distance';
 Blockly.IRRactionBlack='gray level';
 Blockly.RTCAudioControl='Music Control';
 Blockly.MicroduinoForPerTime='Every Time';
+
+Blockly.MicroduinoServoSpeed='rotate Speed(deegre/s)';

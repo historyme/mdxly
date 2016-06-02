@@ -100,3 +100,23 @@ Blockly.Blocks.MicroduinoTimerOut = {
     this.setInputsInline(true);
     },
 };
+
+
+Blockly.Blocks.MicroduinoTimerDuration = {
+  init: function() {
+
+    this.setColour(colorSet);
+  this.appendDummyInput("")
+    .appendTitle(Blockly.MIXLY_DURATION)
+    .appendTitle(Blockly.timerName)
+    .appendTitle(new Blockly.FieldTextInput('timer2'),'timerName');
+
+    this.setOutput(true, Boolean);
+
+    var tip="获取持续时间\n";
+    tip+="\n";
+    this.setTooltip(tip);
+
+    this.setInputsInline(true);
+    },
+};
