@@ -104,7 +104,7 @@
 
 <category id="microduino" colour="0">
 	<!--核心-->
-	<category id="catMicroduinoCore" colour="#eb584e">
+	<category id="catMicroduinoCore" colour="#e36a69">
 		
 <!-- 		<block type="serialBegin">
 		</block>
@@ -337,9 +337,9 @@
 		</block>
 	</category>
 	<!--功能-->
-	<category id="catMicroduinoFunction" colour="#e5b748">
+	<category id="catMicroduinoFunction" colour="#edbd53">
 
-		<!--audio模块-->
+
 		<block type="mCookie_Audio_Serial">
 		    <value name="Vol">
 		        <shadow type="math_number">
@@ -359,7 +359,7 @@
 		</block>
 
 
-		<!--RTC模块-->
+
 		<block type="mCookie_RTC_set">
 		    <value name="Year">
 		        <shadow type="math_number">
@@ -398,16 +398,21 @@
 		    </value>
 		</block> 
 
+
+
 		<block type="mCookie_RTC_time"></block>
 
 		
 		<block type="mCookie_RTC_Output"></block>
 
 
-		<!--GPS模块-->
+
 		<block type="GPS"></block>
 
+
+
 		<block type="GPSShows">
+
 		    <value name="GPSHour">
 		        <block type="GPSHour"></block>
 		    </value>
@@ -455,8 +460,10 @@
 		    </value>
 		    <value name="GPSSatellites">
 		        <block type="GPSSatellites"></block>
+		    </value>
 		</block>
-		<!--Motion模块-->
+
+		
 		<block type="motionAccGyro"></block>
 		<block type="getMotionValue"></block>
 		<block type="motionDMP"></block>
@@ -465,7 +472,7 @@
 		<block type="getMotionYawPitchRoll"></block>
 
 
-		<!--SD模块-->
+
 		 <block type="SD_Write">
 		 		<value name="File_Name">
 					<block type="text">
@@ -480,11 +487,11 @@
 						<field name="File_Name">test.txt</field>
 					</block>
 				</value>
-		 </block>
+		 </block> 
 	</category>
 
 	<!--通讯-->
-	<category id="catMicroduinoCommunication" colour="#51a4ce">
+	<category id="catMicroduinoCommunication" colour="#6c91ac">
 
 		<!--BT-->
 		<block type="bluetoothMicroduinoBegin"></block>
@@ -642,7 +649,7 @@
 	</category>
 
 	<!--执行器-->
-	<category id="catMicroduinoExecutor" colour="#e5624d">
+	<category id="catMicroduinoExecutor" colour="#70bd94">
 
 
 		<!--BreathingLight -->
@@ -809,7 +816,7 @@
 	</category>
 
 	<!--传感器-->
-	<category id="catMicroduinoSensor" colour="#3bc647">
+	<category id="catMicroduinoSensor" colour="#efa752">
 		<!--KEY-->
 
 <!-- 		<block type="oldKEYDigital"></block>
@@ -866,7 +873,7 @@
 	</category>
 
 	<!--扩展变量-->
-	<category id="catVariableExpansion" colour="#da6ba3">
+	<category id="catVariableExpansion" colour="#e386a1">
 		  <block type="Defination">
 	      </block>
 

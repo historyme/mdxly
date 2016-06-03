@@ -6,7 +6,7 @@ goog.require('Blockly.Blocks');
 
 
 //var colorSet = 518;
-var colorSet='#e5624d';
+var colorSet='#70bd94';
 
 
 Blockly.Blocks.ws2812Begin = {

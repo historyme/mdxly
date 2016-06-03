@@ -5,7 +5,7 @@ goog.provide('Blockly.Blocks.Microduino');
 goog.require('Blockly.Blocks');
 
 
-var colorSet=120;
+//var colorSet=120;
 var colorSet='#27b6ac';
 
 Blockly.Blocks.mdStepperBegin = {

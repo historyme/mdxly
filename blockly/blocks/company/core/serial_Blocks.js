@@ -6,7 +6,7 @@ goog.require('Blockly.Blocks');
 
 
 //var colorSet=0;
-var colorSet='#eb584e';
+var colorSet='#e36a69';
 
 Blockly.Blocks.serialBegin = {
   init: function() {

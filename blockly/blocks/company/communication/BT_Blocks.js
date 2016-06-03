@@ -6,7 +6,7 @@ goog.require('Blockly.Blocks');
 
 
 // var colorSet=230;
-var colorSet='#51a4ce';
+var colorSet='#6c91ac';
 
 var mCookie_PORTS =[[Blockly.newMicroduinoBT, "0"],[Blockly.oldmCookie, "1"], [Blockly.oldMicroduino, "2"]];
 

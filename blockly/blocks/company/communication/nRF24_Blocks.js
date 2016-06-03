@@ -5,7 +5,7 @@ goog.provide('Blockly.Blocks.Microduino');
 goog.require('Blockly.Blocks');
 
 //var colorSet=230;
-var colorSet='#51a4ce';
+var colorSet='#6c91ac';
 
 Blockly.Blocks.nRF_Init = {
   init: function() {

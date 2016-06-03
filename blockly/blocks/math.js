@@ -5,7 +5,7 @@ goog.provide('Blockly.Blocks.math');
 goog.require('Blockly.Blocks');
 
 
-Blockly.Blocks.math.HUE = '#7787e1';
+Blockly.Blocks.math.HUE = '#92a4c7';
 
 Blockly.FieldTextInput.math_number_validator = function(text) {
   //return window.isNaN(text) ? null : String(text);

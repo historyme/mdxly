@@ -4,7 +4,7 @@ goog.provide('Blockly.Blocks.Microduino');
 
 goog.require('Blockly.Blocks');
 
-var colorSet='#e5624d';
+var colorSet='#70bd94';
 
 Blockly.Blocks.microduinoServoMove = {
   init: function() {

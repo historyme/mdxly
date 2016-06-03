@@ -43,7 +43,7 @@ Blockly.Arduino = new Blockly.Generator('Arduino');
  */
 Blockly.Arduino.addReservedWords(
   // http://arduino.cc/en/Reference/HomePage
-  'setup,loop,if,else,for,switch,case,while,do,break,continue,return,goto,define,include,HIGH,LOW,INPUT,OUTPUT,INPUT_PULLUP,true,false,interger, constants,floating,point,void,bookean,char,unsigned,byte,int,word,long,float,double,string,String,array,static, volatile,const,sizeof,pinMode,digitalWrite,digitalRead,analogReference,analogRead,analogWrite,tone,noTone,shiftOut,shitIn,pulseIn,millis,micros,delay,delayMicroseconds,min,max,abs,constrain,map,pow,sqrt,sin,cos,tan,randomSeed,random,lowByte,highByte,bitRead,bitWrite,bitSet,bitClear,bit,attachInterrupt,detachInterrupt,interrupts,noInterrupts'
+  'setup,loop,if,else,for,switch,case,while,do,break,continue,return,goto,define,include,HIGH,LOW,INPUT,OUTPUT,INPUT_PULLUP,true,false,interger, constants,floating,point,void,bookean,char,unsigned,byte,int,short,word,long,float,double,string,String,array,static, volatile,const,sizeof,pinMode,digitalWrite,digitalRead,analogReference,analogRead,analogWrite,tone,noTone,shiftOut,shitIn,pulseIn,millis,micros,delay,delayMicroseconds,min,max,abs,constrain,map,pow,sqrt,sin,cos,tan,randomSeed,random,lowByte,highByte,bitRead,bitWrite,bitSet,bitClear,bit,attachInterrupt,detachInterrupt,interrupts,noInterrupts'
 );
 
 /**
@@ -212,7 +212,7 @@ Blockly.Arduino.init = function(workspace) {
   // Create a dictionary of setups to be printed before the code.
   Blockly.Arduino.setups_ = Object.create(null);
   //Blockly.Arduino.variableTypes_ = Object.create(null);//处理变量类型
-
+  
 	if (!Blockly.Arduino.variableDB_) {
 		Blockly.Arduino.variableDB_ =
 				new Blockly.Names(Blockly.Arduino.RESERVED_WORDS_);
@@ -249,14 +249,6 @@ Blockly.Arduino.finish = function(code) {
     if (def.match(/^#include/)) {
       imports.push(def);
     } else {
-		//if (name === 'variables') {
-        // Replace real types of variables if given, other than the default 'long'.
-        //def = def.replace(/long (\w+);/g, function (s, v) {
-          //var type = Blockly.Arduino.variableTypes_[v];
-          //if (type && type != 'long') return type + ' ' + v + ';';
-          //else return s;
-        //});
-      //}
       definitions.push(def);
     }
   }
@@ -267,8 +259,8 @@ Blockly.Arduino.finish = function(code) {
     setups.push(Blockly.Arduino.setups_[name]);
   }
 
-  var allDefs = imports.join('\n') + '\n\n' + definitions.join('\n') + '\nvoid setup() \n{\n  '+setups.join('\n  ') + '\n}'+ '\n\n';
-  return allDefs.replace(/\n\n+/g, '\n\n').replace(/\n*$/, '\n\n\n') + code;
+  var allDefs = imports.join('\n') + '\n\n' + definitions.join('\n') + '\n\nvoid setup() \n{\n  '+setups.join('\n  ') + '\n}'+ '\n\n';
+  return allDefs.replace(/\n\n+/g, '\n\n').replace(/\n*$/, '\n\n') + code;
 };
 
 /**

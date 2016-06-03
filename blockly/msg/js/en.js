@@ -317,6 +317,8 @@ Blockly.Msg.TEXT_CHANGECASE_TOOLTIP = "Return a copy of the text in a different 
 Blockly.Msg.TEXT_CHARAT_FIRST = "get first letter";
 Blockly.Msg.TEXT_CHARAT_FROM_END = "get letter # from end";
 Blockly.Msg.TEXT_CHARAT_FROM_START = "get letter #";
+Blockly.Msg.TEXT_CHARAT = "char at";
+Blockly.Msg.TEXT_CHARAT2 = "";
 Blockly.Msg.TEXT_CHARAT_HELPURL = "https://github.com/google/blockly/wiki/Text#extracting-text";
 Blockly.Msg.TEXT_CHARAT_INPUT_INTEXT = "in text";
 Blockly.Msg.TEXT_CHARAT_LAST = "get last letter";
@@ -353,6 +355,7 @@ Blockly.Msg.TEXT_LENGTH_TITLE = "length of %1";
 Blockly.Msg.TEXT_LENGTH_TOOLTIP = "Returns the number of letters (including spaces) in the provided text.";
 Blockly.Msg.TEXT_PRINT_HELPURL = "https://github.com/google/blockly/wiki/Text#printing-text";
 Blockly.Msg.TEXT_PRINT_TITLE = "print %1";
+Blockly.Msg.TEXT_WRITE_TOOLTIP = "Write the specified text, number or other value.";
 Blockly.Msg.TEXT_PRINT_TOOLTIP = "Print the specified text, number or other value.";
 Blockly.Msg.TEXT_PRINT_HEX_TOOLTIP = "Print the specified number in hexadecimal format.";
 Blockly.Msg.TEXT_PROMPT_HELPURL = "https://github.com/google/blockly/wiki/Text#getting-input-from-the-user";
@@ -422,7 +425,8 @@ Blockly.MIXLY_DIGITALWRITE_PIN='DigitalWrite PIN#';
 Blockly.MIXLY_DIGITALREAD_PIN='DigitalRead PIN#';
 Blockly.MIXLY_ANALOGWRITE_PIN='AnalogWrite PIN#';
 Blockly.MIXLY_ANALOGREAD_PIN='AnalogRead PIN#';
-Blockly.MIXLY_SERIAL_PRINT='print';
+Blockly.MIXLY_SERIAL_WRITE = 'write';
+Blockly.MIXLY_SERIAL_PRINT = 'print';
 Blockly.MIXLY_SERIAL_PRINTLN='println';
 Blockly.MIXLY_SERIAL_PRINT_HEX='println(hex)';
 Blockly.MIXLY_SERIAL_FLUSH='flush';
@@ -476,6 +480,7 @@ Blockly.LANG_MATH_INT = 'int';
 Blockly.LANG_MATH_LONG = 'long';
 Blockly.LANG_MATH_FLOAT = 'float';
 Blockly.LANG_MATH_BOOLEAN = 'boolean';
+Blockly.LANG_MATH_BYTE = 'byte';
 Blockly.LANG_MATH_CHAR = 'char';
 Blockly.LANG_MATH_STRING = 'string';
 Blockly.LANG_LISTS_GET_INDEX_INPUT_AT = 'get item at';
@@ -895,6 +900,14 @@ Blockly.MIXLY_PARAMS = 'parameters';
 
 //others
 Blockly.MIXLY_WARNING_NOT_DECLARE='This variable is not declared!';
+Blockly.MIXLY_LENGTH = "length of";
+Blockly.MIXLY_EQUALS="equals";
+Blockly.MIXLY_STARTSWITH="startsWith";
+Blockly.MIXLY_ENDSWITH="endsWith";
+Blockly.MIXLY_COMPARETO="compareTo";
+Blockly.Msg.UNDO = "Undo";
+Blockly.Msg.REDO = "Redo";
+
 
 /****
 add by Microduino for english

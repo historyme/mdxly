@@ -316,6 +316,8 @@ Blockly.Msg.TEXT_CHANGECASE_TOOLTIP = "使用不同的大小写复制这段文�
 Blockly.Msg.TEXT_CHARAT_FIRST = "获得第一个字符";
 Blockly.Msg.TEXT_CHARAT_FROM_END = "获得倒数第#个字符";
 Blockly.Msg.TEXT_CHARAT_FROM_START = "获得字符#";
+Blockly.Msg.TEXT_CHARAT = "获得第";
+Blockly.Msg.TEXT_CHARAT2 = "个字符";
 Blockly.Msg.TEXT_CHARAT_HELPURL = "https://github.com/google/blockly/wiki/Text#extracting-text";  // untranslated
 Blockly.Msg.TEXT_CHARAT_INPUT_INTEXT = "于文本中";
 Blockly.Msg.TEXT_CHARAT_LAST = "获得最后一个字符";
@@ -354,6 +356,7 @@ Blockly.Msg.TEXT_PRINT_HELPURL = "https://github.com/google/blockly/wiki/Text#pr
 Blockly.Msg.TEXT_PRINT_TITLE = "打印%1";
 Blockly.Msg.TEXT_PRINT_TOOLTIP = "打印指定的文字、数字或其他值。";
 Blockly.Msg.TEXT_PRINT_HEX_TOOLTIP = "以十六进制的格式打印指定的数字。";
+Blockly.Msg.TEXT_WRITE_TOOLTIP = "以原始方式输出，可以输出16进制。";
 Blockly.Msg.TEXT_PROMPT_HELPURL = "https://github.com/google/blockly/wiki/Text#getting-input-from-the-user";  // untranslated
 Blockly.Msg.TEXT_PROMPT_TOOLTIP_NUMBER = "提示用户输入数字。";
 Blockly.Msg.TEXT_PROMPT_TOOLTIP_TEXT = "提示用户输入一些文本。";
@@ -421,7 +424,8 @@ Blockly.MIXLY_DIGITALWRITE_PIN='数字输出 管脚#';
 Blockly.MIXLY_DIGITALREAD_PIN='数字输入 管脚#';
 Blockly.MIXLY_ANALOGWRITE_PIN='模拟输出 管脚#';
 Blockly.MIXLY_ANALOGREAD_PIN='模拟输入 管脚#';
-Blockly.MIXLY_SERIAL_PRINT='打印';
+Blockly.MIXLY_SERIAL_WRITE = '原始输出';
+Blockly.MIXLY_SERIAL_PRINT = '打印';
 Blockly.MIXLY_SERIAL_PRINTLN='打印（自动换行）';
 Blockly.MIXLY_SERIAL_PRINT_HEX='打印（16进制/自动换行）';
 Blockly.MIXLY_SERIAL_FLUSH='清空缓存区数据';
@@ -475,6 +479,7 @@ Blockly.LANG_MATH_INT = '整数';
 Blockly.LANG_MATH_LONG = '整数';
 Blockly.LANG_MATH_FLOAT = '小数';
 Blockly.LANG_MATH_BOOLEAN = '布尔';
+Blockly.LANG_MATH_BYTE = '字节';
 Blockly.LANG_MATH_CHAR = '字符';
 Blockly.LANG_MATH_STRING = '字符串';
 Blockly.LANG_LISTS_GET_INDEX_INPUT_AT = '获取第';
@@ -894,6 +899,15 @@ Blockly.MIXLY_PARAMS = '参数';
 
 //others
 Blockly.MIXLY_WARNING_NOT_DECLARE='该变量未声明';
+Blockly.MIXLY_LENGTH = "获取长度";
+Blockly.MIXLY_EQUALS="等于";
+Blockly.MIXLY_STARTSWITH="开始于";
+Blockly.MIXLY_ENDSWITH="结尾于";
+Blockly.MIXLY_COMPARETO="比较";
+Blockly.MIXLY_COMPARETO_HELP="按字典顺序比较，相等则返回0，大于则返回大于0的值，小于则返回小于0的值";
+Blockly.Msg.UNDO = "撤销";
+Blockly.Msg.REDO = "重做";
+
 
 /****
 add by Microduino for chinese

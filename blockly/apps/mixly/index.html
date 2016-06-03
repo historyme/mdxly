@@ -1,21 +1,22 @@
-<html manifest=node.manifest>
+﻿<html manifest=node.manifest>
 <head>
   <meta charset="utf-8">
   <title>Mixly</title>
   <script type="text/javascript" src="../../blockly_compressed.js"></script>
   <script type="text/javascript" src="../../core/variables.js"></script>
   <script type="text/javascript" src="../../core/blockly.js"></script>
-  <script type="text/javascript" src="../../core/zoom_controls.js"></script>
-  <script type="text/javascript" src="../../core/mycore.js"></script>
+  <script type="text/javascript" src="../../core/events.js"></script>
   <script type="text/javascript" src="../../arduino.js"></script>
   <script type="text/javascript" src="company_pin.js"></script>
-  <script type="text/javascript" src="digitalPinToInterrupt.js"></script>
   <script type="text/javascript" src="drag.js"></script>
-  <script type="text/javascript" src="code.js"></script>
+  <script type="text/javascript" src="code.js"></script> 
+  <script type="text/javascript" src="digitalPinToInterrupt.js"></script>
+
   <script type="text/javascript" src="Blob.js"></script>
   <script type="text/javascript" src="spin.js"></script>
   <script type="text/javascript" src="FileSaver.min.js"></script>
   <script type="text/javascript" src="blockly_helper.js"></script>
+
   <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
   <script type="text/javascript" src="myblock.js"></script>
   <script type="text/javascript" src="../../generators/arduino/pins.js"></script>
@@ -96,7 +97,7 @@ function tabClick(clickedName) {
     }
     if (xmlDom) {
       Blockly.mainWorkspace.clear();
-      Blockly.Xml.domToWorkspace(Blockly.mainWorkspace, xmlDom);
+      Blockly.Xml.domToWorkspace(xmlDom,Blockly.mainWorkspace);
     }
   }
   if (document.getElementById('tab_blocks').className == 'tabon') {
@@ -152,23 +153,17 @@ function renderContent() {
     // an incomplete rendering due to Blockly being invisible.  Rerender.
     Blockly.mainWorkspace.render();
 	var arduinoTextarea = document.getElementById('side_code');
-    arduinoTextarea.value = Blockly.Arduino.workspaceToCode();
+    arduinoTextarea.value = Blockly.Arduino.workspaceToCode(Blockly.mainWorkspace);
   } else if (content.id == 'content_xml') {
     var xmlTextarea = document.getElementById('content_xml');
     var xmlDom = Blockly.Xml.workspaceToDom(Blockly.mainWorkspace);
     var xmlText = Blockly.Xml.domToPrettyText(xmlDom);
     xmlTextarea.value = xmlText;
     xmlTextarea.focus();
-  /*} else if (content.id == 'content_javascript') {
-    content.innerHTML = Blockly.JavaScript.workspaceToCode();
-  } else if (content.id == 'content_dart') {
-    content.innerHTML = Blockly.Dart.workspaceToCode();
-  } else if (content.id == 'content_python') {
-    content.innerHTML = Blockly.Python.workspaceToCode();*/
   } else if (content.id == 'content_arduino') {
-    //content.innerHTML = Blockly.Arduino.workspaceToCode();
+    //content.innerHTML = Blockly.Arduino.workspaceToCode(Blockly.mainWorkspace);
     var arduinoTextarea = document.getElementById('content_arduino');
-    arduinoTextarea.value = Blockly.Arduino.workspaceToCode();
+    arduinoTextarea.value = Blockly.Arduino.workspaceToCode(Blockly.mainWorkspace);
     arduinoTextarea.focus();
   }
 }
@@ -229,7 +224,7 @@ function init() {
   window.addEventListener('resize', onresize, false);
 
   var toolbox = document.getElementById('toolbox');
-  Blockly.inject(document.getElementById('content_blocks'),
+  var masterWorkspace = Blockly.inject(document.getElementById('content_blocks'),
       {//grid:
           //{spacing: 25,
            //length: 3,
@@ -242,6 +237,17 @@ function init() {
             wheel: true}
 	   });
 
+	//实时更新右侧对比代码
+    masterWorkspace.addChangeListener(rightCodeEvent);
+	function rightCodeEvent(masterEvent) {
+	  if (masterEvent.type == Blockly.Events.UI) {
+		return;  // Don't update UI events.
+	  }
+	  //更新
+	  var arduinoTextarea = document.getElementById('side_code');
+      arduinoTextarea.value = Blockly.Arduino.workspaceToCode(Blockly.mainWorkspace);
+	}
+	
   auto_save_and_restore_blocks();
 
   //load from url parameter (single param)
@@ -251,19 +257,8 @@ function init() {
     load_by_url(dest);
   }
 }
-//模块改变时实时更新右侧代码框
-Blockly.Realtime.blockChanged=function() {
-	var arduinoTextarea = document.getElementById('side_code');
-    arduinoTextarea.value = Blockly.Arduino.workspaceToCode();
-}
-Blockly.Realtime.doCommand=function(cmdThunk) {
-	cmdThunk();
-	//模块改变时实时更新右侧代码框
-	var arduinoTextarea = document.getElementById('side_code');
-    arduinoTextarea.value = Blockly.Arduino.workspaceToCode();
-}
 
-  </script>
+</script>
 
 </head>
 <body onload="init()">
@@ -274,12 +269,6 @@ Blockly.Realtime.doCommand=function(cmdThunk) {
           <tr id="tabRow" height="1em">
             <td style="vertical-align: center;" id="tab_blocks" class="tabon" onclick="tabClick('blocks')"><img style="vertical-align:middle" width="25" src="media/blocks.png"/><span id="span_blocks">Blocks</span></td>
             <td class="tabmin">&nbsp;</td>
-            <!--td id="tab_javascript" class="taboff" onclick="tabClick(this.id)">JavaScript</td>
-            <td class="tabmin">&nbsp;</td-->
-            <!--td id="tab_dart" class="taboff" onclick="tabClick(this.id)">Dart</td>
-            <td class="tabmin">&nbsp;</td>
-            <td id="tab_python" class="taboff" onclick="tabClick(this.id)">Python</td>
-            <td class="tabmin">&nbsp;</td-->
             <td style="vertical-align: center;text-align:center;" id="tab_arduino" class="taboff" onclick="tabClick('arduino')"><img style="vertical-align:middle" width="25" src="media/code.png"/><span id="span_arduino">Code</span></td>
 			<td class="tabmin">&nbsp;</td>
             <td style="vertical-align: center;text-align:center;display:none;" id="tab_xml" class="taboff" onclick="tabClick('xml')">XML</td>
@@ -287,10 +276,10 @@ Blockly.Realtime.doCommand=function(cmdThunk) {
 			  <span style="font-family:arial;font-size:12px;color:#999;">Copyright &copy; 北师大教育学部创客教育实验室 maker.bnu.edu.cn</span>
             </td>
 			<td class="tabmin">
-			  <input onclick="undo();" name="undo" type="image" title="undo(ctrl+z)"  src="media/undo.png" style="padding:5px;" onmouseover="this.src='media/undo1.png'" onmousedown="this.src='media/undo2.png'" onmouseup="this.src='media/undo1.png'" onmouseout="this.src='media/undo.png'" width="20" height="20" border="0">
+			  <input onclick="Blockly.mainWorkspace.undo(0);" name="undo" type="image" title="undo(ctrl+z)"  src="media/undo.png" style="padding:5px;" onmouseover="this.src='media/undo1.png'" onmousedown="this.src='media/undo2.png'" onmouseup="this.src='media/undo1.png'" onmouseout="this.src='media/undo.png'" width="20" height="20" border="0">
             </td>
 			<td class="tabmin" style="padding-right:20px">
-			  <input onclick="redo();" name="redo" type="image" title="redo(ctrl+y)"  src="media/redo.png" style="padding:5px" onmouseover="this.src='media/redo1.png'" onmousedown="this.src='media/redo2.png'" onmouseup="this.src='media/redo1.png'" onmouseout="this.src='media/redo.png'" width="20" height="20" border="0">
+			  <input onclick="Blockly.mainWorkspace.undo(1);" name="redo" type="image" title="redo(ctrl+y)"  src="media/redo.png" style="padding:5px" onmouseover="this.src='media/redo1.png'" onmousedown="this.src='media/redo2.png'" onmouseup="this.src='media/redo1.png'" onmouseout="this.src='media/redo.png'" width="20" height="20" border="0">
             </td>
 			<td class="tabmin" style="padding-right:20px;display:none;">
               <button id="fakeload">LoadXML</button>
@@ -318,7 +307,7 @@ Blockly.Realtime.doCommand=function(cmdThunk) {
   <textarea id="content_arduino" class="content" wrap="off" ></textarea>
   <textarea id="content_xml" class="content" wrap="off" readonly></textarea>
   <xml id="toolbox" style="display: none">
-    <category name="" id="catInOut" colour="20">
+    <category name="" id="catInOut" colour="#d2c078">
       <block type="inout_highlow"></block>
 	  <block type="inout_digital_write2">
 	    <value name="PIN">
@@ -388,7 +377,7 @@ Blockly.Realtime.doCommand=function(cmdThunk) {
         </value>
 	  </block>
     </category>
-    <category id="catControl"  colour="120">
+    <category id="catControl"  colour="#5d8f81">
 	  <block type="base_setup"></block>
       <block type="base_delay">
 	    <value name="DELAY_TIME">
@@ -415,7 +404,7 @@ Blockly.Realtime.doCommand=function(cmdThunk) {
 	  <block type="controls_flow_statements"></block>
 	  <block type="controls_millis"></block>
     </category>
-    <category id="catMath"  colour="230">
+    <category id="catMath"  colour="#92a4c7">
 	  <block type="math_number"></block>
 	  <block type="math_arithmetic">
 		<value name="A">
@@ -490,7 +479,7 @@ Blockly.Realtime.doCommand=function(cmdThunk) {
         </value>
 	  </block>
     </category>
-    <category id="catText"  colour="160">
+    <category id="catText"  colour="#4a7d9b">
       <block type="text">
 		<field name="TEXT">hello</field>
 	  </block>
@@ -523,8 +512,51 @@ Blockly.Realtime.doCommand=function(cmdThunk) {
           </shadow>
         </value>
 	  </block>
+	  <block type="text_length">
+	    <value name="VAR">
+          <shadow type="text">
+            <field name="TEXT">hello</field>
+          </shadow>
+        </value>
+	  </block>
+	  <block type="text_char_at">
+		<value name="VAR">
+          <shadow type="text">
+            <field name="TEXT">hello</field>
+          </shadow>
+        </value>
+		<value name="AT">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+	  </block>
+	  <block type="text_equals_starts_ends">
+		<value name="STR1">
+          <shadow type="text">
+            <field name="TEXT"></field>
+          </shadow>
+        </value>
+		<value name="STR2">
+          <shadow type="text">
+            <field name="TEXT"></field>
+          </shadow>
+        </value>
+	  </block>
+	  <block type="text_compareTo">
+		<value name="STR1">
+          <shadow type="text">
+            <field name="TEXT"></field>
+          </shadow>
+        </value>
+		<value name="STR2">
+          <shadow type="text">
+            <field name="TEXT"></field>
+          </shadow>
+        </value>
+	  </block>
     </category>
-	<category id="catLists"  colour="260">
+	<category id="catLists" colour="#75657a">
 	  <block type="lists_create_with2"></block>
 	  <block type="lists_create_with_text2"></block>
 	  <block type="lists_length"></block>
@@ -543,7 +575,7 @@ Blockly.Realtime.doCommand=function(cmdThunk) {
         </value>
 	  </block>
 	</category>
-	<category id="catLogic"  colour="210">
+	<category id="catLogic" colour="#51606b">
       <block type="logic_compare"></block>
       <block type="logic_operation"></block>
       <block type="logic_negate"></block>
@@ -551,7 +583,7 @@ Blockly.Realtime.doCommand=function(cmdThunk) {
 	  <block type="logic_null"></block>
 	  <block type="logic_true_or_false"></block>
     </category>
-	<category id="catSerialPort"  colour="65">
+	<category id="catSerialPort"  colour="#b1bd65">
 	  <block type="serial_begin">
 		<value name="CONTENT">
           <shadow type="math_number">
@@ -559,7 +591,8 @@ Blockly.Realtime.doCommand=function(cmdThunk) {
           </shadow>
         </value>
 	  </block>
-	  <block type="serial_print"></block>
+      <block type="serial_write"></block>
+      <block type="serial_print"></block>
 	  <block type="serial_println"></block>
 	  <block type="serial_print_hex"></block>
 	  <block type="serial_available"></block>
@@ -575,7 +608,7 @@ Blockly.Realtime.doCommand=function(cmdThunk) {
         </value>
 	  </block>
 	</category>
-	<category id="catGroup"  colour="140">
+	<category id="catGroup"  colour="#6c91ac">
 	  <block type="ir_recv">
 		<value name="PIN">
           <shadow type="pins_digital"></shadow>
@@ -639,7 +672,7 @@ Blockly.Realtime.doCommand=function(cmdThunk) {
         </value>
 	  </block>
 	</category>
-	<category id="catStorage" colour="0">
+	<category id="catStorage" colour="#ba8aa2">
 	  <block type="store_sd_write">
 		<field name="FILE">file.txt</field>
 		<value name="DATA">
@@ -673,7 +706,7 @@ Blockly.Realtime.doCommand=function(cmdThunk) {
         </value>
 	  </block>
 	</category>
-	<category id="catSensor" colour="40">
+	<category id="catSensor" colour="#efa752">
 	  <block type="chaoshengbo2">
 		<value name="PIN1">
 			<shadow type="pins_digital">
@@ -752,7 +785,7 @@ Blockly.Realtime.doCommand=function(cmdThunk) {
 		</statement>
 	  </block>
 	</category>
-	<category id="catActuator" colour="100">
+	<category id="catActuator" colour="#70bd94">
 	   <block type="servo_move">
 		<value name="PIN">
 			<shadow type="pins_digital"></shadow>
@@ -862,7 +895,9 @@ Blockly.Realtime.doCommand=function(cmdThunk) {
 			</block>
 		</value>
 	  </block>
-	  <block type="group_lcd_power"></block>
+	  <block type="group_lcd_power">
+		<field name="STAT">clear</field>
+	  </block>
 	  <block type="group_stepper_setup">
 		<value name="PIN1">
 			<shadow type="pins_digital"><field name="PIN">1</field></shadow>
@@ -913,7 +948,7 @@ Blockly.Realtime.doCommand=function(cmdThunk) {
         </value>
 	  </block>
 	</category>
-	<category id="catEthernet" colour="0">
+	<category id="catEthernet" colour="#f28173">
 		<block type="ethernet_init_begin">
 			<value name="MAC">
 				<block type="ethernet_mac_address"></block>
@@ -948,9 +983,9 @@ Blockly.Realtime.doCommand=function(cmdThunk) {
 		<block type="ethernet_client_get_request"></block>	
 	</category>
 	<sep></sep>
-	<category id="catVar" colour="330" custom="VARIABLE"></category>
-    <category id="catFun" custom="PROCEDURE" colour="290"></category>
-	<category id="catFactory" name="Factory" colour="65">
+	<category id="catVar" colour="#e386a1" custom="VARIABLE"></category>
+    <category id="catFun" custom="PROCEDURE" colour="#4a685c"></category>
+	<category id="catFactory" name="Factory" colour="#b1bd65">
 		<block type="factory_include"></block>
 		<block type="factory_function_noreturn"></block>
 		<block type="factory_function_return"></block>

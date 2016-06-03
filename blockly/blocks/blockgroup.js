@@ -4,10 +4,10 @@ goog.provide('Blockly.Blocks.blockgroup');
 
 goog.require('Blockly.Blocks');
 
-Blockly.Blocks.blockgroup.HUE = 65;
-Blockly.Blocks.blockgroup.HUE1 = 40;
-Blockly.Blocks.blockgroup.HUE2 = 100;
-Blockly.Blocks.blockgroup.HUE3 = 140;
+Blockly.Blocks.blockgroup.HUE = '#b1bd65';
+Blockly.Blocks.blockgroup.HUE1 = '#efa752';
+Blockly.Blocks.blockgroup.HUE2 = '#70bd94';
+Blockly.Blocks.blockgroup.HUE3 = '#6c91ac';
 
 Blockly.Blocks['serial_begin'] = {
   init: function() {
@@ -19,6 +19,18 @@ Blockly.Blocks['serial_begin'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
   }
+};
+
+Blockly.Blocks['serial_write'] = {
+    init: function () {
+        this.setColour(Blockly.Blocks.blockgroup.HUE);
+        this.appendValueInput("CONTENT", String)
+            .appendField(new Blockly.FieldDropdown(profile.default.serial_select), "serial_select")
+            .appendField(Blockly.MIXLY_SERIAL_WRITE);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setTooltip(Blockly.Msg.TEXT_WRITE_TOOLTIP);
+    }
 };
 
 Blockly.Blocks['serial_print'] = {

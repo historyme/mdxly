@@ -39,6 +39,8 @@ Blockly.Blocks.GPSShows = {
     this.appendDummyInput()
     .appendField(Blockly.GPSShow);
 
+
+
     this.appendValueInput("GPSHour", String)
         .setCheck([String,Number])
         .setAlign(Blockly.ALIGN_RIGHT)
@@ -63,10 +65,17 @@ Blockly.Blocks.GPSShows = {
         .setCheck([String,Number])
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField(Blockly.GPSYear);
+
+    // this.appendValueInput("GPSFix", String)
+    //     .setCheck([String,Number])
+    //     .setAlign(Blockly.ALIGN_RIGHT)
+    //     .appendField(Blockly.GPSFix);
+
     this.appendValueInput("GPSFix", String)
-        .setCheck([String,Number])
+        .setCheck([Boolean])
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField(Blockly.GPSFix);
+
     this.appendValueInput("GPSQuality", String)
         .setCheck([String,Number])
         .setAlign(Blockly.ALIGN_RIGHT)
@@ -103,6 +112,9 @@ Blockly.Blocks.GPSShows = {
         .setCheck([String,Number])
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField(Blockly.GPSSatellites);
+
+
+
 
     this.setPreviousStatement(true, null);
     //this.setNextStatement(true, null);
