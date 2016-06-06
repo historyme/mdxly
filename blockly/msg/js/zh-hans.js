@@ -1135,7 +1135,7 @@ Blockly.HOST_NAME='主页:';
 Blockly.HOST_PORT='端口:';
 Blockly.WEBPAGE='子页:';
 
-Blockly.carSpeed='小车速度(-255~255):';
+Blockly.carSpeed='电机速度(-255~255):';
 Blockly.carAngle='小车方向(-255~255):';
 Blockly.motor_ctrl='电机控制(-255~255):';
 Blockly.mtankDIR1='方向1(1000~2000):';
