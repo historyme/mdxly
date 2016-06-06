@@ -16,7 +16,7 @@ Blockly.Blocks.Zigbee_AT = {
     this.setColour(colorSet);
     this.appendDummyInput("")
       .appendTitle(Blockly.Zigbee)
-    .appendField(new Blockly.FieldImage("../../media/Microduino/Zigbee.jpg", 45, 32))
+    .appendField(new Blockly.FieldImage("../../media/Microduino/mCookie_Zigbee.png", 45, 32))
     .appendTitle("#")
       .appendTitle(new Blockly.FieldDropdown(mCookie_PORTS), "PIN")
     .appendTitle(Blockly.Zigbee_SetAT);
@@ -29,7 +29,7 @@ Blockly.Blocks.Zigbee_Init = {
     this.setColour(colorSet);
     this.appendDummyInput("")
          .appendTitle(Blockly.Zigbee_Init)
-         .appendField(new Blockly.FieldImage("../../media/Microduino/Zigbee.jpg", 45, 32))
+         .appendField(new Blockly.FieldImage("../../media/Microduino/mCookie_Zigbee.png", 45, 32))
          .appendTitle("#")
           .appendTitle(new Blockly.FieldDropdown(mCookie_PORTS), "PIN")
     this.appendValueInput("BRate", Number)
@@ -48,7 +48,7 @@ Blockly.Blocks.Zigbee_Available = {
     this.setColour(colorSet);
     this.appendDummyInput("")
       .appendTitle(Blockly.Zigbee)
-    .appendField(new Blockly.FieldImage("../../media/Microduino/Zigbee.jpg", 45, 32))
+    .appendField(new Blockly.FieldImage("../../media/Microduino/mCookie_Zigbee.png", 45, 32))
     .appendTitle("#")
     .appendTitle(Blockly.Zigbee_Available);
     this.setOutput(true, Boolean);
@@ -61,7 +61,7 @@ Blockly.Blocks.Zigbee_Send = {
     this.setColour(colorSet);
     this.appendDummyInput("")
       .appendTitle(Blockly.Zigbee)
-    .appendField(new Blockly.FieldImage("../../media/Microduino/Zigbee.jpg", 45, 32))
+    .appendField(new Blockly.FieldImage("../../media/Microduino/mCookie_Zigbee.png", 45, 32))
     .appendTitle("#")
     .appendTitle(Blockly.Zigbee_Send);
   this.appendValueInput('text')
@@ -80,7 +80,7 @@ Blockly.Blocks.Zigbee_Read = {
     this.setColour(colorSet);
     this.appendDummyInput("")
       .appendTitle(Blockly.Zigbee)
-      .appendField(new Blockly.FieldImage("../../media/Microduino/Zigbee.jpg", 45, 32))
+      .appendField(new Blockly.FieldImage("../../media/Microduino/mCookie_Zigbee.png", 45, 32))
       .appendTitle("#")
       .appendTitle(Blockly.Zigbee_Read);
   this.setOutput(true,String);

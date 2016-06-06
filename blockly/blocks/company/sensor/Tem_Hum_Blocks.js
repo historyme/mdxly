@@ -12,7 +12,7 @@ Blockly.Blocks.mCookie_AM2321 = {
   init: function() {
     this.setColour(colorSet);
     this.appendDummyInput("")
-    .appendField(new Blockly.FieldImage("../../media/Microduino/AM2321.jpg", 40, 30))
+    .appendField(new Blockly.FieldImage("../../media/Microduino/AM2321.png", 40, 30))
 	    .appendTitle(Blockly.BLE_AM2321)
 	    .appendTitle("#")
 	    .appendTitle(new Blockly.FieldDropdown([[Blockly.BLE_Tem, "1"], [Blockly.BLE_Hum, "2"]]),'direction')

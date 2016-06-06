@@ -12,8 +12,8 @@ Blockly.Blocks.mCookie_RTC_set = {
     this.setColour(colorSet);
 	this.appendValueInput('Year')
 		.setCheck(Number)
+    .appendField(new Blockly.FieldImage("../../media/Microduino/mCookie_RTC.png", 45, 32))
 		.appendTitle(Blockly.SetRTCTime)
-		.appendField(new Blockly.FieldImage("../../media/Microduino/mCookie_RTC.jpg", 45, 32))
 		.appendTitle(Blockly.RTCYear);
 	this.appendValueInput('Mouth')
 		.setCheck(Number)

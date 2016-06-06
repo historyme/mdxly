@@ -12,7 +12,7 @@ init:function(){
     this.setColour(colorSet);
     this.appendDummyInput("")
         .appendTitle(Blockly.SD_Write)
-        .appendField(new Blockly.FieldImage("../../media/Microduino/SD.jpg", 60, 32))
+        .appendField(new Blockly.FieldImage("../../media/Microduino/mCookie_SD.png", 60, 32))
     this.appendValueInput('File_Name')
 		.setCheck(String)
 		.setAlign(Blockly.ALIGN_RIGHT)
@@ -34,7 +34,7 @@ init:function(){
     this.setColour(colorSet);
     this.appendDummyInput("")
         .appendTitle(Blockly.SD_Read)
-        .appendField(new Blockly.FieldImage("../../media/Microduino/SD.jpg", 60, 32))
+        .appendField(new Blockly.FieldImage("../../media/Microduino/mCookie_SD.png", 60, 32))
     this.appendValueInput('File_Name')
         .setCheck(String)
         .setAlign(Blockly.ALIGN_RIGHT)

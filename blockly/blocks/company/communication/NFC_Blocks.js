@@ -12,7 +12,7 @@ Blockly.Blocks.NFC_Format = {
     this.setColour(colorSet);
     this.appendDummyInput("")
          .appendTitle(Blockly.NFC)
-         .appendField(new Blockly.FieldImage("../../media/Microduino/NFC.jpg", 45, 32))
+         .appendField(new Blockly.FieldImage("../../media/Microduino/mCookie_NFC.png", 45, 32))
          .appendTitle(Blockly.NFC_Format_Classic);
     this.setInputsInline(true);
     this.setPreviousStatement(true);
@@ -25,7 +25,7 @@ Blockly.Blocks.NFC_Read = {
     this.setColour(colorSet);
     this.appendDummyInput("")
          .appendTitle(Blockly.NFC)
-         .appendField(new Blockly.FieldImage("../../media/Microduino/NFC.jpg", 45, 32))
+         .appendField(new Blockly.FieldImage("../../media/Microduino/mCookie_NFC.png", 45, 32))
          .appendTitle(Blockly.NFC_Read);
     this.setInputsInline(true);
     this.setPreviousStatement(true);

@@ -13,8 +13,8 @@ Blockly.Blocks.MotorBegin = {
    init: function() {
     this.setColour(colorSet);
     this.appendDummyInput("")
+        .appendField(new Blockly.FieldImage("../../media/Microduino/mCookie_Motor.png", 45, 32))
         .appendTitle(Blockly.CubeCar)
-        .appendField(new Blockly.FieldImage("../../media/Microduino/mCookie_Motor.jpg", 45, 32))
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setInputsInline(true);
@@ -25,8 +25,8 @@ Blockly.Blocks.MotorBeginchange = {
    init: function() {
     this.setColour(colorSet);
     this.appendDummyInput("")
+        .appendField(new Blockly.FieldImage("../../media/Microduino/mCookie_Motor.png", 45, 32))
         .appendTitle(Blockly.N20begin)
-        .appendField(new Blockly.FieldImage("../../media/Microduino/mCookie_Motor.jpg", 45, 32))
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setInputsInline(true);

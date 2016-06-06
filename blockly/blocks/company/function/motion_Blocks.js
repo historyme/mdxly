@@ -14,8 +14,9 @@ Blockly.Blocks.motionAccGyro = {
     this.setColour(colorSet);
 
     this.appendDummyInput("")
-        .appendTitle(Blockly.motionInit)
-        .appendField(new Blockly.FieldImage("../../media/Microduino/motion.png", 63, 70))
+        .appendField(new Blockly.FieldImage("../../media/Microduino/motion.png", 45, 32))
+        .appendTitle(Blockly.motionInit);
+        
 
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -54,8 +55,9 @@ Blockly.Blocks.motionDMP = {
     this.setColour(colorSet);
 
     this.appendDummyInput("")
-        .appendTitle(Blockly.motionDMP)
-        .appendField(new Blockly.FieldImage("../../media/Microduino/motion.png", 63, 70))
+        .appendField(new Blockly.FieldImage("../../media/Microduino/motion.png", 45, 32))
+        .appendTitle(Blockly.motionDMP);
+        
 
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -76,9 +78,9 @@ Blockly.Blocks.motionSoft = {
     this.setColour(colorSet);
 
     this.appendDummyInput("")
-        .appendTitle(Blockly.motionSoft)
-        .appendField(new Blockly.FieldImage("../../media/Microduino/motion.png", 63, 70))
-
+        .appendField(new Blockly.FieldImage("../../media/Microduino/motion.png", 45, 32))
+        .appendTitle(Blockly.motionSoft);
+        
 
     this.appendDummyInput("")
          .appendTitle(Blockly.motionIsMagic)

@@ -14,9 +14,8 @@ Blockly.Blocks.DotMatrix = {
   init: function() {
     this.setColour(colorSet);
     this.appendDummyInput()
-        .appendTitle(Blockly.DotMatrix)
-        //.appendField(new Blockly.FieldImage("../../media/dfrobot/df_lcd.png", 70, 32));
-
+        .appendField(new Blockly.FieldImage("../../media/Microduino/DotMatrix.png", 50, 38))
+        .appendTitle(Blockly.DotMatrix);
 
     this.appendDummyInput()
     .appendTitle(Blockly.DotMatrixName)
