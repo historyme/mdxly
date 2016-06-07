@@ -89,6 +89,9 @@
 <script type="text/javascript" src="../../blocks/company/sensor/TSL2561_Blocks.js"></script>
 <script type="text/javascript" src="../../generators/arduino/company/sensor/TSL2561_Arduino.js"></script>
 
+<script type="text/javascript" src="../../blocks/company/sensor/TCS3414_Blocks.js"></script>
+<script type="text/javascript" src="../../generators/arduino/company/sensor/TCS3414_Arduino.js"></script>
+
 <script type="text/javascript" src="../../blocks/company/sensor/digitalRead_Blocks.js"></script>
 <script type="text/javascript" src="../../generators/arduino/company/sensor/digitalRead_Arduino.js"></script>
 
@@ -102,7 +105,7 @@
 <script type="text/javascript" src="../../generators/arduino/company/VariableExpansion/NewVariable_Arduino.js"></script>
 
 
-<category id="microduino" colour="0">
+<category id="microduino" colour="#000000">
 	<!--核心-->
 	<category id="catMicroduinoCore" colour="#e36a69">
 		
@@ -870,6 +873,8 @@
 		<!--TEMP HUM-->
 		<block type="mCookie_AM2321"></block>
 		<block type="mCookie_SHT2"></block>
+		<block type="ColorDetPrepare_TCS3414"></block>
+		<block type="ColorGet_TCS3414"></block>
 	</category>
 
 	<!--扩展变量-->

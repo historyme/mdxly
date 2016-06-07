@@ -1292,7 +1292,8 @@ Blockly.MicroduinoLM75='Tempture LM75';
 
 Blockly.TSL2561Ready='Digital Light Ready';
 Blockly.TSL2561='Get Digital Light';
-
+Blockly.TCS3414Ready='Color Prepare';
+Blockly.TCS3414Get='Get RGB';
 
 Blockly.microduinoWatting='Watting';
 Blockly.microduinoWhile='While';

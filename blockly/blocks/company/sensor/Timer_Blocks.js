@@ -12,11 +12,11 @@ var colorSet='#70bd94';
 Blockly.Blocks.MicroduinoTimer = {
   init: function() {
 
-    this.setColour(colorSet);
-	this.appendDummyInput("")
-		.appendTitle(Blockly.interalTime)
-		.appendTitle(Blockly.timerName)
-        .appendTitle(new Blockly.FieldTextInput('timer1'),'timerName');
+  this.setColour(colorSet);
+  this.appendDummyInput("")
+    .appendTitle(Blockly.interalTime)
+    .appendTitle(Blockly.timerName)
+    .appendTitle(new Blockly.FieldTextInput('timer1'),'timerName');
 		// .appendTitle("interval")
   //       .appendTitle(new Blockly.FieldTextInput('2000'),'intervalTime');
 
@@ -48,7 +48,7 @@ Blockly.Blocks.MicroduinoTimerBegin = {
   this.appendDummyInput("")
     .appendTitle(Blockly.timeOutBegin)
     .appendTitle(Blockly.timerName)
-    .appendTitle(new Blockly.FieldTextInput('timer2'),'timerName');
+    .appendTitle(new Blockly.FieldTextInput('timer1'),'timerName');
 
     // this.appendValueInput("intervalTime", Number)
     //   .setCheck(Number)
@@ -79,7 +79,7 @@ Blockly.Blocks.MicroduinoTimerOut = {
   this.appendDummyInput("")
     .appendTitle(Blockly.timeOutDoing)
     .appendTitle(Blockly.timerName)
-        .appendTitle(new Blockly.FieldTextInput('timer2'),'timerName');
+        .appendTitle(new Blockly.FieldTextInput('timer1'),'timerName');
     this.appendValueInput("intervalTime", Number)
       .setCheck(Number)
       .setAlign(Blockly.ALIGN_RIGHT)
@@ -109,9 +109,9 @@ Blockly.Blocks.MicroduinoTimerDuration = {
   this.appendDummyInput("")
     .appendTitle(Blockly.MIXLY_DURATION)
     .appendTitle(Blockly.timerName)
-    .appendTitle(new Blockly.FieldTextInput('timer2'),'timerName');
+    .appendTitle(new Blockly.FieldTextInput('timer1'),'timerName');
 
-    this.setOutput(true, Boolean);
+    this.setOutput(true, Number);
 
     var tip="获取持续时间\n";
     tip+="\n";

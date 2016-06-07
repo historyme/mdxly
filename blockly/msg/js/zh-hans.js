@@ -931,9 +931,9 @@ Blockly.BuzzerMelody='旋律';
 
 Blockly.ColorSet='颜色:';
 
-Blockly.ColorLEDRed='红:';
-Blockly.ColorLEDGreen='绿:';
-Blockly.ColorLEDBlue='蓝:';
+Blockly.ColorLEDRed='红';
+Blockly.ColorLEDGreen='绿';
+Blockly.ColorLEDBlue='蓝';
 
 
 Blockly.ir_r_Init='红外接收初始化:';
@@ -1307,6 +1307,8 @@ Blockly.MicroduinoLM75='温度LM75';
 
 Blockly.TSL2561Ready='数字光照准备';
 Blockly.TSL2561='数字光照获取';
+Blockly.TCS3414Ready='颜色检测准备';
+Blockly.TCS3414Get='获取颜色RGB';
 
 Blockly.microduinoWatting='等待';
 Blockly.microduinoWhile='当';

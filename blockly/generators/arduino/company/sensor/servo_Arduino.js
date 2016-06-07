@@ -17,6 +17,10 @@ Blockly.Arduino.microduinoServoMove = function() {
   funForServo+='void servo'+dropdown_pin+'_move(int target_angle,int move_speed){\n';
   funForServo+='  int servo_angle;\n';
   funForServo+='  servo_angle=servo_'+dropdown_pin+'.read();\n';
+  funForServo+='  if (move_speed >= 1000) {\n';
+  funForServo+='      servo_'+dropdown_pin+'.write(target_angle);\n';
+  funForServo+='  }\n';
+  funForServo+='  else {\n';
   funForServo+='  if(target_angle-servo_angle>0){\n';
   funForServo+='    for(int a=0;a<target_angle-servo_angle;a++){\n';
   funForServo+='      servo_'+dropdown_pin+'.write(servo_angle+a);\n';
@@ -28,7 +32,10 @@ Blockly.Arduino.microduinoServoMove = function() {
   funForServo+='      servo_'+dropdown_pin+'.write(servo_angle-a);\n';
   funForServo+='      delay(1000/move_speed);\n';
   funForServo+='    }\n';
-  funForServo+='  } else {servo_'+dropdown_pin+'.write(target_angle);}\n';
+  funForServo+='  } else {\n';
+  funForServo+='      servo_'+dropdown_pin+'.write(target_angle);\n';
+  funForServo+='    }\n';
+  funForServo+='  }\n';
   funForServo+='}\n';
 
   Blockly.Arduino.definitions_['funForServo'+dropdown_pin] = funForServo;
