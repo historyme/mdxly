@@ -875,6 +875,7 @@
 		<block type="mCookie_SHT2"></block>
 		<block type="ColorDetPrepare_TCS3414"></block>
 		<block type="ColorGet_TCS3414"></block>
+		<block type="MD_Potentiometer"></block>
 	</category>
 
 	<!--扩展变量-->

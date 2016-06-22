@@ -135,6 +135,14 @@ Blockly.Arduino.motionSoft = function() {
 
 Blockly.Arduino.getMotionYawPitchRoll = function() {
   var getType = this.getTitleValue('getType');
-  var code=getType;
+
+  var code='';
+  if(getType=='ypr\[2\]') {
+    code='ypr[2]>=0?180-ypr[2]:(ypr[2]*-1)-180';
+  } else {
+    code=getType;
+  }
+
+  //var code=getType;
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };

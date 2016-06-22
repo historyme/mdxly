@@ -73,3 +73,24 @@ Blockly.Blocks.microduinoIRRactAnal = {
 
   }
 };
+
+
+Blockly.Blocks.MD_Potentiometer = {
+  init: function() {
+    this.setColour(colorSet);
+
+    this.appendDummyInput()
+    //.appendField(new Blockly.FieldImage("../../media/Microduino/MIC.png", 40, 30))
+    .appendField(Blockly.Keyget_Pin)
+    .appendField(new Blockly.FieldTextInput("A0"), "analogPin")
+    .appendTitle(Blockly.MicroduinoPotentiometer);
+
+
+    var tip="获取一个模拟值\n";
+    tip+="返回一个模拟值\n";
+    tip+="模拟接口\n";
+    this.setTooltip(tip);
+    this.setOutput(true, Number);
+
+  }
+};
