@@ -961,6 +961,7 @@ Blockly.Frequency='蜂鸣器频率';
 
 Blockly.motionInit='姿态加速度角速度准备';
 Blockly.GetMotion='获取姿态';
+Blockly.GetMotionDegree='获取姿态角';
 Blockly.motionDMP='姿态DMP解算';
 Blockly.motionSoft='姿态算法解算';
 Blockly.motionIsMagic='是否地磁校准';

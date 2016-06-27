@@ -959,7 +959,8 @@ Blockly.Frequency='Frequency:';
 
 
 Blockly.motionInit='Motion Prepare Acc/Gyro:';
-Blockly.GetMotion='Get Motion:';
+Blockly.GetMotion='Get Motion';
+Blockly.GetMotionDegree='Get Motion Degree';
 Blockly.motionDMP='Motion DMP Solution';
 Blockly.motionSoft='Motion Software Solution';
 Blockly.motionIsMagic='Geomagnetic ?';

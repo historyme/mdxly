@@ -104,7 +104,7 @@ init:function(){
 
     this.setColour(colorSet);
     this.appendDummyInput("")
-         .appendTitle(Blockly.GetMotion)
+         .appendTitle(Blockly.GetMotionDegree)
          .appendTitle(new Blockly.FieldDropdown(getType), "getType");
     this.setInputsInline(true);
     // this.setPreviousStatement(true);

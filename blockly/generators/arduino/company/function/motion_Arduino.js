@@ -138,7 +138,7 @@ Blockly.Arduino.getMotionYawPitchRoll = function() {
 
   var code='';
   if(getType=='ypr\[2\]') {
-    code='ypr[2]>=0?180-ypr[2]:(ypr[2]*-1)-180';
+    code='(ypr[2]>=0?180-ypr[2]:(ypr[2]*-1)-180)';
   } else {
     code=getType;
   }
