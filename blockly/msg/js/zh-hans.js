@@ -534,6 +534,7 @@ Blockly.LANG_VARIABLES_SET_TITLE='赋值为';
 Blockly.MIXLY_TEXT_JOIN='连接';
 Blockly.MIXLY_SERIAL_AVAILABLE='有数据可读吗？';
 Blockly.MIXLY_SERIAL_READSTR='读取字符串';
+Blockly.MIXLY_SERIAL_READSTR_UNTIL='读取字符串直到';
 Blockly.MIXLY_SERIAL_READ='读取';
 Blockly.MIXLY_IR_RECIEVE_TOOLTIP='在接收到红外信号时进行用户自定义的处理。';
 Blockly.MIXLY_IR_SEND_NEC_TOOLTIP='发射指定类型的红外数据';
@@ -558,6 +559,8 @@ Blockly.MIXLY_LCD_RGB_BACKLIGHT='液晶RGB背光屏';
 Blockly.MIXLY_DF_LCD='液晶显示屏';
 Blockly.MIXLY_LCD_PRINT1='打印第1行';
 Blockly.MIXLY_LCD_PRINT2='打印第2行';
+Blockly.MIXLY_LCD_PRINT3='打印第3行';
+Blockly.MIXLY_LCD_PRINT4='打印第4行';
 Blockly.MIXLY_LCD_ROW='在第';
 Blockly.MIXLY_LCD_COLUMN='行第';
 Blockly.MIXLY_LCD_PRINT='列打印';
@@ -686,7 +689,7 @@ Blockly.MIXLY_LABPLUS_ROBOT_DISPLAY_ZEBRA='斑马纹';
 Blockly.MIXLY_LABPLUS_ROBOT_DISPLAY_NOTHING='黑屏';
 Blockly.MIXLY_LABPLUS_ROBOT_LED_TOP='设置顶灯为';
 Blockly.MIXLY_LABPLUS_ROBOT_LED_SIDE='设置侧灯颜色为';
-Blockly.MIXLY_LCD_ADDRESS="液晶显示屏 设备地址";
+Blockly.MIXLY_LCD_ADDRESS="设备地址";
 var MSG = {
   catInOut: "输入/输出",
   catControl: "控制",
@@ -721,7 +724,7 @@ var MSG = {
 Blockly.MIXLY_TOOLTIP_INOUT_HIGHLOW='返回高电平或低电平';
 Blockly.MIXLY_TOOLTIP_INOUT_DIGITAL_READ='返回指定管脚的电平值';
 Blockly.MIXLY_TOOLTIP_INOUT_ANALOG_WRITE='设置指定管脚的值(0~255)';
-Blockly.MIXLY_TOOLTIP_INOUT_ANALOG_READ='返回指定管脚的值(0~1024)';
+Blockly.MIXLY_TOOLTIP_INOUT_ANALOG_READ='返回指定管脚的值(0~1023)';
 Blockly.MIXLY_TOOLTIP_INOUT_ATTACHINTERRUPT='设置指定管脚的中断';
 Blockly.MIXLY_TOOLTIP_INOUT_DETACHINTERRUPT='取消指定管脚的中断';
 Blockly.MIXLY_TOOLTIP_CONTROL_SETUP='初始化操作(这里面的内容只执行一次)';
@@ -895,6 +898,12 @@ Blockly.MIXLY_GPS_TIME_CENTISECOND='时间-厘秒';
 //factory
 Blockly.MIXLY_PARAMS = '参数';
 
+//MsTimer2
+Blockly.MIXLY_MSTIMER2_EVERY='每隔';
+Blockly.MIXLY_MSTIMER2_DO='执行';
+Blockly.MIXLY_MSTIMER2_START='启动';
+Blockly.MIXLY_MSTIMER2_STOP='停止';
+
 //others
 Blockly.MIXLY_WARNING_NOT_DECLARE='该变量未声明';
 Blockly.MIXLY_LENGTH = "获取长度";
@@ -905,7 +914,6 @@ Blockly.MIXLY_COMPARETO="比较";
 Blockly.MIXLY_COMPARETO_HELP="按字典顺序比较，相等则返回0，大于则返回大于0的值，小于则返回小于0的值";
 Blockly.Msg.UNDO = "撤销";
 Blockly.Msg.REDO = "重做";
-
 
 /****
 add by Microduino for chinese
@@ -940,8 +948,8 @@ Blockly.N20begin='电机准备';
 Blockly.N20choose='电机选择';
 Blockly.N20Break='刹车';
 Blockly.N20Free='关闭';
-Blockly.motor_right='右(2A,2B)';
-Blockly.motor_left='左(1A,1B)';
+Blockly.motor_right='2A,2B';
+Blockly.motor_left='1A,1B';
 Blockly.BLE_CubeCar='蓝牙小车';
 Blockly.BLE_AM2321='温湿度传感器';
 Blockly.BLE_Tem='温度';
@@ -959,8 +967,8 @@ Blockly.BuzzerNum='序号';
 Blockly.BuzzerPin='蜂鸣器管脚';
 Blockly.Frequency='蜂鸣器频率';
 
-Blockly.motionInit='姿态加速度角速度准备';
-Blockly.GetMotion='获取姿态';
+Blockly.motionInit='加速度角速度收集';
+Blockly.GetMotion='获取';
 Blockly.GetMotionDegree='获取姿态角';
 Blockly.motionDMP='姿态DMP解算';
 Blockly.motionSoft='姿态算法解算';
@@ -1151,6 +1159,34 @@ Blockly.OLEDRoll='滚动';
 Blockly.OLEDFont='字体';
 Blockly.OLEDContext='内容';
 
+Blockly.OLEDGeomPointLineArea='画 点,线,面';
+Blockly.MD_OLEDPointer='点(x0,y0)';
+Blockly.MD_OLEDLine='线(x0,y0,x1,y1)';
+Blockly.MD_OLEDHLine='横线(x0,y0,w)';
+Blockly.MD_OLEDVLine='竖线(x0,y0,h)';
+Blockly.MD_OLEDTriangle='三角(x0,y0,x1,y1,x2,y2)';
+Blockly.MD_OLEDFrame='空心矩形(x0,y0,w,h)';
+Blockly.MD_OLEDRFrame='圆角矩形(x0,y0,w,h,r)';
+Blockly.MD_OLEDBox='实心矩形(x0,y0,w,h)';
+Blockly.MD_OLEDRBox='实心圆角矩形(x0,y0,w,h,r)';
+
+Blockly.OLEDGeomCircle='画曲线';
+Blockly.MD_OLEDCircle='圆(x,y,r)';
+Blockly.MD_OLEDDisc='实心圆(x,y,r)';
+Blockly.MD_OLEDEllipse='椭圆(x,y,w,h)';
+Blockly.MD_OLEDFilledEllipse='实心椭圆(x,y,w,h)';
+Blockly.MD_OLEDArc='圆弧';
+Blockly.MD_OLEDAllCircle='整圆';
+Blockly.MD_OLEDTopRightCircle='右上圆弧';
+Blockly.MD_OLEDTopLeftCircle='左上圆弧';
+Blockly.MD_OLEDLowLeftCircle='左上圆弧';
+Blockly.MD_OLEDLowRightCircle='右下圆弧';
+
+Blockly.getOLEDWidthHigh='获得屏幕长宽';
+Blockly.OLEDWidth='宽度';
+Blockly.OLEDHigh='长度';
+
+
 Blockly.chooseAudioPlay='音乐播放器准备';
 Blockly.chooseAudioSerial='核心模块类型';
 Blockly.chooseAudioNum='音频选择';
@@ -1234,7 +1270,6 @@ Blockly.blueMtank='蓝牙mTank';
 Blockly.oldmCookie='老版mCookie';
 Blockly.oldMicroduino='老版Microduino';
 Blockly.newMicroduinoBT='新版蓝牙';
-
 
 
 Blockly.interalTime='间隔执行';

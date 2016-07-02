@@ -435,7 +435,6 @@ Blockly.MIXLY_TONE_PIN='Tono PIN#';
 Blockly.MIXLY_FREQUENCY='frecuencia';
 Blockly.MIXLY_DURATION='duración';
 Blockly.MIXLY_NOTONE_PIN='apagaTono PIN#';
-Blockly.MIXLY_END_ADDITION='';
 Blockly.MIXLY_BLOCKGROUP_CATEGORY='BlockGroup';
 Blockly.MIXLY_IR_RECEIVE='IR_recibe PIN#';
 Blockly.MIXLY_IR_RECEIVE_ENABLE='enableIRIn PIN#';
@@ -481,12 +480,11 @@ Blockly.LANG_MATH_BOOLEAN = 'boolean';
 Blockly.LANG_MATH_BYTE = 'byte';
 Blockly.LANG_MATH_CHAR = 'char';
 Blockly.LANG_MATH_STRING = 'string';
-Blockly.LANG_LISTS_GET_INDEX_INPUT_AT = 'recoge elemento en';
-Blockly.LANG_LISTS_GET_INDEX_INPUT_IN_LIST = 'en lista';
+Blockly.LANG_LISTS_GET_INDEX1 = 'get item at'; //untranslated
+Blockly.LANG_LISTS_GET_INDEX2 = '';
 Blockly.LANG_LISTS_GET_INDEX_TOOLTIP = 'Devuelve el valor en la posición especificada en una lista.';
-Blockly.LANG_LISTS_SET_INDEX_INPUT_AT = 'configura elemento en';
-Blockly.LANG_LISTS_SET_INDEX_INPUT_IN_LIST = 'en lista';
-Blockly.LANG_LISTS_SET_INDEX_INPUT_TO = 'a';
+Blockly.LANG_LISTS_SET_INDEX1 = 'set item at'; //untranslated
+Blockly.LANG_LISTS_SET_INDEX2 = 'to'; //untranslated
 Blockly.LANG_LISTS_SET_INDEX_TOOLTIP = 'Establece el valor en la posición especificada en una lista.';
 Blockly.LANG_MATH_CONSTRAIN_INPUT_CONSTRAIN = 'Limitar';
 Blockly.LANG_MATH_CONSTRAIN_INPUT_LOW = 'entre (bajo)';
@@ -534,7 +532,8 @@ Blockly.MIXLY_IR_RECEIVE_NO='NoRecibe';
 Blockly.LANG_VARIABLES_SET_TITLE='';
 Blockly.MIXLY_TEXT_JOIN='unir';
 Blockly.MIXLY_SERIAL_AVAILABLE='disponible?';
-Blockly.MIXLY_SERIAL_READSTR='leeString';
+Blockly.MIXLY_SERIAL_READSTR='readString';
+Blockly.MIXLY_SERIAL_READSTR_UNTIL='readStringUntil';
 Blockly.MIXLY_SERIAL_READ='';
 Blockly.MIXLY_IR_RECIEVE_TOOLTIP='Hacer algo al recibir señales infrarrojas.';
 Blockly.MIXLY_IR_SEND_NEC_TOOLTIP='Envía señales de infrarrojos del tipo especificado';
@@ -559,6 +558,8 @@ Blockly.MIXLY_LCD_RGB_BACKLIGHT='LCD RGB Backlight';
 Blockly.MIXLY_DF_LCD='LCD';
 Blockly.MIXLY_LCD_PRINT1='imprimir linea1';
 Blockly.MIXLY_LCD_PRINT2='imprimir linea2';
+Blockly.MIXLY_LCD_PRINT3='imprimir linea3';
+Blockly.MIXLY_LCD_PRINT4='imprimir linea4';
 Blockly.MIXLY_LCD_ROW='fila';
 Blockly.MIXLY_LCD_COLUMN='columna';
 Blockly.MIXLY_LCD_PRINT='imprime';
@@ -687,7 +688,7 @@ Blockly.MIXLY_LABPLUS_ROBOT_DISPLAY_ZEBRA='zebra';
 Blockly.MIXLY_LABPLUS_ROBOT_DISPLAY_NOTHING='nada';
 Blockly.MIXLY_LABPLUS_ROBOT_LED_TOP='Configura Led en la parte superior';
 Blockly.MIXLY_LABPLUS_ROBOT_LED_SIDE='Establece color en los leds\' laterales';
-Blockly.MIXLY_LCD_ADDRESS="dirección LCD";
+Blockly.MIXLY_LCD_ADDRESS="dirección";
 var MSG = {
   catInOut: "Entrada/Salida",
   catControl: "Control",
@@ -714,7 +715,7 @@ var MSG = {
 Blockly.MIXLY_TOOLTIP_INOUT_HIGHLOW='Devuelve alta o baja tensión.';
 Blockly.MIXLY_TOOLTIP_INOUT_DIGITAL_READ='Devuelve un valor digital de un Pin específico';
 Blockly.MIXLY_TOOLTIP_INOUT_ANALOG_WRITE='Escribe un valor analógico entre 0 y 255 en un Pin específico';
-Blockly.MIXLY_TOOLTIP_INOUT_ANALOG_READ='Devuelve un valor entre 0 y 1.024 de un Pin específico';
+Blockly.MIXLY_TOOLTIP_INOUT_ANALOG_READ='Devuelve un valor entre 0 y 1023 de un Pin específico';
 Blockly.MIXLY_TOOLTIP_INOUT_ATTACHINTERRUPT='Asocia la interrupción a un Pin específico';
 Blockly.MIXLY_TOOLTIP_INOUT_DETACHINTERRUPT='Quita la interrupción de un Pin específico';
 Blockly.MIXLY_TOOLTIP_CONTROL_SETUP='Inizialización(ejecutar una sola vez)';
@@ -849,17 +850,17 @@ Blockly.MIXLY_ETHERNET='Ethernet';
 Blockly.MIXLY_ETHERNET2='Ethernet2';
 Blockly.MIXLY_ETHERNET_MAC_ADDRESS='Mac Address';
 Blockly.MIXLY_ETHERNET_LOCALIP='localIP';
-Blockly.MIXLY_ETHERNET_CLINET_CONNECT_SERVER='Clinet.Connect Server';
+Blockly.MIXLY_ETHERNET_CLINET_CONNECT_SERVER='Clinet.Connect Host';
 Blockly.MIXLY_ETHERNET_CLINET_PORT='Port';
-Blockly.MIXLY_ETHERNET_CLINET_STOP='Client.Stop';
-Blockly.MIXLY_ETHERNET_CLINET_CONNECTED='Client.Connected';
+Blockly.MIXLY_ETHERNET_CLINET_STOP='Client.stop';
+Blockly.MIXLY_ETHERNET_CLINET_CONNECTED='Client.connected';
 Blockly.MIXLY_ETHERNET_CLINET_AVAILABLE='Client.available';
-Blockly.MIXLY_ETHERNET_CLINET_PRINT='Client.Print';
-Blockly.MIXLY_ETHERNET_CLINET_PRINTLN='Client.Println';
-Blockly.MIXLY_ETHERNET_CLINET_READ='Client.Read';
+Blockly.MIXLY_ETHERNET_CLINET_PRINT='Client.print';
+Blockly.MIXLY_ETHERNET_CLINET_PRINTLN='Client.println';
+Blockly.MIXLY_ETHERNET_CLINET_READ='Client.read';
 Blockly.MIXLY_ETHERNET_CLINET_GET_REQUEST='GET Request';
 Blockly.MIXLY_ETHERNET_CLINET_URL='URL';
-Blockly.MIXLY_ETHERNET_CLINET_SERVER='Server';
+Blockly.MIXLY_ETHERNET_CLINET_SERVER='Host';
 
 //DS18B20温度传感器
 Blockly.MIXLY_DS18B20='DS18B20 PIN#';
@@ -888,6 +889,12 @@ Blockly.MIXLY_GPS_TIME_CENTISECOND='time-centisecond';
 
 //factory
 Blockly.MIXLY_PARAMS = 'parameters';
+
+//MsTimer2
+Blockly.MIXLY_MSTIMER2_EVERY='every';
+Blockly.MIXLY_MSTIMER2_DO='do';
+Blockly.MIXLY_MSTIMER2_START='start';
+Blockly.MIXLY_MSTIMER2_STOP='stop';
 
 //others
 Blockly.MIXLY_WARNING_NOT_DECLARE='This variable is not declared!';

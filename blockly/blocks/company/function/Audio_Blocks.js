@@ -17,7 +17,7 @@ init:function(){
 
     var mCookie_DEVICE =[[Blockly.flashMemory, "DEVICE_FLASH"], [Blockly.tfCard, "DEVICE_TF"]];
     this.setColour(colorSet);
-this.appendDummyInput("")
+    this.appendDummyInput("")
         .appendTitle(Blockly.chooseAudioPlay);
 
     this.appendDummyInput("")

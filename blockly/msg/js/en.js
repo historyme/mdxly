@@ -435,7 +435,6 @@ Blockly.MIXLY_TONE_PIN='Tone PIN#';
 Blockly.MIXLY_FREQUENCY='frequency';
 Blockly.MIXLY_DURATION='duration';
 Blockly.MIXLY_NOTONE_PIN='noTone PIN#';
-
 Blockly.MIXLY_BLOCKGROUP_CATEGORY='BlockGroup';
 Blockly.MIXLY_IR_RECEIVE='IRreceive PIN#';
 Blockly.MIXLY_IR_RECEIVE_ENABLE='enableIRIn PIN#';
@@ -536,6 +535,7 @@ Blockly.LANG_VARIABLES_SET_TITLE='';
 Blockly.MIXLY_TEXT_JOIN='join';
 Blockly.MIXLY_SERIAL_AVAILABLE='isAvailable?';
 Blockly.MIXLY_SERIAL_READSTR='readString';
+Blockly.MIXLY_SERIAL_READSTR_UNTIL='readStringUntil';
 Blockly.MIXLY_SERIAL_READ='';
 Blockly.MIXLY_IR_RECIEVE_TOOLTIP='Do something when receiving infrared signals.';
 Blockly.MIXLY_IR_SEND_NEC_TOOLTIP='Sends Infrared signals of the specified type';
@@ -560,6 +560,8 @@ Blockly.MIXLY_LCD_RGB_BACKLIGHT='LCD RGB Backlight';
 Blockly.MIXLY_DF_LCD='LCD';
 Blockly.MIXLY_LCD_PRINT1='print line1';
 Blockly.MIXLY_LCD_PRINT2='print line2';
+Blockly.MIXLY_LCD_PRINT3='print line3';
+Blockly.MIXLY_LCD_PRINT4='print line4';
 Blockly.MIXLY_LCD_ROW='row';
 Blockly.MIXLY_LCD_COLUMN='column';
 Blockly.MIXLY_LCD_PRINT='print';
@@ -688,7 +690,7 @@ Blockly.MIXLY_LABPLUS_ROBOT_DISPLAY_ZEBRA='zebra';
 Blockly.MIXLY_LABPLUS_ROBOT_DISPLAY_NOTHING='nothing';
 Blockly.MIXLY_LABPLUS_ROBOT_LED_TOP='Set led on top to';
 Blockly.MIXLY_LABPLUS_ROBOT_LED_SIDE='Set side leds\' color to';
-Blockly.MIXLY_LCD_ADDRESS="LCD address";
+Blockly.MIXLY_LCD_ADDRESS="address";
 var MSG = {
   catInOut: "In/Out",
   catControl: "Control",
@@ -723,7 +725,7 @@ var MSG = {
 Blockly.MIXLY_TOOLTIP_INOUT_HIGHLOW='Returns high or low voltage.';
 Blockly.MIXLY_TOOLTIP_INOUT_DIGITAL_READ='Returns digital value of a specific Port';
 Blockly.MIXLY_TOOLTIP_INOUT_ANALOG_WRITE='Writes analog value between 0 and 255 to a specific Port';
-Blockly.MIXLY_TOOLTIP_INOUT_ANALOG_READ='Returns value between 0 and 1024 of a specific Port';
+Blockly.MIXLY_TOOLTIP_INOUT_ANALOG_READ='Returns value between 0 and 1023 of a specific Port';
 Blockly.MIXLY_TOOLTIP_INOUT_ATTACHINTERRUPT='Attachs interrupt to a specific Port';
 Blockly.MIXLY_TOOLTIP_INOUT_DETACHINTERRUPT='Detachs interrupt to a specific Port';
 Blockly.MIXLY_TOOLTIP_CONTROL_SETUP='Initialization(run only once)';
@@ -857,17 +859,17 @@ Blockly.MIXLY_ETHERNET='Ethernet';
 Blockly.MIXLY_ETHERNET2='Ethernet2';
 Blockly.MIXLY_ETHERNET_MAC_ADDRESS='Mac Address';
 Blockly.MIXLY_ETHERNET_LOCALIP='localIP';
-Blockly.MIXLY_ETHERNET_CLINET_CONNECT_SERVER='Clinet.Connect Server';
+Blockly.MIXLY_ETHERNET_CLINET_CONNECT_SERVER='Clinet.Connect Host';
 Blockly.MIXLY_ETHERNET_CLINET_PORT='Port';
-Blockly.MIXLY_ETHERNET_CLINET_STOP='Client.Stop';
-Blockly.MIXLY_ETHERNET_CLINET_CONNECTED='Client.Connected';
+Blockly.MIXLY_ETHERNET_CLINET_STOP='Client.stop';
+Blockly.MIXLY_ETHERNET_CLINET_CONNECTED='Client.connected';
 Blockly.MIXLY_ETHERNET_CLINET_AVAILABLE='Client.available';
-Blockly.MIXLY_ETHERNET_CLINET_PRINT='Client.Print';
-Blockly.MIXLY_ETHERNET_CLINET_PRINTLN='Client.Println';
-Blockly.MIXLY_ETHERNET_CLINET_READ='Client.Read';
+Blockly.MIXLY_ETHERNET_CLINET_PRINT='Client.print';
+Blockly.MIXLY_ETHERNET_CLINET_PRINTLN='Client.println';
+Blockly.MIXLY_ETHERNET_CLINET_READ='Client.read';
 Blockly.MIXLY_ETHERNET_CLINET_GET_REQUEST='GET Request';
 Blockly.MIXLY_ETHERNET_CLINET_URL='URL';
-Blockly.MIXLY_ETHERNET_CLINET_SERVER='Server';
+Blockly.MIXLY_ETHERNET_CLINET_SERVER='Host';
 
 //DS18B20温度传感器
 Blockly.MIXLY_DS18B20='DS18B20 PIN#';
@@ -897,6 +899,12 @@ Blockly.MIXLY_GPS_TIME_CENTISECOND='time-centisecond';
 //factory
 Blockly.MIXLY_PARAMS = 'parameters';
 
+//MsTimer2
+Blockly.MIXLY_MSTIMER2_EVERY='every';
+Blockly.MIXLY_MSTIMER2_DO='do';
+Blockly.MIXLY_MSTIMER2_START='start';
+Blockly.MIXLY_MSTIMER2_STOP='stop';
+
 //others
 Blockly.MIXLY_WARNING_NOT_DECLARE='This variable is not declared!';
 Blockly.MIXLY_LENGTH = "length of";
@@ -906,7 +914,6 @@ Blockly.MIXLY_ENDSWITH="endsWith";
 Blockly.MIXLY_COMPARETO="compareTo";
 Blockly.Msg.UNDO = "Undo";
 Blockly.Msg.REDO = "Redo";
-
 
 /****
 add by Microduino for english
@@ -937,8 +944,8 @@ Blockly.N20begin='Motor Begin';
 Blockly.N20choose='Motor choose';
 Blockly.N20Break='Break';
 Blockly.N20Free='Free';
-Blockly.motor_right='Right(2A,2B)';
-Blockly.motor_left='Left(1A,1B)';
+Blockly.motor_right='2A,2B';
+Blockly.motor_left='1A,1B';
 Blockly.BLE_CubeCar='BLE Car';
 Blockly.BLE_AM2321='Temperature&Humidity';
 Blockly.BLE_Tem='Temperature';
@@ -958,8 +965,8 @@ Blockly.Frequency='Frequency:';
 //Blockly.BuzzerMelody='Melody';
 
 
-Blockly.motionInit='Motion Prepare Acc/Gyro:';
-Blockly.GetMotion='Get Motion';
+Blockly.motionInit='Motion Collect Acc/Gyro:';
+Blockly.GetMotion='Get';
 Blockly.GetMotionDegree='Get Motion Degree';
 Blockly.motionDMP='Motion DMP Solution';
 Blockly.motionSoft='Motion Software Solution';
@@ -1145,6 +1152,33 @@ Blockly.OLEDPrint='Print';
 Blockly.OLEDRoll='Roll';
 Blockly.OLEDFont='Font';
 Blockly.OLEDContext='Context';
+
+Blockly.OLEDGeomPointLineArea='draw point,line,area';
+Blockly.MD_OLEDPointer='Point(x0,y0)';
+Blockly.MD_OLEDLine='Line(x0,y0,x1,y1)';
+Blockly.MD_OLEDHLine='HLine(x0,y0,w)';
+Blockly.MD_OLEDVLine='VLine(x0,y0,h)';
+Blockly.MD_OLEDTriangle='Triangle(x0,y0,x1,y1,x2,y2)';
+Blockly.MD_OLEDFrame='Frame(x0,y0,w,h)';
+Blockly.MD_OLEDRFrame='RFrame(x0,y0,w,h,r)';
+Blockly.MD_OLEDBox='Box(x0,y0,w,h)';
+Blockly.MD_OLEDRBox='RBox(x0,y0,w,h,r)';
+
+Blockly.OLEDGeomCircle='Draw circle';
+Blockly.MD_OLEDCircle='Circle(x,y,r)';
+Blockly.MD_OLEDDisc='Disc(x,y,r)';
+Blockly.MD_OLEDEllipse='Ellipse(x,y,w,h)';
+Blockly.MD_OLEDFilledEllipse='Filled Ellipse(x,y,w,h)';
+Blockly.MD_OLEDArc='Arc';
+Blockly.MD_OLEDAllCircle='All Circle';
+Blockly.MD_OLEDTopRightCircle='Top Right Circle';
+Blockly.MD_OLEDTopLeftCircle='Top Left Circle';
+Blockly.MD_OLEDLowLeftCircle='Low Left Circle';
+Blockly.MD_OLEDLowRightCircle='Low Right Circle';
+
+Blockly.getOLEDWidthHigh='Get screen width high';
+Blockly.OLEDWidth='Width';
+Blockly.OLEDHigh='High';
 
 Blockly.chooseAudioPlay='Audio Player Perpare';
 Blockly.chooseAudioSerial='Core Module Type';

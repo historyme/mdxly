@@ -7,7 +7,7 @@ goog.require('Blockly.Blocks');
 Blockly.Blocks.blockgroup.HUE = '#b1bd65';
 Blockly.Blocks.blockgroup.HUE1 = '#efa752';
 Blockly.Blocks.blockgroup.HUE2 = '#70bd94';
-Blockly.Blocks.blockgroup.HUE3 = '#6c91ac';
+Blockly.Blocks.blockgroup.HUE3 = '6c91ac';
 
 Blockly.Blocks['serial_begin'] = {
   init: function() {
@@ -89,6 +89,17 @@ Blockly.Blocks['serial_readstr'] = {
         .appendField(Blockly.MIXLY_SERIAL_READSTR);
 	this.setOutput(true, String);
 	this.setTooltip(Blockly.MIXLY_TOOLTIP_BLOCKGROUP_SERIAL_READ_STR);
+  }
+};
+
+Blockly.Blocks['serial_readstr_until'] = {
+  init: function() {
+    this.setColour(Blockly.Blocks.blockgroup.HUE);
+	this.appendValueInput("CONTENT", Number)
+		.appendField(new Blockly.FieldDropdown(profile.default.serial_select), "serial_select")
+        .appendField(Blockly.MIXLY_SERIAL_READSTR_UNTIL)
+		.setCheck(Number);
+	this.setOutput(true, String);
   }
 };
 
@@ -502,6 +513,9 @@ Blockly.Blocks.group_lcd_init = {
         .setCheck(Number)
 		.setAlign(Blockly.ALIGN_RIGHT)
 		.appendField(Blockly.MIXLY_SETUP)
+		.appendField(Blockly.MIXLY_DF_LCD)
+		.appendField(new Blockly.FieldDropdown([['1602','16,2'],['2004','20,4']]),'TYPE')
+		.appendField(new Blockly.FieldTextInput('mylcd'), 'VAR')
         .appendField(Blockly.MIXLY_LCD_ADDRESS);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -516,6 +530,9 @@ Blockly.Blocks.group_lcd_init2 = {
         .setCheck(Number)
 		.setAlign(Blockly.ALIGN_RIGHT)
 		.appendField(Blockly.MIXLY_SETUP)
+        .appendField(Blockly.MIXLY_DF_LCD)
+		.appendField(new Blockly.FieldDropdown([['1602','16,2'],['2004','20,4']]),'TYPE')
+		.appendField(new Blockly.FieldTextInput('mylcd'), 'VAR')
         .appendField(Blockly.MIXLY_LCD_ADDRESS);
     this.appendValueInput("PIN1")
         .setCheck(Number)
@@ -538,11 +555,22 @@ Blockly.Blocks.group_lcd_print = {
         .setCheck([String,Number])
         .setAlign(Blockly.ALIGN_RIGHT)
 		.appendField(Blockly.MIXLY_DF_LCD)
+		.appendField(new Blockly.FieldTextInput('mylcd'), 'VAR')
         .appendField(Blockly.MIXLY_LCD_PRINT1);
     this.appendValueInput("TEXT2", String)
         .setCheck([String,Number])
         .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField(Blockly.MIXLY_LCD_PRINT2)
+        .appendField(Blockly.MIXLY_LCD_PRINT2);
+	/*
+	this.appendValueInput("TEXT3", String)
+        .setCheck([String,Number])
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField(Blockly.MIXLY_LCD_PRINT3);
+	this.appendValueInput("TEXT4", String)
+        .setCheck([String,Number])
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField(Blockly.MIXLY_LCD_PRINT4);
+	*/
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
   }
@@ -555,6 +583,7 @@ Blockly.Blocks.group_lcd_print2 = {
         .setCheck(Number)
         .setAlign(Blockly.ALIGN_RIGHT)
 		.appendField(Blockly.MIXLY_DF_LCD)
+		.appendField(new Blockly.FieldTextInput('mylcd'), 'VAR')
         .appendField(Blockly.MIXLY_LCD_ROW);
 	this.appendValueInput("column", Number)
         .setCheck(Number)
@@ -575,6 +604,7 @@ Blockly.Blocks.group_lcd_power = {
     this.setColour(Blockly.Blocks.blockgroup.HUE2);
     this.appendDummyInput()
 		.appendField(Blockly.MIXLY_DF_LCD)
+		.appendField(new Blockly.FieldTextInput('mylcd'), 'VAR')
         .appendField(new Blockly.FieldDropdown([[Blockly.MIXLY_LCD_STAT_ON, "display"], [Blockly.MIXLY_LCD_STAT_OFF, "noDisplay"], [Blockly.MIXLY_LCD_STAT_CURSOR, "cursor"], [Blockly.MIXLY_LCD_STAT_NOCURSOR, "noCursor"], [Blockly.MIXLY_LCD_STAT_BLINK, "blink"], [Blockly.MIXLY_LCD_STAT_NOBLINK, "noBlink"], [Blockly.MIXLY_LCD_STAT_CLEAR, "clear"]]), "STAT");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);

@@ -435,7 +435,6 @@ Blockly.MIXLY_TONE_PIN='播放聲音管脚#';
 Blockly.MIXLY_FREQUENCY='頻率';
 Blockly.MIXLY_DURATION='持續時間';
 Blockly.MIXLY_NOTONE_PIN='結束聲音管脚#';
-Blockly.MIXLY_END_ADDITION='中）';
 Blockly.MIXLY_BLOCKGROUP_CATEGORY='模塊組';
 Blockly.MIXLY_IR_RECEIVE='紅外接收 管腳#';
 Blockly.MIXLY_IR_RECEIVE_ENABLE='紅外接收使能 管腳#';
@@ -483,12 +482,11 @@ Blockly.LANG_MATH_BOOLEAN = '布爾';
 Blockly.LANG_MATH_BYTE = '字節';
 Blockly.LANG_MATH_CHAR = '字符';
 Blockly.LANG_MATH_STRING = '字符串';
-Blockly.LANG_LISTS_GET_INDEX_INPUT_AT = '獲取第';
-Blockly.LANG_LISTS_GET_INDEX_INPUT_IN_LIST = '項（在數組';
+Blockly.LANG_LISTS_GET_INDEX1 = '的第';
+Blockly.LANG_LISTS_GET_INDEX2 = '項';
 Blockly.LANG_LISTS_GET_INDEX_TOOLTIP = '返回數組中指定位置的值。';
-Blockly.LANG_LISTS_SET_INDEX_INPUT_AT = '設定第';
-Blockly.LANG_LISTS_SET_INDEX_INPUT_IN_LIST = '項（在數組';
-Blockly.LANG_LISTS_SET_INDEX_INPUT_TO = '中）為';
+Blockly.LANG_LISTS_SET_INDEX1 = '的第';
+Blockly.LANG_LISTS_SET_INDEX2 = '項賦值為';
 Blockly.LANG_LISTS_SET_INDEX_TOOLTIP = '設定數組中指定位置的值。';
 Blockly.LANG_MATH_CONSTRAIN_INPUT_CONSTRAIN = '約束';
 Blockly.LANG_MATH_CONSTRAIN_INPUT_LOW = '介於（最小值）';
@@ -537,6 +535,7 @@ Blockly.LANG_VARIABLES_SET_TITLE='賦值為';
 Blockly.MIXLY_TEXT_JOIN='連接';
 Blockly.MIXLY_SERIAL_AVAILABLE='有數據可讀嗎？';
 Blockly.MIXLY_SERIAL_READSTR='讀取字符串';
+Blockly.MIXLY_SERIAL_READSTR_UNTIL='讀取字符串直到';
 Blockly.MIXLY_SERIAL_READ='讀取';
 Blockly.MIXLY_IR_RECIEVE_TOOLTIP='在接收到紅外訊號時進行用戶自定義的處理。';
 Blockly.MIXLY_IR_SEND_NEC_TOOLTIP='發射指定類型的紅外數據';
@@ -561,6 +560,8 @@ Blockly.MIXLY_LCD_RGB_BACKLIGHT='液晶RGB背光屏';
 Blockly.MIXLY_DF_LCD='液晶顯示屏';
 Blockly.MIXLY_LCD_PRINT1='打印第1行';
 Blockly.MIXLY_LCD_PRINT2='打印第2行';
+Blockly.MIXLY_LCD_PRINT3='打印第3行';
+Blockly.MIXLY_LCD_PRINT4='打印第4行';
 Blockly.MIXLY_LCD_ROW='在第';
 Blockly.MIXLY_LCD_COLUMN='行第';
 Blockly.MIXLY_LCD_PRINT='列打印';
@@ -689,7 +690,7 @@ Blockly.MIXLY_LABPLUS_ROBOT_DISPLAY_ZEBRA='斑馬紋';
 Blockly.MIXLY_LABPLUS_ROBOT_DISPLAY_NOTHING='黑屏';
 Blockly.MIXLY_LABPLUS_ROBOT_LED_TOP='設定頂燈為';
 Blockly.MIXLY_LABPLUS_ROBOT_LED_SIDE='設定側燈顏色為';
-Blockly.MIXLY_LCD_ADDRESS="液晶顯示屏 設備地址";
+Blockly.MIXLY_LCD_ADDRESS="設備地址";
 var MSG = {
 catInOut:"輸入/輸出",
 catControl:"控制",
@@ -716,7 +717,7 @@ tab_arduino:"程式碼"
 Blockly.MIXLY_TOOLTIP_INOUT_HIGHLOW='返回高電平或低電平';
 Blockly.MIXLY_TOOLTIP_INOUT_DIGITAL_READ='返回指定管脚的電平值';
 Blockly.MIXLY_TOOLTIP_INOUT_ANALOG_WRITE='設定指定管脚的值（0~255）';
-Blockly.MIXLY_TOOLTIP_INOUT_ANALOG_READ='返回指定管脚的值（0~1024）';
+Blockly.MIXLY_TOOLTIP_INOUT_ANALOG_READ='返回指定管脚的值（0~1023）';
 Blockly.MIXLY_TOOLTIP_INOUT_ATTACHINTERRUPT='設定指定管脚的中斷';
 Blockly.MIXLY_TOOLTIP_INOUT_DETACHINTERRUPT='取消指定管脚的中斷';
 Blockly.MIXLY_TOOLTIP_CONTROL_SETUP='初始化操作（這裡面的內容只執行一次）';
@@ -890,6 +891,12 @@ Blockly.MIXLY_GPS_TIME_CENTISECOND='時間-厘秒';
 
 //factory
 Blockly.MIXLY_PARAMS = '參數';
+
+//MsTimer2
+Blockly.MIXLY_MSTIMER2_EVERY='每隔';
+Blockly.MIXLY_MSTIMER2_DO='執行';
+Blockly.MIXLY_MSTIMER2_START='啟動';
+Blockly.MIXLY_MSTIMER2_STOP='停止';
 
 //others
 Blockly.MIXLY_WARNING_NOT_DECLARE='該變量未聲明';

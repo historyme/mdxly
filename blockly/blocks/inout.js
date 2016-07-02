@@ -4,7 +4,6 @@ goog.provide('Blockly.Blocks.base');
 
 goog.require('Blockly.Blocks');
 
-
 var setColor='#d2c078';
 
 Blockly.Blocks['inout_highlow'] = {

@@ -403,6 +403,15 @@ function init() {
 	  <block type="controls_whileUntil"></block>
 	  <block type="controls_flow_statements"></block>
 	  <block type="controls_millis"></block>
+	  <block type="controls_mstimer2">
+		<value name="TIME">
+          <shadow type="math_number">
+            <field name="NUM">500</field>
+          </shadow>
+        </value>
+	  </block>
+	  <block type="controls_mstimer2_start"></block>
+	  <block type="controls_mstimer2_stop"></block>
     </category>
     <category id="catMath"  colour="#92a4c7">
 	  <block type="math_number"></block>
@@ -556,7 +565,7 @@ function init() {
         </value>
 	  </block>
     </category>
-	<category id="catLists" colour="#75657a">
+	<category id="catLists"  colour="#75657a">
 	  <block type="lists_create_with2"></block>
 	  <block type="lists_create_with_text2"></block>
 	  <block type="lists_length"></block>
@@ -575,7 +584,7 @@ function init() {
         </value>
 	  </block>
 	</category>
-	<category id="catLogic" colour="#51606b">
+	<category id="catLogic"  colour="#51606b">
       <block type="logic_compare"></block>
       <block type="logic_operation"></block>
       <block type="logic_negate"></block>
@@ -583,7 +592,7 @@ function init() {
 	  <block type="logic_null"></block>
 	  <block type="logic_true_or_false"></block>
     </category>
-	<category id="catSerialPort"  colour="#b1bd65">
+	<category id="catSerialPort"  colour="65">
 	  <block type="serial_begin">
 		<value name="CONTENT">
           <shadow type="math_number">
@@ -597,6 +606,13 @@ function init() {
 	  <block type="serial_print_hex"></block>
 	  <block type="serial_available"></block>
 	  <block type="serial_readstr"></block>
+	  <block type="serial_readstr_until">
+		<value name="CONTENT">
+		  <shadow type="text_char">
+			<field name="TEXT">a</field>
+		  </shadow>
+		</value>
+	  </block>
 	  <block type="serial_parseInt_Float"></block>
 	  <block type="serial_flush"></block>
 	  <block type="serial_softserial">
@@ -962,9 +978,10 @@ function init() {
 			  </shadow>
 			</value>
 		</block>
-		<block type="ethernet_client_stop"></block>
 		<block type="ethernet_client_connected"></block>
 		<block type="ethernet_client_available"></block>
+		<block type="ethernet_client_read"></block>
+		<block type="ethernet_client_stop"></block>
 		<block type="ethernet_client_print">
 			<value name="TEXT">
 			  <block type="text">
@@ -979,7 +996,6 @@ function init() {
 			  </block>
 			</value>
 		</block>
-		<block type="ethernet_client_read"></block>
 		<block type="ethernet_client_get_request"></block>	
 	</category>
 	<sep></sep>
