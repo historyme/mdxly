@@ -86,7 +86,7 @@ var speed = Blockly.Arduino.valueToCode(this, 'speed',Blockly.Arduino.ORDER_ATOM
 var code='throttle = '+speed+';\n';
 
  if (Break_left_right==1)  code+='MotorLeft.Driver(MotorLeft.GetData(throttle, 0, CHAN_LEFT));\n';
- else if (Break_left_right==2) code+='MotorRight.Driver(MotorRight.GetData(throttle, 0, CHAN_RIGHT));\n';
+ else if (Break_left_right==2) code+='MotorRight.Driver(MotorRight.GetData(-throttle, 0, CHAN_RIGHT));\n';
 
 return code;
 

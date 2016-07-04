@@ -140,19 +140,19 @@ Blockly.Blocks.MD_OLED_GeometryLine = {
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendTitle("y0:");
 
-    this.appendValueInput("x1wh", Number)
+    this.appendValueInput("x1w", Number)
         .setCheck(Number)
         .setAlign(Blockly.ALIGN_RIGHT)
-        .appendTitle("x1wh:");
+        .appendTitle("x1(w):");
     this.appendValueInput("y1h", Number)
         .setCheck(Number)
         .setAlign(Blockly.ALIGN_RIGHT)
-        .appendTitle("y1h:");
+        .appendTitle("y1(h):");
 
     this.appendValueInput("x2r", Number)
         .setCheck(Number)
         .setAlign(Blockly.ALIGN_RIGHT)
-        .appendTitle("x2r:");
+        .appendTitle("x2(r):");
     this.appendValueInput("y2", Number)
         .setCheck(Number)
         .setAlign(Blockly.ALIGN_RIGHT)
@@ -206,7 +206,7 @@ Blockly.Blocks.MD_OLED_GeometryCircle = {
     this.appendValueInput("rw", Number)
         .setCheck(Number)
         .setAlign(Blockly.ALIGN_RIGHT)
-        .appendTitle("rw:");
+        .appendTitle("r(w):");
     this.appendValueInput("h", Number)
         .setCheck(Number)
         .setAlign(Blockly.ALIGN_RIGHT)

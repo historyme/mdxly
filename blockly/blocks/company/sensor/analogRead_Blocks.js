@@ -80,7 +80,7 @@ Blockly.Blocks.MD_Potentiometer = {
     this.setColour(colorSet);
 
     this.appendDummyInput()
-    //.appendField(new Blockly.FieldImage("../../media/Microduino/MIC.png", 40, 30))
+    .appendField(new Blockly.FieldImage("../../media/Microduino/potentiometer.png", 40, 30))
     .appendField(Blockly.Keyget_Pin)
     .appendField(new Blockly.FieldTextInput("A0"), "analogPin")
     .appendTitle(Blockly.MicroduinoPotentiometer);

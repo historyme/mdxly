@@ -227,8 +227,6 @@ class U8GLIB : public Print
 };
 
 
-
-/*
 class U8GLIB_DOGS102 : public U8GLIB 
 {
   public:
@@ -800,7 +798,7 @@ class U8GLIB_NHD31OLED_2X_GR : public U8GLIB
       : U8GLIB(&u8g_dev_ssd1322_nhd31oled_2x_gr_hw_spi, cs, a0, reset)
       { }
 };
-*/
+
 
 class U8GLIB_SSD1306_128X64 : public U8GLIB 
 {
@@ -816,7 +814,6 @@ class U8GLIB_SSD1306_128X64 : public U8GLIB
       { }
 };
 
-/*
 class U8GLIB_SSD1306_ADAFRUIT_128X64 : public U8GLIB 
 {
   public:
@@ -1095,6 +1092,12 @@ class U8GLIB_ST7687_C144MVGD: public U8GLIB
 class U8GLIB_ILI9325D_320x240 : public U8GLIB 
 {
   public:
+    /*
+    U8GLIB_ILI9325D_320x240(uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3, uint8_t d4, uint8_t d5, uint8_t d6, uint8_t d7, 
+        uint8_t en, uint8_t cs1, uint8_t di, uint8_t rw = U8G_PIN_NONE, uint8_t reset = U8G_PIN_NONE) 
+      : U8GLIB(&u8g_dev_ili9325d_320x240_8bit, d0, d1, d2, d3, d4, d5, d6, d7, en, cs1, U8G_PIN_NONE, di, rw, reset)
+      { }
+  */
     U8GLIB_ILI9325D_320x240( uint8_t en, uint8_t cs1, uint8_t di, uint8_t rw = U8G_PIN_NONE, uint8_t reset = U8G_PIN_NONE) 
       { init8BitFixedPort(&u8g_dev_ili9325d_320x240_8bit, en, cs1, di, rw, reset); }
 };
@@ -1214,8 +1217,6 @@ class U8GLIB_VS : public U8GLIB
     U8GLIB_VS(void) : U8GLIB(&u8g_dev_vs)
       {  }
 };
-
-*/
 
 
 #endif /* _CPP_U8GLIB */

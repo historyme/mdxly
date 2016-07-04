@@ -1159,7 +1159,7 @@ Blockly.OLEDRoll='滚动';
 Blockly.OLEDFont='字体';
 Blockly.OLEDContext='内容';
 
-Blockly.OLEDGeomPointLineArea='画 点,线,面';
+Blockly.OLEDGeomPointLineArea='点,线,面';
 Blockly.MD_OLEDPointer='点(x0,y0)';
 Blockly.MD_OLEDLine='线(x0,y0,x1,y1)';
 Blockly.MD_OLEDHLine='横线(x0,y0,w)';
@@ -1170,7 +1170,7 @@ Blockly.MD_OLEDRFrame='圆角矩形(x0,y0,w,h,r)';
 Blockly.MD_OLEDBox='实心矩形(x0,y0,w,h)';
 Blockly.MD_OLEDRBox='实心圆角矩形(x0,y0,w,h,r)';
 
-Blockly.OLEDGeomCircle='画曲线';
+Blockly.OLEDGeomCircle='曲线';
 Blockly.MD_OLEDCircle='圆(x,y,r)';
 Blockly.MD_OLEDDisc='实心圆(x,y,r)';
 Blockly.MD_OLEDEllipse='椭圆(x,y,w,h)';
