@@ -74,8 +74,8 @@ Blockly.Arduino.MD_OLED_GeometryLine = function() {
   var y0 = Blockly.Arduino.valueToCode(this, 'y0', Blockly.Arduino.ORDER_ATOMIC);
   var x1w = Blockly.Arduino.valueToCode(this, 'x1w', Blockly.Arduino.ORDER_ATOMIC);
   var y1h = Blockly.Arduino.valueToCode(this, 'y1h', Blockly.Arduino.ORDER_ATOMIC);
-  var x2r = Blockly.Arduino.valueToCode(this, 'x2r', Blockly.Arduino.ORDER_ATOMIC);
-  var y2 = Blockly.Arduino.valueToCode(this, 'y2', Blockly.Arduino.ORDER_ATOMIC);
+  // var x2r = Blockly.Arduino.valueToCode(this, 'x2r', Blockly.Arduino.ORDER_ATOMIC);
+  // var y2 = Blockly.Arduino.valueToCode(this, 'y2', Blockly.Arduino.ORDER_ATOMIC);
 
   var code='';
 
@@ -87,17 +87,22 @@ Blockly.Arduino.MD_OLED_GeometryLine = function() {
     code+='u8g.drawHLine('+x0+','+y0+','+x1w+');\n';
   } else if(type=='VLine') {
     code+='u8g.drawVLine('+x0+','+y0+','+y1h+');\n';
-  } else if(type=='triangle') {
-    code+='u8g.drawTriangle('+x0+','+y0+','+x1w+','+y1h+','+x2r+','+y2+');\n';
-  } else if(type=='frame') {
+  } 
+  // else if(type=='triangle') {
+  //   code+='u8g.drawTriangle('+x0+','+y0+','+x1w+','+y1h+','+x2r+','+y2+');\n';
+  // } 
+  else if(type=='frame') {
     code+='u8g.drawFrame('+x0+','+y0+','+x1w+','+y1h+');\n';
-  } else if(type=='RFrame') {
-    code+='u8g.drawRFrame('+x0+','+y0+','+x1w+','+y1h+','+x2r+');\n';
-  } else if(type=='box') {
+  } 
+  // else if(type=='RFrame') {
+  //   code+='u8g.drawRFrame('+x0+','+y0+','+x1w+','+y1h+','+x2r+');\n';
+  // } 
+  else if(type=='box') {
     code+='u8g.drawBox('+x0+','+y0+','+x1w+','+y1h+');\n';
-  } else if(type=='RBox') {
-    code+='u8g.drawRBox('+x0+','+y0+','+x1w+','+y1h+','+x2r+');\n';
-  }
+  } 
+  // else if(type=='RBox') {
+  //   code+='u8g.drawRBox('+x0+','+y0+','+x1w+','+y1h+','+x2r+');\n';
+  // }
 
   return code;
 };
@@ -112,7 +117,7 @@ Blockly.Arduino.MD_OLED_GeometryCircle = function() {
   var x = Blockly.Arduino.valueToCode(this, 'x', Blockly.Arduino.ORDER_ATOMIC);
   var y = Blockly.Arduino.valueToCode(this, 'y', Blockly.Arduino.ORDER_ATOMIC);
   var rw = Blockly.Arduino.valueToCode(this, 'rw', Blockly.Arduino.ORDER_ATOMIC);
-  var h = Blockly.Arduino.valueToCode(this, 'h', Blockly.Arduino.ORDER_ATOMIC);
+  // var h = Blockly.Arduino.valueToCode(this, 'h', Blockly.Arduino.ORDER_ATOMIC);
 
   var code='';
 
@@ -120,11 +125,13 @@ Blockly.Arduino.MD_OLED_GeometryCircle = function() {
     code+='u8g.drawCircle('+x+','+y+','+rw+','+ArcType+');\n';
   } else if(type=='disc') {
     code+='u8g.drawDisc('+x+','+y+','+rw+','+ArcType+');\n';
-  } else if(type=='ellipse') {
-    code+='u8g.drawEllipse('+x+','+y+','+rw+','+h+','+ArcType+');\n';
-  } else if(type=='filledEllipse') {
-    code+='u8g.drawFilledEllipse('+x+','+y+','+rw+','+h+','+ArcType+');\n';
   } 
+
+  // else if(type=='ellipse') {
+  //   code+='u8g.drawEllipse('+x+','+y+','+rw+','+h+','+ArcType+');\n';
+  // } else if(type=='filledEllipse') {
+  //   code+='u8g.drawFilledEllipse('+x+','+y+','+rw+','+h+','+ArcType+');\n';
+  // } 
 
   return code;
 };

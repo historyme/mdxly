@@ -114,36 +114,47 @@ return code;
 };
 
 
-Blockly.Arduino.Car_Motor = function() {
 
-  var speed = Blockly.Arduino.valueToCode(this, 'speed',Blockly.Arduino.ORDER_ATOMIC) || '0';
-  var angle = Blockly.Arduino.valueToCode(this, 'angle',Blockly.Arduino.ORDER_ATOMIC) || '0';
 
-var code='throttle = map('+speed+', 1000, 2000, -255, 255);\n';
-    code+='steering =map('+angle+', 1000, 2000, -255, 255);\n';
+Blockly.Arduino.microduinoCarControl = function() {
 
-   // var code='throttle = '+throttle+';\n';
-   // code+='steering = '+steering+';\n';
+  var leftSpeed = Blockly.Arduino.valueToCode(this, 'leftSpeed',Blockly.Arduino.ORDER_ATOMIC) || '0';
+  var rightSpeed = Blockly.Arduino.valueToCode(this, 'rightSpeed',Blockly.Arduino.ORDER_ATOMIC) || '0';
 
-   code+='MotorLeft.Driver(MotorLeft.GetData(throttle, steering, CHAN_LEFT));\n';
-   code+='MotorRight.Driver(MotorRight.GetData(throttle, steering, CHAN_RIGHT));\n';
+  var code='';
+  code+='MotorLeft.Driver(MotorLeft.GetData('+leftSpeed+', 0, CHAN_LEFT));\n';
+  code+='MotorRight.Driver(MotorRight.GetData('+rightSpeed+', 0, CHAN_RIGHT));\n';
   
   return code;
 };
 
-Blockly.Arduino.mCookie_Motor = function() {
 
 
-  var throttle = this.getFieldValue('speed');
-  var steering = this.getFieldValue('angle');
+// Blockly.Arduino.Car_MotorBegin = function() {
 
-  var code='throttle = '+throttle+';\n';
-  code+='steering = '+steering+';\n';
+//   // var leftSpeed = Blockly.Arduino.valueToCode(this, 'leftSpeed',Blockly.Arduino.ORDER_ATOMIC) || '0';
+//   // var rightSpeed = Blockly.Arduino.valueToCode(this, 'rightSpeed',Blockly.Arduino.ORDER_ATOMIC) || '0';
 
-  code+='MotorLeft.Driver(MotorLeft.GetData(throttle, steering, CHAN_LEFT));\n';
-  code+='MotorRight.Driver(MotorRight.GetData(throttle, steering, CHAN_RIGHT));\n';
-  return code;
-};
+//   code='ssss';
+//   // code+='MotorLeft.Driver(MotorLeft.GetData('+leftSpeed+', 0, CHAN_LEFT));\n';
+//   // code+='MotorRight.Driver(MotorRight.GetData('+rightSpeed+', 0, CHAN_RIGHT));\n';
+  
+//   return code;
+// };
+
+// Blockly.Arduino.mCookie_Motor = function() {
+
+
+//   var throttle = this.getFieldValue('speed');
+//   var steering = this.getFieldValue('angle');
+
+//   var code='throttle = '+throttle+';\n';
+//   code+='steering = '+steering+';\n';
+
+//   code+='MotorLeft.Driver(MotorLeft.GetData(throttle, steering, CHAN_LEFT));\n';
+//   code+='MotorRight.Driver(MotorRight.GetData(throttle, steering, CHAN_RIGHT));\n';
+//   return code;
+// };
 
 
 // Blockly.Arduino.mCookie_bluetooth_Robot_Direction = function() {

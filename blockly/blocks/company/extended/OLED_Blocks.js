@@ -119,11 +119,11 @@ Blockly.Blocks.MD_OLED_GeometryLine = {
                 [Blockly.MD_OLEDLine, 'line'],
                 [Blockly.MD_OLEDHLine, 'HLine'],
                 [Blockly.MD_OLEDVLine, 'VLine'],
-                [Blockly.MD_OLEDTriangle, 'triangle'],
+                //[Blockly.MD_OLEDTriangle, 'triangle'],
                 [Blockly.MD_OLEDFrame, 'frame'],
-                [Blockly.MD_OLEDRFrame, 'RFrame'],
+                //[Blockly.MD_OLEDRFrame, 'RFrame'],
                 [Blockly.MD_OLEDBox, 'box'],
-                [Blockly.MD_OLEDRBox, 'RBox']
+                //[Blockly.MD_OLEDRBox, 'RBox']
                 ];
 
     this.setColour(colorSet);
@@ -149,14 +149,14 @@ Blockly.Blocks.MD_OLED_GeometryLine = {
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendTitle("y1(h):");
 
-    this.appendValueInput("x2r", Number)
-        .setCheck(Number)
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendTitle("x2(r):");
-    this.appendValueInput("y2", Number)
-        .setCheck(Number)
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendTitle("y2:");
+    // this.appendValueInput("x2r", Number)
+    //     .setCheck(Number)
+    //     .setAlign(Blockly.ALIGN_RIGHT)
+    //     .appendTitle("x2(r):");
+    // this.appendValueInput("y2", Number)
+    //     .setCheck(Number)
+    //     .setAlign(Blockly.ALIGN_RIGHT)
+    //     .appendTitle("y2:");
 
 
     this.setPreviousStatement(true, null);
@@ -172,9 +172,9 @@ Blockly.Blocks.MD_OLED_GeometryLine = {
 Blockly.Blocks.MD_OLED_GeometryCircle = {
   init: function() {
     var TYPE = [[Blockly.MD_OLEDCircle, 'circle'],
-                [Blockly.MD_OLEDDisc, 'disc'],
-                [Blockly.MD_OLEDEllipse, 'ellipse'],
-                [Blockly.MD_OLEDFilledEllipse, 'filledEllipse']
+                [Blockly.MD_OLEDDisc, 'disc']
+                // [Blockly.MD_OLEDEllipse, 'ellipse'],
+                // [Blockly.MD_OLEDFilledEllipse, 'filledEllipse']
                 ];
 
     var ArcType = [[Blockly.MD_OLEDAllCircle, 'U8G_DRAW_ALL'],
@@ -202,15 +202,14 @@ Blockly.Blocks.MD_OLED_GeometryCircle = {
         .setCheck(Number)
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendTitle("y:");
-
     this.appendValueInput("rw", Number)
         .setCheck(Number)
         .setAlign(Blockly.ALIGN_RIGHT)
-        .appendTitle("r(w):");
-    this.appendValueInput("h", Number)
-        .setCheck(Number)
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendTitle("h:");
+        .appendTitle("r:");
+    // this.appendValueInput("h", Number)
+    //     .setCheck(Number)
+    //     .setAlign(Blockly.ALIGN_RIGHT)
+    //     .appendTitle("h:");
 
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);

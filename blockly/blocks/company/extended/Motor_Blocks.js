@@ -101,34 +101,58 @@ Blockly.Blocks.MotorFree = {
   }
 };
 
-Blockly.Blocks.Car_Motor = {
+
+
+
+Blockly.Blocks.microduinoCarControl = {
   init: function() {
+
     this.setColour(colorSet);
 
-
-  this.appendValueInput('speed')
+  this.appendValueInput('leftSpeed')
         .setCheck(Number)
-        .appendTitle(' '+Blockly.carSpeed);
-  this.appendValueInput('angle')
+        .appendTitle(' '+Blockly.leftSpeed);
+  this.appendValueInput('rightSpeed')
         .setCheck(Number)
-        .appendTitle(' '+Blockly.carAngle);
-  this.setInputsInline(true);
+        .appendTitle(' '+Blockly.rightSpeed);
+        
+    //this.setOutput(true, Number);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-  this.setTooltip(Blockly.LKL_IR_SEND_RAW_TOOLTIP);
+    this.setInputsInline(true);
   }
 };
 
-Blockly.Blocks.mCookie_Motor = {
-   init: function() {
-    this.setColour(colorSet);
-    this.appendDummyInput("")
-        .appendField(Blockly.carSpeed)
-        .appendField(new Blockly.FieldTextInput("255"), "speed")
-        .appendField(Blockly.carAngle)
-        .appendField(new Blockly.FieldTextInput("0"), "angle");
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-	this.setInputsInline(true);
-    }
-};
+
+
+
+
+
+
+
+
+
+// Blockly.Blocks.Car_MotorBegin = {
+//   init: function() {
+//     this.setColour(colorSet);
+
+//   this.setInputsInline(true);
+//     this.setPreviousStatement(true);
+//     this.setNextStatement(true);
+//   this.setTooltip(Blockly.LKL_IR_SEND_RAW_TOOLTIP);
+//   }
+// };
+
+// Blockly.Blocks.mCookie_Motor = {
+//    init: function() {
+//     this.setColour(colorSet);
+//     this.appendDummyInput("")
+//         .appendField(Blockly.carSpeed)
+//         .appendField(new Blockly.FieldTextInput("255"), "speed")
+//         .appendField(Blockly.carAngle)
+//         .appendField(new Blockly.FieldTextInput("0"), "angle");
+//     this.setPreviousStatement(true);
+//     this.setNextStatement(true);
+// 	this.setInputsInline(true);
+//     }
+// };
