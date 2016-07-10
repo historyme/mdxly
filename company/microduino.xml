@@ -56,6 +56,9 @@
 <script type="text/javascript" src="../../blocks/company/communication/IRCommunication_Blocks.js"></script>
 <script type="text/javascript" src="../../generators/arduino/company/communication/IRCommunication_Arduino.js"></script>
 
+<script type="text/javascript" src="../../blocks/company/communication/IIC_Blocks.js"></script>
+<script type="text/javascript" src="../../generators/arduino/company/communication/IIC_Arduino.js"></script>
+
 <script type="text/javascript" src="../../blocks/company/communication/GSM_Blocks.js"></script>
 <script type="text/javascript" src="../../generators/arduino/company/communication/GSM_Arduino.js"></script>
 
@@ -513,7 +516,7 @@
 		<block type="motionAccGyro"></block>
 		<block type="getMotionValue"></block>
 		<block type="motionDMP"></block>
-		<block type="motionSoft"></block>
+<!-- 		<block type="motionSoft"></block> -->
 
 		<block type="getMotionYawPitchRoll"></block>
 
@@ -607,22 +610,66 @@
 	<block type="nRF_Send"></block>
 	<block type="nRF_Read"></block>
 
-		<block type="WiFiBlynk"></block>
-		<block type="BLYNK_READ"></block>
-		<block type="BLYNK_WRITE"></block>
-		<block type="BLYNKParamOne"></block>
-		<block type="BLYNKParamArray">
-			<value name="paramNum">
-				<block type="math_number">
-					<field name="NUM">0</field>
-				</block>
-			</value>
-		</block>
-		<block type="WiFiBlynkTimer"></block>
-		<block type="WiFiBlynkVirtualWrite"></block>
+	<block type="WiFiBlynk"></block>
+	<block type="BLYNK_READ"></block>
+	<block type="BLYNK_WRITE"></block>
+	<block type="BLYNKParamOne"></block>
+	<block type="BLYNKParamArray">
+		<value name="paramNum">
+			<block type="math_number">
+				<field name="NUM">0</field>
+			</block>
+		</value>
+	</block>
+	<block type="WiFiBlynkTimer"></block>
+	<block type="WiFiBlynkVirtualWrite"></block>
 
 
+	<block type="microduinoIICSendToSlaver">
+		<value name="numSlaver">
+			<shadow type="math_number">
+				<field name="NUM">0</field>
+			</shadow>
+		</value>
+		<value name="numByte">
+		  <shadow type="text">
+			<field name="TEXT">a</field>
+		  </shadow>
+		</value>
 
+	</block>
+
+	<block type="microduinoIICRequest">
+		<value name="numSlaver">
+			<shadow type="math_number">
+				<field name="NUM">0</field>
+			</shadow>
+		</value>
+		<value name="numByte">
+			<shadow type="math_number">
+				<field name="NUM">0</field>
+			</shadow>
+		</value>
+	</block>
+
+	<block type="microduinoIICReadCache"></block>
+	<block type="microduinoIICCacheLen"></block>
+	<block type="microduinoIMIICSlaver">
+		<value name="numSlaver">
+			<shadow type="math_number">
+				<field name="NUM">0</field>
+			</shadow>
+		</value>
+	</block>
+	<block type="reciverIICMasterRequest"></block>
+	<block type="microduinoIICSendToMaster">
+		<value name="numByte">
+		  <shadow type="text">
+			<field name="TEXT">a</field>
+		  </shadow>
+		</value>
+	</block>
+	<block type="reciverIICMasterData"></block>
 
 		<!--Zigbee-->
 		<!--

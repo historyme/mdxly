@@ -65,6 +65,8 @@ Blockly.Arduino.motionDMP = function() {
   var code='';
   code+='if (!mpuReady) return;\n';
   code+='mpu.getYawPitchRoll(ypr);\n';
+  code+='if (!mpuReady) return;\n';
+  code+='mpu.getYawPitchRoll(ypr);\n';
   return code;
 };
 

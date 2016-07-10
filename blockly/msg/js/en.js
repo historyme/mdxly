@@ -1364,3 +1364,24 @@ Blockly.MicroduinoForPerTime='Every Time';
 
 Blockly.MicroduinoServoSpeed='rotate Speed(deegre/s)';
 Blockly.MicroduinoPotentiometer='Rotation Potentiometer';
+
+
+Blockly.IICMasterTo='IIC Master to';
+Blockly.NumberSlaverRequest='Number from slaver request';
+Blockly.IICByteData='Byte data';
+Blockly.IICIfSuccess='Success';
+Blockly.IICIfFail='Fail';
+Blockly.IICMasterSendToSlaver='IIC Master to Slaver number';
+Blockly.IICMasterSendData='Send';
+Blockly.IICMasterSendTypeChar='Byte';
+Blockly.IICMasterSendTypeString='String';
+Blockly.IICMasterSendTypeVar='Var';
+Blockly.IICMasterSendType='Type is';
+Blockly.IICMasterSendDataLength='Length';
+Blockly.IICReadByte='Read 1 Byte form IIC Cache';
+Blockly.IICCacheLen='IIC Cache length';
+Blockly.IAMIIC='I am IIC';
+Blockly.IICNumberSlaver='Number Slaver';
+Blockly.IICReciverMasterRequest='Reciver IIC Master Request';
+Blockly.IICSendtoMaster='Send to Master';
+Blockly.reciverIICMasterData='Reciver IIC Master Data';

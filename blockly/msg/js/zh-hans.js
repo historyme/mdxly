@@ -1381,3 +1381,24 @@ Blockly.MicroduinoForPerTime='按次';
 
 Blockly.MicroduinoServoSpeed='转速(度/秒)';
 Blockly.MicroduinoPotentiometer='旋转电位器';
+
+
+Blockly.IICMasterTo='IIC主机向';
+Blockly.NumberSlaverRequest='号从机请求';
+Blockly.IICByteData='字节数据';
+Blockly.IICIfSuccess='成功';
+Blockly.IICIfFail='失败';
+Blockly.IICMasterSendToSlaver='IIC主机向从机号';
+Blockly.IICMasterSendData='发送';
+Blockly.IICMasterSendTypeChar='字符';
+Blockly.IICMasterSendTypeString='字符串';
+Blockly.IICMasterSendTypeVar='变量';
+Blockly.IICMasterSendType='类型为';
+Blockly.IICMasterSendDataLength='长度';
+Blockly.IICReadByte='读取1字节IIC缓存';
+Blockly.IICCacheLen='IIC缓存长度';
+Blockly.IAMIIC='我是IIC';
+Blockly.IICNumberSlaver='号从机';
+Blockly.IICReciverMasterRequest='收到IIC主机请求';
+Blockly.IICSendtoMaster='向主机发送';
+Blockly.reciverIICMasterData='收到IIC主机数据';
