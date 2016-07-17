@@ -1134,10 +1134,10 @@ Blockly.HOST_NAME='HOST NAME:';
 Blockly.HOST_PORT='HOST PORT:';
 Blockly.WEBPAGE='WEB PAGE:';
 
-Blockly.carSpeed='Speed(-255~255):'
-Blockly.leftSpeed='left Wheel Speed(-255~255):';
-Blockly.rightSpeed='right Wheel(-255~255):';
-Blockly.motor_ctrl='motor control(-255~255):';
+Blockly.carSpeed='Speed:'
+Blockly.leftSpeed='left Wheel Speed:';
+Blockly.rightSpeed='right Wheel:';
+Blockly.motor_ctrl='motor control:';
 Blockly.mtankDIR1='Direction1(1000~2000):';
 Blockly.mTankthr1='Throttle1(1000~2000):';
 Blockly.mtankDIR2='Direction2(1000~2000):';

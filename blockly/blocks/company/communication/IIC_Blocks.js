@@ -85,7 +85,7 @@ Blockly.Blocks.microduinoIICCacheLen = {
     this.appendDummyInput("")
         .appendTitle(Blockly.IICCacheLen);
     this.setInputsInline(true);
-    this.setOutput(true, String);
+    this.setOutput(true, Number);
   }
 };
 

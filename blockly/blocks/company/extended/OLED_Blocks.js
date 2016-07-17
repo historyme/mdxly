@@ -117,8 +117,8 @@ Blockly.Blocks.MD_OLED_GeometryLine = {
   init: function() {
     var TYPE = [[Blockly.MD_OLEDPointer, 'point'],
                 [Blockly.MD_OLEDLine, 'line'],
-                [Blockly.MD_OLEDHLine, 'HLine'],
-                [Blockly.MD_OLEDVLine, 'VLine'],
+                // [Blockly.MD_OLEDHLine, 'HLine'],
+                // [Blockly.MD_OLEDVLine, 'VLine'],
                 //[Blockly.MD_OLEDTriangle, 'triangle'],
                 [Blockly.MD_OLEDFrame, 'frame'],
                 //[Blockly.MD_OLEDRFrame, 'RFrame'],
