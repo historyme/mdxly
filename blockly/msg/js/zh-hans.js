@@ -1143,8 +1143,8 @@ Blockly.HOST_PORT='端口:';
 Blockly.WEBPAGE='子页:';
 
 Blockly.carSpeed='速度:'
-Blockly.leftSpeed='左轮速度:';
-Blockly.rightSpeed='右轮速度:';
+Blockly.leftSpeed='左';
+Blockly.rightSpeed='右';
 Blockly.motor_ctrl='电机控制:';
 Blockly.mtankDIR1='方向1(1000~2000):';
 Blockly.mTankthr1='油门1(1000~2000):';
