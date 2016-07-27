@@ -108,6 +108,8 @@ Blockly.Blocks.microduinoCarControl = {
   init: function() {
 
     this.setColour(colorSet);
+        this.appendDummyInput("")
+        .appendTitle(Blockly.motor_ctrl);
 
   this.appendValueInput('leftSpeed')
         .setCheck(Number)
