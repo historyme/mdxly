@@ -124,3 +124,13 @@ Blockly.Arduino.microduinoAnaloyRead = function() {
   code+='analogRead('+analogPin+')';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
+
+
+Blockly.Arduino.microduinoSerailAvailable = function() {
+  var serailType = this.getTitleValue('serailType');
+
+
+  var code='';
+  code+=serailType+'.available()';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};

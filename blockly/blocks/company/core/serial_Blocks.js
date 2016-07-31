@@ -212,3 +212,27 @@ Blockly.Blocks.microduinoAnaloyRead = {
 
   }
 };
+
+
+Blockly.Blocks.microduinoSerailAvailable = {
+  init: function() {
+
+
+
+  var serailType =[["Serial", "Serial"], 
+    ["SoftwareSerial", "mySerial"]];
+
+
+    this.setColour(colorSet);
+
+    this.appendDummyInput()
+    .appendTitle(new Blockly.FieldDropdown(serailType), "serailType")
+    .appendTitle(Blockly.serailAvalibleLength);
+
+    var tip="获取串口数据长度\n";
+    tip+="返回一个数字值\n";
+    this.setTooltip(tip);
+    this.setOutput(true, Number);
+
+  }
+};

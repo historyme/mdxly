@@ -1385,3 +1385,4 @@ Blockly.IICNumberSlaver='Number Slaver';
 Blockly.IICReciverMasterRequest='Reciver IIC Master Request';
 Blockly.IICSendtoMaster='Send to Master';
 Blockly.reciverIICMasterData='Reciver IIC Master Data';
+Blockly.serailAvalibleLength='Serial Available';

@@ -144,6 +144,8 @@
 		</block>
 
 		<block type="microduinoAnaloyRead"></block>
+
+		<block type="microduinoSerailAvailable"></block>
 	</category>
 
 

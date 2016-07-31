@@ -1402,3 +1402,4 @@ Blockly.IICNumberSlaver='号从机';
 Blockly.IICReciverMasterRequest='收到IIC主机请求';
 Blockly.IICSendtoMaster='向主机发送';
 Blockly.reciverIICMasterData='收到IIC主机数据';
+Blockly.serailAvalibleLength='未读数据长度';
