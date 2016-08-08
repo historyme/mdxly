@@ -81,7 +81,7 @@ Blockly.Arduino.BuzzerToneSong = function() {
 	code+='  noTone(BuzzerPin'+BuzzerPin+');\n';
 	code+='  delay(30);\n';
 	code+='}\n';
-	code+='delay(2000);\n';
+	code+='delay(1000);\n';
 
 	return code;
 };

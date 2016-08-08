@@ -96,6 +96,13 @@ volatile uint8_t timer5_pin_mask;
 const uint8_t PROGMEM tone_pin_to_timer_PGM[] = { 2 /*, 3, 4, 5, 1, 0 */ };
 static uint8_t tone_pins[AVAILABLE_TONE_PINS] = { 255 /*, 255, 255, 255, 255, 255 */ };
 
+#elif defined(__AVR_ATmega128RFA1__)
+
+#define AVAILABLE_TONE_PINS 6
+
+const uint8_t PROGMEM tone_pin_to_timer_PGM[] = { 5, 4, 0, 2, 1, 3 };
+static uint8_t tone_pins[AVAILABLE_TONE_PINS] = { 255, 255, 255, 255, 255, 255 };
+
 #elif defined(__AVR_ATmega8__)
 
 #define AVAILABLE_TONE_PINS 1
@@ -158,6 +165,7 @@ static int8_t toneBegin(uint8_t _pin)
         // 8 bit timer
         TCCR0A = 0;
         TCCR0B = 0;
+		TIMSK0 = 0;
         bitWrite(TCCR0A, WGM01, 1);
         bitWrite(TCCR0B, CS00, 1);
         timer0_pin_port = portOutputRegister(digitalPinToPort(_pin));
@@ -170,6 +178,7 @@ static int8_t toneBegin(uint8_t _pin)
         // 16 bit timer
         TCCR1A = 0;
         TCCR1B = 0;
+		TIMSK1 = 0;
         bitWrite(TCCR1B, WGM12, 1);
         bitWrite(TCCR1B, CS10, 1);
         timer1_pin_port = portOutputRegister(digitalPinToPort(_pin));
@@ -182,6 +191,7 @@ static int8_t toneBegin(uint8_t _pin)
         // 8 bit timer
         TCCR2A = 0;
         TCCR2B = 0;
+		TIMSK2 = 0;
         bitWrite(TCCR2A, WGM21, 1);
         bitWrite(TCCR2B, CS20, 1);
         timer2_pin_port = portOutputRegister(digitalPinToPort(_pin));
@@ -194,6 +204,7 @@ static int8_t toneBegin(uint8_t _pin)
         // 16 bit timer
         TCCR3A = 0;
         TCCR3B = 0;
+		TIMSK3 = 0;
         bitWrite(TCCR3B, WGM32, 1);
         bitWrite(TCCR3B, CS30, 1);
         timer3_pin_port = portOutputRegister(digitalPinToPort(_pin));
@@ -206,6 +217,7 @@ static int8_t toneBegin(uint8_t _pin)
         // 16 bit timer
         TCCR4A = 0;
         TCCR4B = 0;
+		TIMSK4 = 0;
         #if defined(WGM42)
           bitWrite(TCCR4B, WGM42, 1);
         #elif defined(CS43)
@@ -224,6 +236,7 @@ static int8_t toneBegin(uint8_t _pin)
         // 16 bit timer
         TCCR5A = 0;
         TCCR5B = 0;
+		TIMSK5 = 0;
         bitWrite(TCCR5B, WGM52, 1);
         bitWrite(TCCR5B, CS50, 1);
         timer5_pin_port = portOutputRegister(digitalPinToPort(_pin));
