@@ -437,3 +437,88 @@ Blockly.Blocks.MatrixWriteString = {
     },
 };
 
+
+
+Blockly.Blocks.MD_Matrix_GeometryLine = {
+  init: function() {
+    var TYPE = [[Blockly.MD_OLEDPointer, 'point'],
+                [Blockly.MD_OLEDLine, 'line'],
+                [Blockly.MD_OLEDFrame, 'frame'],
+                [Blockly.MD_OLEDBox, 'box'],
+                ];
+
+    this.setColour(colorSet);
+    this.appendDummyInput("")
+        .appendTitle(Blockly.OLEDGeomPointLineArea)
+        .appendField(new Blockly.FieldDropdown(TYPE), 'TYPE');
+
+    this.appendValueInput("x0", Number)
+        .setCheck(Number)
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendTitle("x0:");
+    this.appendValueInput("y0", Number)
+        .setCheck(Number)
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendTitle("y0:");
+
+    this.appendValueInput("x1w", Number)
+        .setCheck(Number)
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendTitle("x1(w):");
+    this.appendValueInput("y1h", Number)
+        .setCheck(Number)
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendTitle("y1(h):");
+
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+//    this.setTooltip("test");  
+    this.setInputsInline(true);
+
+    },
+};
+
+
+
+Blockly.Blocks.MD_Matrix_GeometryCircle = {
+  init: function() {
+    var TYPE = [[Blockly.MD_OLEDCircle, 'circle'],
+                [Blockly.MD_OLEDDisc, 'disc']
+                ];
+
+    // var ArcType = [[Blockly.MD_OLEDAllCircle, 'U8G_DRAW_ALL'],
+    //             [Blockly.MD_OLEDTopRightCircle, 'U8G_DRAW_UPPER_RIGHT'],
+    //             [Blockly.MD_OLEDTopLeftCircle, 'U8G_DRAW_UPPER_LEFT'],
+    //             [Blockly.MD_OLEDLowLeftCircle, 'U8G_DRAW_LOWER_LEFT'],
+    //             [Blockly.MD_OLEDLowRightCircle, 'U8G_DRAW_LOWER_RIGHT']
+    //             ];
+
+    this.setColour(colorSet);
+    this.appendDummyInput("")
+        .appendTitle(Blockly.OLEDGeomCircle)
+        .appendField(new Blockly.FieldDropdown(TYPE), 'TYPE');
+
+
+    // this.appendDummyInput("")
+    //     .appendTitle(Blockly.MD_OLEDArc)
+    //     .appendField(new Blockly.FieldDropdown(ArcType), 'ArcType');
+
+    this.appendValueInput("x", Number)
+        .setCheck(Number)
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendTitle("x:");
+    this.appendValueInput("y", Number)
+        .setCheck(Number)
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendTitle("y:");
+    this.appendValueInput("rw", Number)
+        .setCheck(Number)
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendTitle("r:");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+//    this.setTooltip("test");  
+    this.setInputsInline(true);
+
+    },
+};

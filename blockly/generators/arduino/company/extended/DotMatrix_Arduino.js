@@ -239,19 +239,57 @@ Blockly.Arduino.clearMatrixColor = function() {
 
 Blockly.Arduino.MatrixWriteString = function() {
   var stringVar=this.getFieldValue('stringVar');
-
-  //Blockly.Arduino.definitions_['dotMatrixstringDefine'] = 'char str[]="'+stringVar+'";';
-
   var MatrixShowMode = this.getFieldValue('MatrixShowMode');
-  
   var startMatrixT = Blockly.Arduino.valueToCode(this, 'startMatrixT', Blockly.Arduino.ORDER_ATOMIC);
   var startMatrixXY = Blockly.Arduino.valueToCode(this, 'startMatrixXY', Blockly.Arduino.ORDER_ATOMIC);
   var code='';
-
-  //code+='str=\"'+stringVar+'\0\";\n';
-
   code+='display.writeString("'+stringVar+'", '+MatrixShowMode+', '+startMatrixT+', '+startMatrixXY+');\n';
+  return code;
+};
 
+
+Blockly.Arduino.MD_Matrix_GeometryLine = function() {
+  var type = this.getFieldValue('TYPE');
+
+  var x0 = Blockly.Arduino.valueToCode(this, 'x0', Blockly.Arduino.ORDER_ATOMIC);
+  var y0 = Blockly.Arduino.valueToCode(this, 'y0', Blockly.Arduino.ORDER_ATOMIC);
+  var x1w = Blockly.Arduino.valueToCode(this, 'x1w', Blockly.Arduino.ORDER_ATOMIC);
+  var y1h = Blockly.Arduino.valueToCode(this, 'y1h', Blockly.Arduino.ORDER_ATOMIC);
+
+  var code='';
+
+  if(type=='point') {
+    code+='display.setLed('+x0+','+y0+', true);\n';
+  } else if(type=='line') {
+    code+='display.drawLine('+x0+','+y0+','+x1w+','+y1h+');\n';
+  } else if(type=='HLine') {
+    code+='display.drawHLine('+x0+','+y0+','+x1w+');\n';
+  } else if(type=='VLine') {
+    code+='display.drawVLine('+x0+','+y0+','+y1h+');\n';
+  } 
+  else if(type=='frame') {
+    code+='display.drawFrame('+x0+','+y0+','+x1w+','+y1h+');\n';
+  } 
+  else if(type=='box') {
+    code+='display.drawBox('+x0+','+y0+','+x1w+','+y1h+');\n';
+  } 
+  return code;
+};
+
+
+Blockly.Arduino.MD_Matrix_GeometryCircle = function() {
+  var type = this.getFieldValue('TYPE');
+
+  var x = Blockly.Arduino.valueToCode(this, 'x', Blockly.Arduino.ORDER_ATOMIC);
+  var y = Blockly.Arduino.valueToCode(this, 'y', Blockly.Arduino.ORDER_ATOMIC);
+  var rw = Blockly.Arduino.valueToCode(this, 'rw', Blockly.Arduino.ORDER_ATOMIC);
+  var code='';
+
+  if(type=='circle') {
+    code+='display.drawCircle('+x+','+y+','+rw+');\n';
+  } else if(type=='disc') {
+    code+='display.drawDisc('+x+','+y+','+rw+');\n';
+  } 
 
   return code;
 };
