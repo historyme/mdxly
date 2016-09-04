@@ -943,7 +943,7 @@ Blockly.ColorLEDBlue='蓝';
 
 
 Blockly.ir_r_Init='红外接收初始化:';
-Blockly.CubeCar='Cube小车';
+Blockly.CubeCar='小车准备';
 Blockly.N20begin='电机准备';
 Blockly.N20choose='电机选择';
 Blockly.N20Break='刹车';
@@ -1145,7 +1145,7 @@ Blockly.WEBPAGE='子页:';
 Blockly.carSpeed='速度:'
 Blockly.leftSpeed='左';
 Blockly.rightSpeed='右';
-Blockly.motor_ctrl='电机控制:';
+Blockly.motor_ctrl='小车控制:';
 Blockly.mtankDIR1='方向1(1000~2000):';
 Blockly.mTankthr1='油门1(1000~2000):';
 Blockly.mtankDIR2='方向2(1000~2000):';

@@ -939,7 +939,7 @@ Blockly.ColorLEDGreen='Green:';
 Blockly.ColorLEDBlue='Blue:';
 
 Blockly.ir_r_Init='ir receiver initialize:';
-Blockly.CubeCar='Cube Car';
+Blockly.CubeCar='Car Prepare';
 Blockly.N20begin='Motor Begin';
 Blockly.N20choose='Motor choose';
 Blockly.N20Break='Break';
@@ -1137,7 +1137,7 @@ Blockly.WEBPAGE='WEB PAGE:';
 Blockly.carSpeed='Speed:'
 Blockly.leftSpeed='left';
 Blockly.rightSpeed='right';
-Blockly.motor_ctrl='motor control:';
+Blockly.motor_ctrl='car control:';
 Blockly.mtankDIR1='Direction1(1000~2000):';
 Blockly.mTankthr1='Throttle1(1000~2000):';
 Blockly.mtankDIR2='Direction2(1000~2000):';

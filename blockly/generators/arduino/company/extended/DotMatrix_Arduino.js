@@ -40,7 +40,7 @@ Blockly.Arduino.DotMatrix = function() {
   var setColorString='void setColor(byte add, uint8_t x, uint8_t y, uint8_t red, uint8_t green, uint8_t blue)\n';
 	setColorString+='{\n';
 	// setColorString+='  Wire.beginTransmission(add);\n';
-  setColorString+='  Wire.beginTransmission('+dotAddress+');\n';
+  setColorString+='  Wire.beginTransmission(add);\n';
 	setColorString+='  temp[0] = 0x80|(y<<3)|x;\n';
 	setColorString+='  temp[1] = blue;\n';
 	setColorString+='  temp[2] = 0x20|green;\n';
@@ -91,7 +91,7 @@ Blockly.Arduino.DotMatrix = function() {
   code+='{\n'
   code+='    for(j=0; j<8; j++)\n'
   code+='    {\n'
-  code+='        setColor(add,i,j,rgbArray'+dotName+'[i][j][0],rgbArray'+dotName+'[i][j][1],rgbArray'+dotName+'[i][j][2]);\n'
+  code+='        setColor('+dotAddress+',i,j,rgbArray'+dotName+'[i][j][0],rgbArray'+dotName+'[i][j][1],rgbArray'+dotName+'[i][j][2]);\n'
   code+='    }  \n'
   code+='}\n'
 
