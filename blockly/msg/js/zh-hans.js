@@ -593,11 +593,13 @@ Blockly.MIXLY_SERIAL_READ_INT='整数';
 Blockly.MIXLY_SERIAL_READ_FLOAT='小数';
 Blockly.MIXLY_MAX='取最大值';
 Blockly.MIXLY_MIN='取最小值';
-Blockly.MIXLY_WRITE_SD_FILE='写入 SD 文件';
+Blockly.MIXLY_WRITE_SD_FILE='写入SD文件';
 Blockly.MIXLY_SD_DATA='数据';
 Blockly.MIXLY_SD_NEWLINE='换行';
-Blockly.MIXLY_EEPROM_WRITE_LONG='写入 EEPROM 地址';
-Blockly.MIXLY_EEPROM_READ_LONG='读取 EEPROM 地址';
+Blockly.MIXLY_EEPROM_WRITE_LONG='写入(长整数) EEPROM 地址';
+Blockly.MIXLY_EEPROM_READ_LONG='读取(长整数) EEPROM 地址';
+Blockly.MIXLY_EEPROM_WRITE_BYTE='写入(字节) EEPROM 地址';
+Blockly.MIXLY_EEPROM_READ_BYTE='读取(字节) EEPROM 地址';
 Blockly.MIXLY_SENSE_MOTOR='设置马达转速为';
 Blockly.MIXLY_SENSE_MOTOR_STOP='停止马达';
 Blockly.MIXLY_SENSE_SERVO='设置舵机角度';
@@ -719,7 +721,8 @@ var MSG = {
   microduino: "美科科技",
   catLuxe:"泺喜机器人",
   tab_blocks: "模块",
-  tab_arduino: "代码"
+  tab_arduino: "代码",
+  copyright:"Copyright © 北师大教育学部创客教育实验室  maker.bnu.edu.cn"
 };
 Blockly.MIXLY_TOOLTIP_INOUT_HIGHLOW='返回高电平或低电平';
 Blockly.MIXLY_TOOLTIP_INOUT_DIGITAL_READ='返回指定管脚的电平值';

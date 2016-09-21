@@ -113,15 +113,33 @@ Blockly.Arduino.WiFiBlynk = function() {
 
   //var branch = Blockly.Arduino.statementToCode(this, 'WiFiInput');
 
-  var WiFiDefine='#define BLYNK_PRINT Serial\n';
-  WiFiDefine+='#include <ESP8266_HardSer.h>\n';
-  WiFiDefine+='#include <BlynkSimpleShieldEsp8266_HardSer.h>\n';
+  // var WiFiDefine='#define BLYNK_PRINT Serial\n';
+  // WiFiDefine+='#include <ESP8266_HardSer.h>\n';
+  // WiFiDefine+='#include <BlynkSimpleShieldEsp8266_HardSer.h>\n';
   
+  // WiFiDefine+='#define EspSerial Serial1\n';
+  // WiFiDefine+='ESP8266 wifi(EspSerial);\n';
+  // WiFiDefine+='char auth[] = "'+authToken+'";\n';
+  // WiFiDefine+='\n';
+  // WiFiDefine+='\n';
+
+    /*********************test******************************/
+  var  WiFiDefine='#include <ESP8266_HardSer.h>\n';
+  WiFiDefine+='#include <BlynkSimpleShieldEsp8266_HardSer.h>\n';
+  WiFiDefine+='#if defined(__AVR_ATmega32U4__)\n';
+  WiFiDefine+='#define BLYNK_PRINT Serial\n';
   WiFiDefine+='#define EspSerial Serial1\n';
+  WiFiDefine+='#else if defined(__AVR_ATmega328P__) || (__AVR_ATmega1284P__) || defined(__AVR_ATmega644P__) || defined(__AVR_ATmega128RFA1__)\n';
+  WiFiDefine+='#include <SoftwareSerial.h>\n';
+  WiFiDefine+='SoftwareSerial mySerial(2, 3); // RX, TX\n';
+  WiFiDefine+='#define BLYNK_PRINT mySerial\n';
+  WiFiDefine+='#define EspSerial Serial\n';
+  WiFiDefine+='#endif\n';
   WiFiDefine+='ESP8266 wifi(EspSerial);\n';
   WiFiDefine+='char auth[] = "'+authToken+'";\n';
   WiFiDefine+='\n';
   WiFiDefine+='\n';
+  /*********************test^*****************************/
 
   Blockly.Arduino.definitions_['var_WiFiBlynkDefine'] = WiFiDefine;
 

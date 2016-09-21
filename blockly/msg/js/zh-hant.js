@@ -597,8 +597,10 @@ Blockly.MIXLY_MIN='取最小值';
 Blockly.MIXLY_WRITE_SD_FILE='寫入SD檔案';
 Blockly.MIXLY_SD_DATA='數據';
 Blockly.MIXLY_SD_NEWLINE='換行';
-Blockly.MIXLY_EEPROM_WRITE_LONG='寫入EEPROM地址';
-Blockly.MIXLY_EEPROM_READ_LONG='讀取EEPROM地址';
+Blockly.MIXLY_EEPROM_WRITE_LONG='寫入(長整數) EEPROM地址';
+Blockly.MIXLY_EEPROM_READ_LONG='讀取(長整數) EEPROM地址';
+Blockly.MIXLY_EEPROM_WRITE_BYTE='寫入(字節) EEPROM地址';
+Blockly.MIXLY_EEPROM_READ_BYTE='讀取(字節) EEPROM地址';
 Blockly.MIXLY_SENSE_MOTOR='設定馬達轉速為（-255~255）';
 Blockly.MIXLY_SENSE_MOTOR_STOP='停止馬達';
 Blockly.MIXLY_SENSE_SERVO='設定舵機角度';
@@ -712,7 +714,8 @@ catSense:"盛思（盒子）",
 catSense2:"盛思（機器人）",
 catLuxe:"濼喜機器人",
 tab_blocks:"模塊",
-tab_arduino:"程式碼"
+tab_arduino:"程式碼",
+copyright:"Copyright © 北師大教育學部創客教育實驗室  maker.bnu.edu.cn"
 };
 Blockly.MIXLY_TOOLTIP_INOUT_HIGHLOW='返回高電平或低電平';
 Blockly.MIXLY_TOOLTIP_INOUT_DIGITAL_READ='返回指定管脚的電平值';

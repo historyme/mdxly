@@ -595,8 +595,10 @@ Blockly.MIXLY_MIN='min';
 Blockly.MIXLY_WRITE_SD_FILE='Escribe fichero en SD';
 Blockly.MIXLY_SD_DATA='Dato';
 Blockly.MIXLY_SD_NEWLINE='NuevaLinea';
-Blockly.MIXLY_EEPROM_WRITE_LONG='Escribir EEPROM dirección';
-Blockly.MIXLY_EEPROM_READ_LONG='Leer EEPROM dirección';
+Blockly.MIXLY_EEPROM_WRITE_LONG='Escribir(long) EEPROM dirección';
+Blockly.MIXLY_EEPROM_READ_LONG='Leer(long) EEPROM dirección';
+Blockly.MIXLY_EEPROM_WRITE_BYTE='Escribir(byte) EEPROM dirección';
+Blockly.MIXLY_EEPROM_READ_BYTE='Leer(byte) EEPROM dirección';
 Blockly.MIXLY_SENSE_MOTOR='Configurar Velocidad Motor(-255~255)';
 Blockly.MIXLY_SENSE_MOTOR_STOP='Stop Motor';
 Blockly.MIXLY_SENSE_SERVO='Configurar Ángulo Servo';
@@ -710,7 +712,8 @@ var MSG = {
   catSense2: "Labplus(Robot)",
   catLuxe:"LuxeRobot",
   tab_blocks: "Bloques",
-  tab_arduino: "Código"
+  tab_arduino: "Código",
+  copyright:"Copyright © Mixly Team@BNU  maker.bnu.edu.cn"
 };
 Blockly.MIXLY_TOOLTIP_INOUT_HIGHLOW='Devuelve alta o baja tensión.';
 Blockly.MIXLY_TOOLTIP_INOUT_DIGITAL_READ='Devuelve un valor digital de un Pin específico';

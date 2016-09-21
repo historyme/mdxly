@@ -597,8 +597,10 @@ Blockly.MIXLY_MIN='min';
 Blockly.MIXLY_WRITE_SD_FILE='Write SD File';
 Blockly.MIXLY_SD_DATA='Data';
 Blockly.MIXLY_SD_NEWLINE='NewLine';
-Blockly.MIXLY_EEPROM_WRITE_LONG='Write EEPROM address';
-Blockly.MIXLY_EEPROM_READ_LONG='Read EEPROM address';
+Blockly.MIXLY_EEPROM_WRITE_LONG='Write(long) EEPROM address';
+Blockly.MIXLY_EEPROM_READ_LONG='Read(long) EEPROM address';
+Blockly.MIXLY_EEPROM_WRITE_BYTE='Write(byte) EEPROM address';
+Blockly.MIXLY_EEPROM_READ_BYTE='Read(byte) EEPROM address';
 Blockly.MIXLY_SENSE_MOTOR='Set Motor Speed(-255~255)';
 Blockly.MIXLY_SENSE_MOTOR_STOP='Stop Motor';
 Blockly.MIXLY_SENSE_SERVO='Set Servo Angle';
@@ -720,7 +722,8 @@ var MSG = {
   microduino: "Microduino",
   catLuxe:"LuxeRobot",
   tab_blocks: "Blocks",
-  tab_arduino: "Code"
+  tab_arduino: "Code",
+  copyright:"Copyright © Mixly Team@BNU  maker.bnu.edu.cn"
 };
 Blockly.MIXLY_TOOLTIP_INOUT_HIGHLOW='Returns high or low voltage.';
 Blockly.MIXLY_TOOLTIP_INOUT_DIGITAL_READ='Returns digital value of a specific Port';
