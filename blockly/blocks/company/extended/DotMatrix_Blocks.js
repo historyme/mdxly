@@ -9,7 +9,6 @@ goog.require('Blockly.Blocks');
 var colorSet='#27b6ac';
 
 
-
 Blockly.Blocks.DotMatrix = {
   init: function() {
     this.setColour(colorSet);
@@ -405,13 +404,13 @@ Blockly.Blocks.clearMatrixColor = {
 Blockly.Blocks.MatrixWriteString = {
   init: function() {
 
-    var MatrixShowMode =[['MODE_H', 'MODE_H'], ['MODE_V', 'MODE_V']];
+    //var MatrixShowMode =[['MODE_H', 'MODE_H'], ['MODE_V', 'MODE_V']];
 
     this.setColour(colorSet);
 
     this.appendDummyInput("")
-      .appendTitle(Blockly.MatrixShowMode)
-      .appendField(new Blockly.FieldDropdown(MatrixShowMode), 'MatrixShowMode')
+      // .appendTitle(Blockly.MatrixShowMode)
+      // .appendField(new Blockly.FieldDropdown(MatrixShowMode), 'MatrixShowMode')
       .appendTitle(Blockly.stringVar)
       .appendField(new Blockly.FieldTextInput('microduino'),'stringVar');
 

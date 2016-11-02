@@ -239,11 +239,11 @@ Blockly.Arduino.clearMatrixColor = function() {
 
 Blockly.Arduino.MatrixWriteString = function() {
   var stringVar=this.getFieldValue('stringVar');
-  var MatrixShowMode = this.getFieldValue('MatrixShowMode');
+  //var MatrixShowMode = this.getFieldValue('MatrixShowMode');
   var startMatrixT = Blockly.Arduino.valueToCode(this, 'startMatrixT', Blockly.Arduino.ORDER_ATOMIC);
   var startMatrixXY = Blockly.Arduino.valueToCode(this, 'startMatrixXY', Blockly.Arduino.ORDER_ATOMIC);
   var code='';
-  code+='display.writeString("'+stringVar+'", '+MatrixShowMode+', '+startMatrixT+', '+startMatrixXY+');\n';
+  code+='display.writeString("'+stringVar+'", '+startMatrixT+', '+startMatrixXY+');\n';
   return code;
 };
 

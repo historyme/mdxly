@@ -489,4 +489,3 @@ Blockly.AudioProPause='Pause';
 Blockly.audioProMelody='Melody';
 Blockly.audioProVolume='Volume';
 Blockly.audioProDuration='Duration';
-

@@ -18,6 +18,9 @@
 <script type="text/javascript" src="../../blocks/company/function/Audio_Blocks.js"></script>
 <script type="text/javascript" src="../../generators/arduino/company/function/Audio_Arduino.js"></script>
 
+<script type="text/javascript" src="../../blocks/company/function/AudioPro_Blocks.js"></script>
+<script type="text/javascript" src="../../generators/arduino/company/function/AudioPro_Arduino.js"></script>
+
 <script type="text/javascript" src="../../blocks/company/function/RTC_Blocks.js"></script>
 <script type="text/javascript" src="../../generators/arduino/company/function/RTC_Arduino.js"></script>
 
@@ -461,12 +464,32 @@
 	        </value>
 		</block>
 
+		<block type="audioProPrepare"></block>
+		<block type="audioProInstrument"></block>
+		<block type="audioProControl">
+			<value name="audioProMelody">
+	          <shadow type="math_number">
+	            <field name="NUM">57</field>
+	          </shadow>
+	        </value>
+	        <value name="audioProVolume">
+	          <shadow type="math_number">
+	            <field name="NUM">127</field>
+	          </shadow>
+	        </value>
+	        <value name="audioProDuration">
+	          <shadow type="math_number">
+	            <field name="NUM">100</field>
+	          </shadow>
+	        </value>
+		</block>
 
+		<block type="mCookie_RTC_time"></block>
 
 		<block type="mCookie_RTC_set">
 		    <value name="Year">
 		        <shadow type="math_number">
-		            <field name="NUM">15</field>
+		            <field name="NUM">2016</field>
 		        </shadow>
 		    </value>
 		    <value name="Mouth">
@@ -501,7 +524,7 @@
 		    </value>
 		</block> 
 
-		<block type="mCookie_RTC_time"></block>
+		
 		<block type="mCookie_RTC_Output"></block>
 		<block type="GPS"></block>
 		<block type="GPSShows">

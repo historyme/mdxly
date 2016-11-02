@@ -115,7 +115,7 @@ Blockly.Arduino.definitions_['define_pos_num'] = 'int led_pos = 0,led_num = 1;\n
 Blockly.Arduino.definitions_['define_led_time'] = 'unsigned long led_time = 0;\n';
 Blockly.Arduino.definitions_['define_val_max'] = '#define val_max 255\n';
 Blockly.Arduino.definitions_['define_val_min'] = '#define val_min 0\n';
-Blockly.Arduino.setups_['setup_Serial'] = 'Serial.begin(115200);'; 
+Blockly.Arduino.setups_['setup_Serial'] = 'Serial.begin(9600);'; 
 
 var setColor='void colorSet(uint32_t c) {\n';
     setColor+='for (uint16_t i = 0; i < strip.numPixels(); i++)\n';
