@@ -614,10 +614,76 @@
 		<block type="bluetoothMicroduinoReciver"></block>
 		<block type="btMicroduinoReciverData"></block>
 		<block type="btMicroduinoSenderData"></block>
-		<block type="bluetoothmtankBegin"></block>
+
+<!-- 		<block type="bluetoothmtankBegin"></block>
 		<block type="bluetoothmTankReciver"></block>
 		<block type="bluetoothmTankdata"></block>
-		<block type="bluetoothcolorled"></block>
+		<block type="bluetoothcolorled"></block> -->
+
+		<block type="BTATPrepare"></block>
+		<block type="BTATOneTime"></block>
+		<block type="BTATCommands"></block>
+		<block type="BTATOLEDShow"></block>
+		<block type="BTATClear"></block>
+
+		<block type="BTATsetBaud"></block>
+		<block type="BTATsetPARI"></block>
+		<block type="BTATsetSTOP"></block>
+		<block type="BTATsetMODE"></block>
+		<block type="BTATsetROLE"></block>
+		<block type="BTATsetTYPE"></block>
+		<block type="BTATsetEmissionSignalStrength"></block>
+		<block type="BTATsetWorkStyle"></block>
+ 		<block type="BTATsetConnectNum">
+			<value name="btNum">
+			   <shadow type="math_number">
+			     <field name="NUM">0</field>
+			   </shadow>
+			</value>
+ 		</block>
+		<block type="BTATsetNAME">
+			<value name="btName">
+			   <shadow type="text">
+			     <field name="TEXT">microduino</field>
+			   </shadow>
+			</value>
+		</block>
+		<block type="BTATconnectSlaver">
+			<value name="btAddress">
+			   <shadow type="text">
+			     <field name="TEXT">0017EA0923AE</field>
+			   </shadow>
+			</value>
+		</block>
+		<block type="BTATsetPASS">
+			<value name="btPass">
+			   <shadow type="math_number">
+			     <field name="NUM">12345</field>
+			   </shadow>
+			</value>
+ 		</block>
+		<block type="BTATsetTimeCON">
+			<value name="btTime">
+			   <shadow type="math_number">
+			     <field name="NUM">001000</field>
+			   </shadow>
+			</value>
+ 		</block>
+		<block type="BTATsetTIBE">
+			<value name="btTIBETime">
+			   <shadow type="math_number">
+			     <field name="NUM">000500</field>
+			   </shadow>
+			</value>
+ 		</block>
+		<block type="BTATsearchAvalibleSlavers">
+			<value name="btSearchTime">
+			   <shadow type="math_number">
+			     <field name="NUM">3000</field>
+			   </shadow>
+			</value>
+ 		</block>
+
 
 		<block type="IRSenderCode">
 			<value name="data">

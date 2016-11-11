@@ -1,0 +1,50 @@
+#######################################
+# Syntax Coloring Map BT
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+BT	KEYWORD1	BT
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+ATCommand	KEYWORD2
+ATTest	KEYWORD2
+queryBaud	KEYWORD2
+setBaud	KEYWORD2
+queryPARI	KEYWORD2
+setPARI	KEYWORD2
+querySTOP	KEYWORD2
+setSTOP	KEYWORD2
+queryMODE	KEYWORD2
+setMODE	KEYWORD2	
+queryNAME	KEYWORD2	
+renew	KEYWORD2	
+reset	KEYWORD2	
+queryROLE	KEYWORD2	
+setROLE	KEYWORD2	
+queryPASS	KEYWORD2	
+setPASS	KEYWORD2	
+queryTYPE	KEYWORD2	
+setTYPE	KEYWORD2	
+queryADDR	KEYWORD2	
+queryCONNLast	KEYWORD2	
+connectSlaver	KEYWORD2	
+CLEAR	KEYWORD2	
+querySuccessedADDR	KEYWORD2	
+queryVersion	KEYWORD2	
+queryTimeCON	KEYWORD2	
+setTimeCON	KEYWORD2	
+searchRSSI	KEYWORD2	
+queryEmissionSignalStrength	KEYWORD2	
+setEmissionSignalStrength	KEYWORD2	
+queryTIBE	KEYWORD2	
+setTIBE	KEYWORD2	
+queryWorkStyle	KEYWORD2	
+setWorkStyle	KEYWORD2	
+searchAvalibleSlavers	KEYWORD2	
+setConnectNum	KEYWORD2	
+

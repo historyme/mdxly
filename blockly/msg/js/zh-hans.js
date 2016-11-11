@@ -917,3 +917,65 @@ Blockly.MIXLY_COMPARETO="比较";
 Blockly.MIXLY_COMPARETO_HELP="按字典顺序比较，相等则返回0，大于则返回大于0的值，小于则返回小于0的值";
 Blockly.Msg.UNDO = "撤销";
 Blockly.Msg.REDO = "重做";
+
+
+
+
+//add by microduino for chinese
+
+Blockly.MD_BTSerialType='蓝牙AT准备';
+Blockly.MD_BTSerail='默认串口(core)';
+Blockly.MD_BTSerial1='core+硬串口';
+Blockly.MD_BTSoftSerial45='软串口4,5';
+
+Blockly.MD_BTATCommands='AT命令选择';
+Blockly.MD_BTATTest='AT命令测试';
+Blockly.MD_BTATqueryNAME='查询设备名称';
+Blockly.MD_BTATqueryBaud='查询波特率';
+Blockly.MD_BTATqueryPARI='查询串口校验';
+Blockly.MD_BTATquerySTOP='查询串口停止位';
+Blockly.MD_BTATqueryMODE='查询模块工作模式';
+Blockly.MD_BTATqueryROLE='查询主从模式';
+Blockly.MD_BTATqueryPASS='查询配对密码';
+Blockly.MD_BTATqueryTYPE='查询模块鉴权工作类型';
+Blockly.MD_BTATqueryADDR='查询本机MAC地址';
+Blockly.MD_BTATquerySuccessedADDR='查询成功连接过的从机地址';
+Blockly.MD_BTATqueryVersion='查询蓝牙固件版本';
+Blockly.MD_BTATqueryTimeCON='查询尝试连接时间';
+Blockly.MD_BTATqueryWorkStyle='查询工作类型';
+Blockly.MD_BTATsearchRSSI='读取RSSI信号值';
+Blockly.MD_BTATqueryTIBE='查询模块作为ibeacon基站广播时间间隔';
+Blockly.MD_BTATqueryEmissionSignalStrength='查询模块发射信号强度';
+Blockly.MD_BTATrenew='恢复默认设置';
+Blockly.MD_BTATreset='设置主从模式';
+Blockly.MD_BTATCLEAR='清除主设备配对信息';
+Blockly.MD_BTATqueryCONNLast='连接最后一次连接成功的从设备';
+Blockly.MD_BTATExecuted='AT执行一次';
+Blockly.MD_BTATOLEDShow='OLED显示AT结果';
+Blockly.MD_BTATClear='清除AT结果';
+Blockly.MD_BTATsetBaud='设置波特率';
+Blockly.MD_BTATsetPARI='设置串口校验';
+Blockly.MD_BTATNoPARI='无校验';
+Blockly.MD_BTATsetSTOP='设置串口停止位';
+Blockly.MD_BTATset1STOP='1停止位';
+Blockly.MD_BTATset2STOP='2停止位';
+Blockly.MD_BTATsetMODE='设置模块工作模式';
+Blockly.MD_BTATEnSetMODE='开启串口透传模式';
+Blockly.MD_BTATDisSetMODE='关闭串口透传模式';
+Blockly.MD_BTATMaster='主设备';
+Blockly.MD_BTATSlaver='从设备';
+Blockly.MD_BTATsetROLE='设置主从模式';
+Blockly.MD_BTATConNoPass='连接不需要密码';
+Blockly.MD_BTATConNeedPass='连接需要密码';
+Blockly.MD_BTATsetTYPE='设置模块鉴权工作类型';
+Blockly.MD_BTATsetEmissionSignalStrength='改变模块发射信号强度';
+Blockly.MD_BTATWaitCon='等待AT+CON或AT+CONNL 命令';
+Blockly.MD_BTATWorkNow='立即工作';
+Blockly.MD_BTATsetWorkStyle='设置工作类型';
+Blockly.MD_BTATsetConnectNum='设置连接指定编号的从机';
+Blockly.MD_BTATsetName='设置设备名称';
+Blockly.MD_BTATconnectSlaver='连接指定蓝牙地址的从设备';
+Blockly.MD_BTATsetPASS='设置配对密码';
+Blockly.MD_BTATsetTimeCON='设置主模式下尝试连接时间';
+Blockly.MD_BTATsetTIBE='改变模块作为ibeacon基站广播时间间隔'
+Blockly.MD_BTATsearchAvalibleSlavers='查询周围的可用蓝牙从机 搜索时间';
