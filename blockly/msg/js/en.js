@@ -977,3 +977,22 @@ Blockly.MD_BTATsetPASS='set password';
 Blockly.MD_BTATsetTimeCON='set master connect time';
 Blockly.MD_BTATsetTIBE='set TIBE'
 Blockly.MD_BTATsearchAvalibleSlavers='search avalible slavers, search time';
+
+
+Blockly.MD_audioProSDPrepare='MP3 Player prepare';
+Blockly.MD_MAXSongNum='SD card Song nmber:';
+Blockly.MD_MAXSongUnit='';
+Blockly.MD_AudioProSDShowList='Serial print song list';
+Blockly.MD_AudioProSDControl='MP3 player controller';
+Blockly.MD_audioProSDPowerOnOff='power on/off';
+Blockly.MD_audioProSDNext='next song';
+Blockly.MD_audioProSDPre='per song';
+
+Blockly.MD_audioProSDVolumAdd='volume add';
+Blockly.MD_audioProSDVolumSub='volume sub';
+Blockly.MD_audioProSDFast='fast speed';
+Blockly.MD_audioProSDSlow='slow speed';
+Blockly.MD_audioProSDRepeat='repeat';
+Blockly.MD_AudioProSDPlayByName='MP3 play';
+Blockly.MD_AudioProSDIsPlay='is playing';
+Blockly.MD_AudioProSDPlayNum='current song number';

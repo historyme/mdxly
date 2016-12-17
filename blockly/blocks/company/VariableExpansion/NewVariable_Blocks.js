@@ -7,13 +7,12 @@ goog.require('Blockly.Blocks');
 //var colorSet=220;
 var colorSet='#e386a1';
 
-Blockly.Blocks.Defination = {
+Blockly.Blocks.MDVarDefination = {
   init: function() {
         var FLIP = [['uint16_t', 'uint16_t'],     //announce menu
                     ['uint32_t', 'uint32_t'],
                     ['double', 'double']];
   this.setColour(colorSet);  //module color
-  //this.setColour('#e184a7');  //module color
 
 
     this.appendValueInput('VALUE') 
@@ -29,7 +28,7 @@ Blockly.Blocks.Defination = {
     this.setPreviousStatement(true, null);    
     this.setNextStatement(true, null);
 //    this.setTooltip("test");  
-    this.setOutput(true);
+    //this.setOutput(true);
     //this.setInputsInline(true);
     },
 };
@@ -275,4 +274,100 @@ Blockly.Blocks.nrfDataMemberReciver = {
    this.setOutput(true);
     //this.setInputsInline(true);
     },
+};
+
+
+
+// ************************************************************************
+// THIS SECTION IS INSERTED INTO BLOCKLY BY BLOCKLYDUINO.
+Blockly.Blocks.MDvariables_declare = {
+  // Variable setter.
+  init: function() {
+
+
+    var FLIP = [['uint16_t', 'uint16_t'],     //announce menu
+                ['uint32_t', 'uint32_t'],
+                ['uint8_t','uint8_t'],
+                ['long','long'],
+                ['unsigned long','unsigned long'],
+                ['int','int'],
+                ['char','char'],
+                ['String','String'],
+                ['float', 'float'],
+                ['double', 'double']];
+
+    this.setColour(colorSet);
+    this.appendValueInput('VALUE', null)
+        .appendField(Blockly.MIXLY_DECLARE)
+        .appendField(new Blockly.FieldTextInput('item'), 'VAR')
+        .appendField(Blockly.MIXLY_AS)
+      .appendField(new Blockly.FieldDropdown(FLIP), "TYPE")
+      .appendField(Blockly.MIXLY_VALUE);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.MIXLY_TOOLTIP_VARIABLES_DECLARE);
+  },
+  getVars: function() {
+    return [this.getFieldValue('VAR')];
+  },
+  renameVar: function(oldName, newName) {
+    if (Blockly.Names.equals(oldName, this.getFieldValue('VAR'))) {
+      this.setTitleValue(newName, 'VAR');
+    }
+  }
+};
+// ************************************************************************
+
+Blockly.Blocks.MDvariables_get = {
+  init: function() {
+    this.setColour(colorSet);
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldTextInput('item'), 'VAR')
+    this.setOutput(true);
+    this.setTooltip(Blockly.Msg.VARIABLES_GET_TOOLTIP);
+  },
+  getVars: function() {
+    return [this.getFieldValue('VAR')];
+  },
+  renameVar: function(oldName, newName) {
+    if (Blockly.Names.equals(oldName, this.getFieldValue('VAR'))) {
+      this.setFieldValue(newName, 'VAR');
+    }
+  }/*,
+  onchange: function() {
+    var varName = Blockly.Arduino.variableDB_.getName(this.getFieldValue('VAR'),Blockly.Variables.NAME_TYPE);
+    if(Blockly.Arduino.definitions_['var_declare'+varName]){
+      this.setWarningText(null);
+    }else{
+      this.setWarningText(Blockly.MIXLY_WARNING_NOT_DECLARE);
+    }
+  }*/
+};
+
+Blockly.Blocks.MDvariables_set = {
+  init: function() {
+    this.setColour(colorSet);
+    this.appendValueInput('VALUE')
+        .appendField(new Blockly.FieldTextInput('item'), 'VAR')
+    .appendField(Blockly.LANG_VARIABLES_SET_TITLE);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.VARIABLES_SET_TOOLTIP);
+  },
+  getVars: function() {
+    return [this.getFieldValue('VAR')];
+  },
+  renameVar: function(oldName, newName) {
+    if (Blockly.Names.equals(oldName, this.getFieldValue('VAR'))) {
+      this.setFieldValue(newName, 'VAR');
+    }
+  }/*,
+  onchange: function() {
+    var varName = Blockly.Arduino.variableDB_.getName(this.getFieldValue('VAR'),Blockly.Variables.NAME_TYPE);
+    if(Blockly.Arduino.definitions_['var_declare'+varName]){
+      this.setWarningText(null);
+    }else{
+      this.setWarningText(Blockly.MIXLY_WARNING_NOT_DECLARE);
+    }
+  }*/
 };

@@ -979,3 +979,22 @@ Blockly.MD_BTATsetPASS='设置配对密码';
 Blockly.MD_BTATsetTimeCON='设置主模式下尝试连接时间';
 Blockly.MD_BTATsetTIBE='改变模块作为ibeacon基站广播时间间隔'
 Blockly.MD_BTATsearchAvalibleSlavers='查询周围的可用蓝牙从机 搜索时间';
+
+
+Blockly.MD_audioProSDPrepare='MP3播放器准备';
+Blockly.MD_MAXSongNum='SD卡中的前';
+Blockly.MD_MAXSongUnit='首';
+Blockly.MD_AudioProSDShowList='串口显示歌曲列表';
+Blockly.MD_AudioProSDControl='MP3播放器控制';
+Blockly.MD_audioProSDPowerOnOff='开关';
+Blockly.MD_audioProSDNext='下一曲';
+Blockly.MD_audioProSDPre='上一曲';
+
+Blockly.MD_audioProSDVolumAdd='音量加';
+Blockly.MD_audioProSDVolumSub='音量减';
+Blockly.MD_audioProSDFast='快进';
+Blockly.MD_audioProSDSlow='慢速';
+Blockly.MD_audioProSDRepeat='重播';
+Blockly.MD_AudioProSDPlayByName='MP3播放';
+Blockly.MD_AudioProSDIsPlay='是否播放';
+Blockly.MD_AudioProSDPlayNum='当前播放序号';

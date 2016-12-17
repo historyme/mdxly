@@ -4,7 +4,7 @@ goog.provide('Blockly.Arduino.Microduino');
 
 goog.require('Blockly.Arduino');
 
-Blockly.Arduino.Defination = function() {
+Blockly.Arduino.MDVarDefination = function() {
   //var branch = Blockly.Arduino.statementToCode(this, 'DO');
   var varName = this.getFieldValue('NAME');
   var flip = this.getFieldValue('FLIP');
@@ -14,12 +14,14 @@ Blockly.Arduino.Defination = function() {
 
   //var flip = this.getFieldValue('FLIP');
   var code='';
+  //code+=varName;
   //code+='strip.show();\n'
   // code+='do {\n';
   //code+=branch;
   // code+='} while( oled.nextPage() );\n';
 
   return code;
+  //return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
 Blockly.Arduino.Structure = function() {
@@ -154,4 +156,40 @@ Blockly.Arduino.nrfDataMemberReciver = function() {
   var code='payload.'+ Struct_Member;
 
   return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+
+
+
+Blockly.Arduino.MDvariables_get = function() {
+  // Variable getter.
+  var code = Blockly.Arduino.variableDB_.getName(this.getFieldValue('VAR'),
+      Blockly.Variables.NAME_TYPE);
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Arduino.MDvariables_declare = function() {
+  var dropdown_type = this.getFieldValue('TYPE');
+  var argument0;
+  //TODO: settype to variable
+  if(dropdown_type=='String'){
+  argument0 = Blockly.Arduino.valueToCode(this, 'VALUE',Blockly.Arduino.ORDER_ASSIGNMENT) || '""';
+  }else{
+    argument0 = Blockly.Arduino.valueToCode(this, 'VALUE',Blockly.Arduino.ORDER_ASSIGNMENT) || '0';
+  }
+  var varName = Blockly.Arduino.variableDB_.getName(this.getFieldValue('VAR'),
+      Blockly.Variables.NAME_TYPE);
+  Blockly.Arduino.definitions_['var_declare'+varName] = dropdown_type+' '+varName+';';
+  Blockly.Arduino.setups_['setup_var'+varName] = varName + ' = ' + argument0 + ';';
+  //Blockly.Arduino.variableTypes_[varName] = dropdown_type;//处理变量类型
+  return '';
+};
+
+Blockly.Arduino.MDvariables_set = function() {
+  // Variable setter.
+  var argument0 = Blockly.Arduino.valueToCode(this, 'VALUE',
+      Blockly.Arduino.ORDER_ASSIGNMENT) || '0';
+  var varName = Blockly.Arduino.variableDB_.getName(this.getFieldValue('VAR'),
+      Blockly.Variables.NAME_TYPE);
+  return varName + ' = ' + argument0 + ';\n';
 };
