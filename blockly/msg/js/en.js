@@ -996,3 +996,4 @@ Blockly.MD_audioProSDRepeat='repeat';
 Blockly.MD_AudioProSDPlayByName='MP3 play';
 Blockly.MD_AudioProSDIsPlay='is playing';
 Blockly.MD_AudioProSDPlayNum='current song number';
+Blockly.audioProLoudness='Loudness';

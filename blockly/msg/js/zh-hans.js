@@ -998,3 +998,4 @@ Blockly.MD_audioProSDRepeat='重播';
 Blockly.MD_AudioProSDPlayByName='MP3播放';
 Blockly.MD_AudioProSDIsPlay='是否播放';
 Blockly.MD_AudioProSDPlayNum='当前播放序号';
+Blockly.audioProLoudness='响度';

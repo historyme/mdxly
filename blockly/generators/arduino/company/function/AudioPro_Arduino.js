@@ -48,8 +48,13 @@ Blockly.Arduino.audioProControl = function() {
 	var audioProVolume = Blockly.Arduino.valueToCode(this, 'audioProVolume', Blockly.Arduino.ORDER_ATOMIC);
 	var audioProDuration = Blockly.Arduino.valueToCode(this, 'audioProDuration', Blockly.Arduino.ORDER_ATOMIC);
 	var code='';
-	code+=getType+'(0, '+audioProMelody+', '+audioProVolume+');\n';
+
+
+	// code+=getType+'(0, '+audioProMelody+', '+audioProVolume+');\n';
+	code+='midiPlayer.noteOn(0, '+audioProMelody+', '+audioProVolume+');\n';
 	code+='delay('+audioProDuration+');\n';
+	code+='midiPlayer.noteOff(0, '+audioProMelody+', '+audioProVolume+');\n';
+	//code+='delay('+audioProDuration+');\n';
 	return code;
 };
 

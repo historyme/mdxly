@@ -65,13 +65,13 @@ Blockly.Blocks.audioProControl = {
   init: function() {
     this.setColour(colorSet);
 
-    var getType =[[Blockly.AudioProPlay, "midiPlayer.noteOn"],
-                  [Blockly.AudioProPause, "midiPlayer.noteOff"]
-                ];
+    // var getType =[[Blockly.AudioProPlay, "midiPlayer.noteOn"],
+    //               [Blockly.AudioProPause, "midiPlayer.noteOff"]
+    //             ];
 
     this.appendDummyInput("")
-         .appendTitle(Blockly.AudioProControl)
-         .appendTitle(new Blockly.FieldDropdown(getType), "getType");
+         .appendTitle(Blockly.AudioProControl);
+         // .appendTitle(new Blockly.FieldDropdown(getType), "getType");
 
 
     this.appendDummyInput("")
@@ -81,7 +81,7 @@ Blockly.Blocks.audioProControl = {
         .setAlign(Blockly.ALIGN_RIGHT);
 
     this.appendDummyInput("")
-        .appendTitle(Blockly.audioProVolume)
+        .appendTitle(Blockly.audioProLoudness)
     this.appendValueInput("audioProVolume", Number)
         .setCheck(Number)
         .setAlign(Blockly.ALIGN_RIGHT);
