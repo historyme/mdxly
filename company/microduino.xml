@@ -98,8 +98,15 @@
 <script type="text/javascript" src="../../blocks/company/sensor/TCS3414_Blocks.js"></script>
 <script type="text/javascript" src="../../generators/arduino/company/sensor/TCS3414_Arduino.js"></script>
 
+<script type="text/javascript" src="../../blocks/company/sensor/m18b20_Blocks.js"></script>
+<script type="text/javascript" src="../../generators/arduino/company/sensor/m18b20_Arduino.js"></script>
+
+
 <script type="text/javascript" src="../../blocks/company/sensor/digitalRead_Blocks.js"></script>
 <script type="text/javascript" src="../../generators/arduino/company/sensor/digitalRead_Arduino.js"></script>
+
+<script type="text/javascript" src="../../blocks/company/sensor/Number_Blocks.js"></script>
+<script type="text/javascript" src="../../generators/arduino/company/sensor/Number_Arduino.js"></script>
 
 <script type="text/javascript" src="../../blocks/company/sensor/analogRead_Blocks.js"></script>
 <script type="text/javascript" src="../../generators/arduino/company/sensor/analogRead_Arduino.js"></script>
@@ -109,6 +116,7 @@
 
 <script type="text/javascript" src="../../blocks/company/VariableExpansion/NewVariable_Blocks.js"></script>
 <script type="text/javascript" src="../../generators/arduino/company/VariableExpansion/NewVariable_Arduino.js"></script>
+
 
 
 <category id="microduino" colour="#000000">
@@ -1061,6 +1069,8 @@
 	  </block>
 
 
+	  <block type="NumberTube"></block>
+
 	</category>
 
 	<!--传感器-->
@@ -1121,6 +1131,20 @@
 		<block type="ColorDetPrepare_TCS3414"></block>
 		<block type="ColorGet_TCS3414"></block>
 		<block type="MD_Potentiometer"></block>
+<!-- 		<block type="mCookie_18B20">
+			<value name="digitalPin">
+	          <shadow type="math_number">
+	            <field name="NUM">6</field>
+	          </shadow>
+	        </value>
+		</block> -->
+		<block type="mCookie_18B20">
+			<value name="PIN">
+	          <shadow type="math_number">
+	            <field name="NUM">6</field>
+	          </shadow>
+	        </value>
+		</block>
 	</category>
 
 	<!--扩展变量-->
