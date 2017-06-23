@@ -26,7 +26,7 @@ Blockly.Arduino.ws2812Begin = function() {
   Blockly.Arduino.definitions_['var_Adafruit_NeoPixel'] = 'Adafruit_NeoPixel strip = Adafruit_NeoPixel('+LEDNumber+', '+LEDPin+', NEO_GRB + NEO_KHZ800);';
   
   Blockly.Arduino.setups_['setup_stripBegin'] = 'strip.begin();';
-  Blockly.Arduino.setups_['setup_stripShow'] ='strip.show();';
+  // Blockly.Arduino.setups_['setup_stripShow'] ='strip.show();';
 
   //var flip = this.getFieldValue('FLIP');
   var code='';
@@ -48,6 +48,7 @@ Blockly.Arduino.ws2812Doing = function() {
   var colorRGB = this.getFieldValue('colorRGB');
 
   var code='strip.setPixelColor('+LEDNumber+'-1, '+hexToRgb(colorRGB)+');\n';
+  code+='delay(1);\n'
   code+='strip.show();\n'
 
   return code;
@@ -63,7 +64,8 @@ Blockly.Arduino.ws2812DoingRGB = function() {
   var blue = Blockly.Arduino.valueToCode(this, 'blue', Blockly.Arduino.ORDER_ATOMIC)
 
   var code='strip.setPixelColor('+LEDNumber+'-1, '+red+','+green+','+blue+');\n';
-  code+='strip.show();\n'
+      code+='delay(1);\n'
+      code+='strip.show();\n'
 
   return code;
 };
@@ -84,6 +86,7 @@ Blockly.Arduino.definitions_['define_val_min'] = '#define val_min 0\n';
 
 var setColor='void colorSet(uint32_t c, int i) {\n';
     setColor+='strip.setPixelColor(i, c);\n';
+    setColor+='delay(1);\n';
     setColor+='strip.show();}\n';
 Blockly.Arduino.definitions_['define_setColor'] = setColor;
 
