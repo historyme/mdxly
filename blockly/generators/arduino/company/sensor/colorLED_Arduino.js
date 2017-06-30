@@ -48,9 +48,7 @@ Blockly.Arduino.ws2812Doing = function() {
   var colorRGB = this.getFieldValue('colorRGB');
 
   var code='strip.setPixelColor('+LEDNumber+'-1, '+hexToRgb(colorRGB)+');\n';
-  code+='delay(1);\n'
   code+='strip.show();\n'
-
   return code;
 };
 
@@ -64,9 +62,7 @@ Blockly.Arduino.ws2812DoingRGB = function() {
   var blue = Blockly.Arduino.valueToCode(this, 'blue', Blockly.Arduino.ORDER_ATOMIC)
 
   var code='strip.setPixelColor('+LEDNumber+'-1, '+red+','+green+','+blue+');\n';
-      code+='delay(1);\n'
       code+='strip.show();\n'
-
   return code;
 };
 

@@ -1,23 +1,15 @@
-#include <OneWire.h>
-#include <DallasTemperature.h>
+#include <Adafruit_NeoPixel.h>
 
-OneWire oneWire_6(6);
-DallasTemperature sensors_6(&oneWire_6);
-DeviceAddress insideThermometer;
-float ds18b20_6_getTemp(int w) {
-  sensors_6.requestTemperatures();
-  if(w==0) {return sensors_6.getTempC(insideThermometer);}
-  else {return sensors_6.getTempF(insideThermometer);}
-}
+Adafruit_NeoPixel strip = Adafruit_NeoPixel(1, 6, NEO_GRB + NEO_KHZ800);
 
 void setup()
 {
-  sensors_6.getAddress(insideThermometer, 0);
-  sensors_6.setResolution(insideThermometer, 9);
+  strip.begin();
 }
 
 void loop()
 {
-  ds18b20_6_getTemp(0);
+  strip.setPixelColor(1-1, 255,0,0);
+  strip.show();
 
 }
